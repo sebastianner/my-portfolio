@@ -1,4 +1,3 @@
-"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
@@ -18,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${Poppins_Font.className}`}>
+      <body
+        className={`${inter.className} ${Poppins_Font.className} overflow-x-hidden`}
+      >
         <div className="relative z-0">
           <div className="absolute z-1">{children}</div>
           <StarsCanvas />
