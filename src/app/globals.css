@@ -16,12 +16,37 @@
   }
 }
 
-* {
-  color-scheme: dark;
-  scroll-behavior: smooth;
-  background: rgb(21,47,32);
-}
-
 body {
   color: rgb(var(--foreground-rgb));
+  background: rgb(21, 47, 32);
+}
+
+svg:hover .linkIcon {
+  transition: fill 0.3s ease;
+  fill: #0A66C2;
+}
+
+svg:hover .ghIcon {
+  transition: fill 0.3s ease;
+  fill: #000;
+}
+
+.profile-picture {
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
 }
