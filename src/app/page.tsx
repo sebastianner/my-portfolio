@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import NavBar from "@/components/navBar/NavBar";
 import { Hero } from "@/views/Hero";
-import StarsCanvas from "@/components/Stars";
+import { SectionBuilder } from "@/composition";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -14,7 +14,9 @@ export default function Home() {
     <Fragment>
       <NavBar />
       <Hero />
-      {/* <section className="w-auto h-screen bg-[#342E2E]"></section> */}
+      {/* <SectionBuilder id={"hero"}>
+        <section className="w-auto h-screen bg-[#342E2E]">HEEEEYYY</section>
+      </SectionBuilder> */}
     </Fragment>
   );
 }
