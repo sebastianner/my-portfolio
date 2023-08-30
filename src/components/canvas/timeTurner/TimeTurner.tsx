@@ -1,19 +1,33 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Mesh } from "three";
 
 // import CanvasLoader from '../loader'
 
 type Props = {};
 
 function TimeTurner({}: Props) {
+  const myMesh = useRef<Mesh>(null);
   const timeTurner = useGLTF("./timeTurner/scene.gltf");
+
+  useFrame(({ clock }) => {
+    if (myMesh.current) {
+      myMesh.current.rotation.y = clock.getElapsedTime();
+    }
+  });
+
   return (
-    <mesh>
-      <hemisphereLight intensity={11} groundColor="#6b5138" />
-      <pointLight intensity={1} />
-      <primitive object={timeTurner.scene} />
+    <mesh position={[0, 0, 0]} ref={myMesh}>
+      <ambientLight intensity={3} />
+      <directionalLight intensity={5} />
+      <primitive
+        object={timeTurner.scene}
+        scale={1.5}
+        position={[0, -90, -1.5]}
+        rotation={[0, 0, 0]}
+      />
     </mesh>
   );
 }
@@ -21,7 +35,7 @@ function TimeTurner({}: Props) {
 const TimeTurnerCanvas = () => {
   return (
     <Canvas
-      frameloop="demand"
+      style={{ width: "150px", height: "fit-content" }}
       shadows
       camera={{ position: [600, 600, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}

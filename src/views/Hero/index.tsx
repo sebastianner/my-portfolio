@@ -11,7 +11,10 @@ function Hero({}: Props) {
     <main className="flex justify-center items-center h-screen w-screen gap-20">
       {/* info section */}
       <section className="flex flex-col w-[460px] gap-8">
-        <h1 className="text-[55px] font-bold">React Front-End Developer🎨</h1>
+        {/* TODO IF DEVICE IS SLOW DONT RENDER THE TIME TURNER INSTEAD USE 🎨*/}
+        <h1 className="text-[55px] font-bold relative">
+          React Front-End Developer
+        </h1>
         <TimeTurnerCanvas />
         <p className="text-lg	font-light w-full">
           Hey there, I'm Sebastian Mera, a dedicated React Front-end Developer
