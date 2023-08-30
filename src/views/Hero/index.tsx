@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons/icons";
+import { TimeTurnerCanvas } from "@/components/canvas";
 import React from "react";
 
 type Props = {};
@@ -11,6 +12,7 @@ function Hero({}: Props) {
       {/* info section */}
       <section className="flex flex-col w-[460px] gap-8">
         <h1 className="text-[55px] font-bold">React Front-End Developer🎨</h1>
+        <TimeTurnerCanvas />
         <p className="text-lg	font-light w-full">
           Hey there, I'm Sebastian Mera, a dedicated React Front-end Developer
           from Colombia. 🇨🇴📍
