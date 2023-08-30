@@ -20,8 +20,8 @@ function TimeTurner({}: Props) {
 
   return (
     <mesh position={[0, 0, 0]} ref={myMesh}>
-      <ambientLight intensity={3} />
-      <directionalLight intensity={5} />
+      <ambientLight intensity={3.3} />
+      <directionalLight intensity={5.5} />
       <primitive
         object={timeTurner.scene}
         scale={1.5}
@@ -35,7 +35,14 @@ function TimeTurner({}: Props) {
 const TimeTurnerCanvas = () => {
   return (
     <Canvas
-      style={{ width: "150px", height: "fit-content" }}
+      style={{
+        width: "150px",
+        height: "fit-content",
+        alignSelf: "flex-end",
+        position: "absolute",
+        top: "-125px",
+        right: "25px",
+      }}
       shadows
       camera={{ position: [600, 600, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}

@@ -8,18 +8,18 @@ type Props = {};
 
 function Hero({}: Props) {
   return (
-    <main className="flex justify-center items-center h-screen w-screen gap-20">
+    <main className="flex flex-wrap-reverse justify-center items-center h-screen w-screen gap-20 bg-red-400">
       {/* info section */}
       <section className="flex flex-col w-[460px] gap-8">
         {/* TODO IF DEVICE IS SLOW DONT RENDER THE TIME TURNER INSTEAD USE 🎨*/}
-        <h1 className="text-[55px] font-bold relative">
-          React Front-End Developer
-        </h1>
-        <TimeTurnerCanvas />
-        <p className="text-lg	font-light w-full">
-          Hey there, I'm Sebastian Mera, a dedicated React Front-end Developer
-          from Colombia. 🇨🇴📍
-        </p>
+        <h1 className="text-[55px] font-bold">React Front-End Developer</h1>
+        <div className="flex flex-col relative">
+          {/* <TimeTurnerCanvas /> */}
+          <p className="text-lg	font-light w-full">
+            Hey there, Im Sebastian Mera, a dedicated React Front-end Developer
+            from Colombia. 🇨🇴📍
+          </p>
+        </div>
         <span className="flex gap-1">
           <Link
             href={"https://www.linkedin.com/in/sebastian-mera/"}
