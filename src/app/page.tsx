@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import NavBar from "@/components/navBar/NavBar";
-import { Hero } from "@/views/Hero";
+import { Hero, About } from "@/views/";
 import { SectionBuilder } from "@/composition";
 
 export const metadata: Metadata = {
@@ -14,9 +14,9 @@ export default function Home() {
     <Fragment>
       <NavBar />
       <Hero />
-      {/* <SectionBuilder id={"hero"}>
-        <section className="w-auto h-screen bg-[#342E2E]">HEEEEYYY</section>
-      </SectionBuilder> */}
+      <SectionBuilder id={"about"}>
+        <About />
+      </SectionBuilder>
     </Fragment>
   );
 }

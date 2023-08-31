@@ -3,8 +3,7 @@ import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
-
-// import CanvasLoader from '../loader'
+import CanvasLoader from "@/components/canvasLoader";
 
 type Props = {};
 
@@ -43,19 +42,19 @@ const TimeTurnerCanvas = () => {
         top: "-125px",
         right: "25px",
       }}
-      shadows
+      frameloop="always"
       camera={{ position: [600, 600, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={<>LOADING</>}>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
+        <Preload all />
         <TimeTurner />
       </Suspense>
-      <Preload all />
     </Canvas>
   );
 };

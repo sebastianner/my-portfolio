@@ -1,27 +1,25 @@
-import Link from "next/link";
-
 type Props = {};
 
 function NavBar({}: Props) {
   return (
-    <nav className="bg-transparent w-screen h-20 flex items-center justify-between px-14 py-8 shadow-sm shadow-black font-semibold text-lg absolute">
+    <nav className="bg-transparent w-screen h-20 flex items-center justify-between px-14 py-8 shadow-sm font-semibold text-lg absolute">
       Sebastian.dev
-      <ul className="flex gap-4">
-        <Link href={""}>
+      <ul className="gap-4 hidden md:flex">
+        <a href={""}>
           <li>Home</li>
-        </Link>
-        <Link href={""}>
+        </a>
+        <a href={"#about"}>
           <li>About me</li>
-        </Link>
-        <Link href={""}>
+        </a>
+        <a href={""}>
           <li>Work</li>
-        </Link>
-        <Link href={""}>
+        </a>
+        <a href={""}>
           <li>Projects</li>
-        </Link>
-        <Link href={""}>
+        </a>
+        <a href={""}>
           <li>Contact</li>
-        </Link>
+        </a>
       </ul>
     </nav>
   );
