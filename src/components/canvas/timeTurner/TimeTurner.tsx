@@ -11,9 +11,9 @@ function TimeTurner({}: Props) {
   const myMesh = useRef<Mesh>(null);
   const timeTurner = useGLTF("./timeTurner/scene.gltf");
 
-  useFrame(({ clock }) => {
+  useFrame((_, delta) => {
     if (myMesh.current) {
-      myMesh.current.rotation.y = clock.getElapsedTime();
+      myMesh.current.rotation.y += delta;
     }
   });
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { SphereCanvas } from "@/components/canvas";
 
 type Props = {};
 
@@ -17,6 +17,18 @@ function About({}: Props) {
         user-friendly solutions. Let's collaborate to turn your vision into
         reality!
       </p>
+      <div className="flex flex-wrap items-center justify-center mt-20">
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+        <SphereCanvas />
+      </div>
       {/* <article className="mt-36 text-center">
         <h2 className="text-2xl font-extralight opacity-80 tracking-wide">
           My stack
