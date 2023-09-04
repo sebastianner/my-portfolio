@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
-import StarsCanvas from "@/components/Stars";
+import { StarsCanvas } from "@/components/canvas/";
 
 const inter = Inter({ subsets: ["latin"] });
 const Poppins_Font = Poppins({

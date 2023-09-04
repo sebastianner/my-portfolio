@@ -3,6 +3,7 @@ import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons/icons";
 import { TimeTurnerCanvas } from "@/components/canvas";
 import React from "react";
+import { GLOBAL_STYLES } from "@/global-styles";
 
 type Props = {};
 
@@ -13,10 +14,10 @@ function Hero({}: Props) {
         {/* info section */}
         <section className="flex flex-col max-w-[460px] gap-6 text-center lg:text-left">
           {/* TODO IF DEVICE IS SLOW DONT RENDER THE TIME TURNER INSTEAD USE 🎨*/}
-          <h1 className="text-title font-bold">React Front-End Developer🎨</h1>
+          <h1 className={GLOBAL_STYLES.title}>React Front-End Developer🎨</h1>
           <div className="flex flex-col relative">
             {/* <TimeTurnerCanvas /> */}
-            <p className="text-paragraph font-light w-full">
+            <p className={GLOBAL_STYLES.paragraph}>
               Hey there, Im <strong>Sebastian Mera</strong>, a dedicated React
               Front-end Developer from Colombia.📍
             </p>

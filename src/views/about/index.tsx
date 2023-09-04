@@ -1,15 +1,14 @@
 import { SphereCanvas } from "@/components/canvas";
+import { GLOBAL_STYLES } from "@/global-styles";
 
 type Props = {};
 
 function About({}: Props) {
   return (
     <div className="w-auto h-screen bg-slytherin-green">
-      <h2 className="text-subtitle font-extralight opacity-80 tracking-wide">
-        Introduction
-      </h2>
-      <h1 className="text-title font-bold">Overview</h1>
-      <p className="text-paragraph font-extralight tracking-wide">
+      <h2 className={GLOBAL_STYLES.subtitle}>Introduction</h2>
+      <h1 className={GLOBAL_STYLES.title}>Overview</h1>
+      <p className={GLOBAL_STYLES.paragraph}>
         I'm a proficient Front-end developer with a focus on crafting
         interactive digital experiences using React. Proficient across the
         JavaScript spectrum – including React, Next.js, TypeScript, Node.js, and
