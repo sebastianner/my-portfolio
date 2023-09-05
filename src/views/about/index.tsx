@@ -9,7 +9,7 @@ function About({}: Props) {
     <div className="w-auto h-screen bg-slytherin-green flex flex-col">
       <div>
         <h2 className={GLOBAL_STYLES.subtitle}>Introduction</h2>
-        <h1 className={GLOBAL_STYLES.title}>Overview</h1>
+        <h1 className={GLOBAL_STYLES.title}>Overview.</h1>
         <p className={GLOBAL_STYLES.paragraph}>
           I'm a proficient Front-end developer with a focus on crafting
           interactive digital experiences using React. Proficient across the
