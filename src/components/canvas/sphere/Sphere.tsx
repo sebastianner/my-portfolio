@@ -3,7 +3,7 @@ import { Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Preload, useTexture, Decal, Float, Html } from "@react-three/drei";
 import { Mesh } from "three";
-import CanvasLoader from "@/components/canvasLoader";
+import CanvasLoader from "@/components/canvas/canvasLoader";
 import { ErrorBoundary } from "react-error-boundary";
 
 type Props = {

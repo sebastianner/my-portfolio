@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
-import NavBar from "@/components/navBar/";
+import { NavBar } from "@/components/";
 import { Hero, About } from "@/views/";
 import { SectionBuilder } from "@/composition";
 

@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons/icons";
 import { TimeTurnerCanvas } from "@/components/canvas";
-import React from "react";
 import { GLOBAL_STYLES } from "@/global-styles";
 
 type Props = {};

@@ -1,3 +1,4 @@
+import { Card } from "@/components";
 import { SphereCanvas } from "@/components/canvas";
 import { GLOBAL_STYLES } from "@/global-styles";
 
