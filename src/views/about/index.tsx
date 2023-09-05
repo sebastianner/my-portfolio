@@ -16,16 +16,7 @@ function About({}: Props) {
         user-friendly solutions. Let's collaborate to turn your vision into
         reality!
       </p>
-      <div className="flex flex-wrap items-center justify-center mt-20">
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
-        <SphereCanvas />
+      <div className="mt-20 max-w-[100%]">
         <SphereCanvas />
       </div>
       {/* <article className="mt-36 text-center">
