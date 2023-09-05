@@ -1,16 +1,28 @@
 "use client";
-import { Suspense, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Preload, useTexture, Decal, Float, Html } from "@react-three/drei";
+import { useEffect, useRef, useState, memo } from "react";
+import { useTexture, Decal, Float } from "@react-three/drei";
 import { Mesh } from "three";
-import CanvasLoader from "@/components/canvas/canvasLoader";
-import { ErrorBoundary } from "react-error-boundary";
+import SphereContainer from "./Sphere.container";
+import { CANVAS_MEDIA_QUERIES, SPHERE_SCALE } from "@/constants";
+
+const SphereContainerMemo = memo(SphereContainer);
 
 type Props = {
   position: [number, number, number];
   rotation: [number, number, number];
+  medium: boolean;
+  small: boolean;
+  extraSmall: boolean;
 };
-function SphereMesh(props: Props) {
+export function SphereMesh(props: Props) {
+  let scale = SPHERE_SCALE.initial;
+  if (props.small) {
+    scale = SPHERE_SCALE.small;
+  }
+  if (props.extraSmall) {
+    scale = SPHERE_SCALE.extraSmall;
+  }
+
   const [decal] = useTexture([
     "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
   ]);
@@ -25,10 +37,10 @@ function SphereMesh(props: Props) {
       floatIntensity={0.05}
       rotation={[0, 0, 0.065]}
     >
-      <mesh {...props} ref={sphereRef} scale={25} castShadow receiveShadow>
+      <mesh {...props} ref={sphereRef} scale={scale} castShadow receiveShadow>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color={"#fff8eb"}
+          color={"#D3D0CB"}
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -44,42 +56,65 @@ function SphereMesh(props: Props) {
 }
 
 function SphereCanvas({}: {}) {
+  const [isMedium, setMedium] = useState<boolean>(false);
+  const [isSmall, setSmall] = useState<boolean>(false);
+  const [isExtraSmall, setExtraSmall] = useState<boolean>(false);
+
+  useEffect(() => {
+    const w = window;
+
+    const mediumScreen = window.matchMedia(
+      `(max-width:${CANVAS_MEDIA_QUERIES.medium}px)`
+    );
+
+    const smallScreen = window.matchMedia(
+      `(max-width:${CANVAS_MEDIA_QUERIES.small}px)`
+    );
+
+    const extraSmallScreen = window.matchMedia(
+      `(max-width:${CANVAS_MEDIA_QUERIES.extraSmall}px)`
+    );
+
+    setMedium(mediumScreen.matches);
+    setSmall(smallScreen.matches);
+    setExtraSmall(extraSmallScreen.matches);
+
+    const handleMediaQueryChange = (event: any) => {
+      if (event.target.outerWidth > CANVAS_MEDIA_QUERIES.medium) {
+        setMedium(false);
+        setSmall(false);
+        setExtraSmall(false);
+      }
+      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.medium) {
+        setSmall(false);
+        setExtraSmall(false);
+        setMedium(true);
+      }
+      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.small) {
+        setMedium(false);
+        setExtraSmall(false);
+        setSmall(true);
+      }
+      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.extraSmall) {
+        setMedium(false);
+        setSmall(false);
+        setExtraSmall(true);
+      }
+    };
+
+    w.addEventListener("resize", handleMediaQueryChange);
+
+    return () => {
+      w.removeEventListener("resize", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
-    <Canvas
-      style={{
-        maxWidth: "100%",
-        height: "300px",
-      }}
-      camera={{ position: [600, 50, 0], fov: 15 }}
-      gl={{ preserveDrawingBuffer: true }}
-      frameloop="always"
-    >
-      <ErrorBoundary
-        fallback={
-          <Html>
-            <div>Something went wrong TODO ERROR BOUNDARY</div>
-          </Html>
-        }
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <ambientLight intensity={0.8} />
-          <directionalLight intensity={10} position={[0, 0, 0.05]} />
-          <Preload all />
-          <SphereMesh position={[0, 50, 210]} rotation={[0, 1.8, 0]} />
-          <SphereMesh position={[0, 50, 140]} rotation={[0, 1.7, 0]} />
-          <SphereMesh position={[0, 50, 70]} rotation={[0, 1.65, 0]} />
-          <SphereMesh position={[0, 50, -0]} rotation={[0, 1.55, 0]} />
-          <SphereMesh position={[0, 50, -70]} rotation={[0, 1.45, 0]} />
-          <SphereMesh position={[0, 50, -140]} rotation={[0, 1.4, 0]} />
-          <SphereMesh position={[0, 50, -210]} rotation={[0, 1.25, 0]} />
-          <SphereMesh position={[0, -20, 140]} rotation={[0, 1.7, 0]} />
-          <SphereMesh position={[0, -20, 70]} rotation={[0, 1.65, 0]} />
-          <SphereMesh position={[0, -20, -0]} rotation={[0, 1.55, 0]} />
-          <SphereMesh position={[0, -20, -70]} rotation={[0, 1.45, 0]} />
-          <SphereMesh position={[0, -20, -140]} rotation={[0, 1.4, 0]} />
-        </Suspense>
-      </ErrorBoundary>
-    </Canvas>
+    <SphereContainerMemo
+      medium={isMedium}
+      small={isSmall}
+      extraSmall={isExtraSmall}
+    />
   );
 }
 

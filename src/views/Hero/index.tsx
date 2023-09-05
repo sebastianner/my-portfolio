@@ -25,10 +25,15 @@ function Hero({}: Props) {
             <Link
               href={"https://www.linkedin.com/in/sebastian-mera/"}
               target="_blank"
+              as={"https://www.linkedin.com/in/sebastian-mera/"}
             >
               <LinkedInIcon />
             </Link>
-            <Link href={"https://github.com/sebastianner"} target="_blank">
+            <Link
+              href={"https://github.com/sebastianner"}
+              target="_blank"
+              as={"https://github.com/sebastianner"}
+            >
               <GithubIcon />
             </Link>
           </span>
