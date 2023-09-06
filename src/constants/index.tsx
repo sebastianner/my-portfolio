@@ -4,7 +4,7 @@ import {
   CANVAS_HEIGHT_INTERFACE,
   CANVAS_FOV_INTERFACE,
   SPHERE_SCALE_INTERFACE,
-} from "@/components/interfaces";
+} from "@/app/interfaces";
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   position: {

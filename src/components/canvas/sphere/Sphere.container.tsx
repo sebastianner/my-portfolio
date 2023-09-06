@@ -9,7 +9,7 @@ import { Html } from "next/document";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import CanvasLoader from "../canvasLoader";
-import { SphereMesh } from "./Sphere";
+import { SphereMesh } from ".";
 
 type Props = { medium: boolean; small: boolean; extraSmall: boolean };
 

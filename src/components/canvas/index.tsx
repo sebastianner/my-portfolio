@@ -1,5 +1,5 @@
-import TimeTurnerCanvas from "./timeTurner/TimeTurner";
-import SphereCanvas from "./sphere/Sphere";
-import StarsCanvas from "./stars/Stars";
+import TimeTurnerCanvas from "./timeTurner";
+import SphereCanvas from "./sphere";
+import StarsCanvas from "./stars";
 
 export { TimeTurnerCanvas, SphereCanvas, StarsCanvas };
