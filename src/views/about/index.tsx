@@ -1,5 +1,6 @@
 import { Card } from "@/components";
 import { GLOBAL_STYLES } from "@/global-styles";
+import SphereCanvas, { SphereMesh } from "@/components/canvas/sphere";
 
 type Props = {};
 
@@ -18,10 +19,13 @@ function About({}: Props) {
           into reality!
         </p>
       </div>
+      <div>
+        <SphereCanvas />
+      </div>
       <div className="w-full flex flex-wrap gap-8">
-        <Card n={1} />
+        {/* <Card n={1} />
         <Card n={2} />
-        <Card n={3} />
+        <Card n={3} /> */}
       </div>
       {/* <article className="mt-36 text-center">
         <h2 className="text-2xl font-extralight opacity-80 tracking-wide">
