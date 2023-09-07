@@ -1,13 +1,12 @@
 import { Card } from "@/components";
-import { SphereCanvas } from "@/components/canvas";
 import { GLOBAL_STYLES } from "@/global-styles";
 
 type Props = {};
 
 function About({}: Props) {
   return (
-    <div className="w-auto h-screen bg-slytherin-green flex flex-col">
-      <div>
+    <div className="max-w-7xl w-auto h-screen bg-slytherin-green flex flex-col gap-5 px-6 sm:px-20 sm:py-16">
+      <div className="max-w-[80%]">
         <h2 className={GLOBAL_STYLES.subtitle}>Introduction</h2>
         <h1 className={GLOBAL_STYLES.title}>Overview.</h1>
         <p className={GLOBAL_STYLES.paragraph}>
@@ -19,8 +18,10 @@ function About({}: Props) {
           into reality!
         </p>
       </div>
-      <div>
-        <SphereCanvas />
+      <div className="w-full flex flex-wrap gap-8">
+        <Card n={1} />
+        <Card n={2} />
+        <Card n={3} />
       </div>
       {/* <article className="mt-36 text-center">
         <h2 className="text-2xl font-extralight opacity-80 tracking-wide">

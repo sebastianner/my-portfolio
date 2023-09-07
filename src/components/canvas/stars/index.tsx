@@ -1,8 +1,8 @@
 "use client";
+import { HERO_HEIGHT } from "@/constants";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, Suspense } from "react";
-import * as random from "maath/random/dist/maath-random.esm";
 import { Points as ThreePoints } from "three"; // Import Three's Points and PointMaterial
 
 type Props = {};
@@ -10,7 +10,18 @@ type Props = {};
 function StarsCanvas({}: Props) {
   const Stars = () => {
     const starsRef = useRef<ThreePoints>(null);
-    const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 });
+
+    const generateStarPositions = () => {
+      const positions = new Float32Array(5000 * 3); // Three components (x, y, z) per star
+
+      for (let i = 0; i < positions.length; i++) {
+        positions[i] = (Math.random() - 0.5) * 2.4; // Adjust the range as needed
+      }
+
+      return positions;
+    };
+
+    const sphere = generateStarPositions();
 
     useFrame((_, delta) => {
       if (starsRef.current) {
@@ -35,7 +46,7 @@ function StarsCanvas({}: Props) {
   };
 
   return (
-    <div className="w-screen h-screen absolute z-[-1]">
+    <div className={`w-screen absolute z-[-1] ${HERO_HEIGHT.style}`}>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={"null"}>
           <Stars />

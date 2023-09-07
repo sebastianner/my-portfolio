@@ -13,9 +13,12 @@ const config: Config = {
         "slytherin-green": "#0e1d15",
       },
       fontSize: {
-        title: "3.438rem",
-        subtitle: "1.5rem",
-        paragraph: "1.5rem",
+        title: "2.5rem",
+        subtitle: "1.2rem",
+        paragraph: "1.3rem",
+      },
+      height: {
+        mobile: "120vh",
       },
     },
   },

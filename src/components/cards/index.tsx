@@ -1,10 +1,10 @@
 import React from "react";
 
-type Props = {};
+type Props = { n: number };
 
-function Card({}: Props) {
+function Card({ n }: Props) {
   return (
-    <div className="w-[350px] h-[320px] bg-green-700 rounded-2xl">TECH</div>
+    <div className="w-full max-w-xs h-72 bg-[#162e21] rounded-2xl">{n}</div>
   );
 }
 

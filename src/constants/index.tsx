@@ -4,6 +4,8 @@ import {
   CANVAS_HEIGHT_INTERFACE,
   CANVAS_FOV_INTERFACE,
   SPHERE_SCALE_INTERFACE,
+  HERO_HEIGHT_INTERFACE,
+  SOCIALS_INTERFACE,
 } from "@/app/interfaces";
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
@@ -131,4 +133,14 @@ export const SPHERE_SCALE: SPHERE_SCALE_INTERFACE = {
   initial: 20,
   small: 15,
   extraSmall: 10,
+};
+
+export const HERO_HEIGHT: HERO_HEIGHT_INTERFACE = {
+  style: "h-mobile sm:h-screen",
+};
+
+export const SOCIALS: SOCIALS_INTERFACE = {
+  linkedIn: "https://www.linkedin.com/in/sebastian-mera/",
+  gitHub: "https://github.com/sebastianner",
+  email: "sebastianner23@gmail.com",
 };

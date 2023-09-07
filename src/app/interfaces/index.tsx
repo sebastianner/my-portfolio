@@ -47,3 +47,13 @@ export interface SPHERE_SCALE_INTERFACE {
   small: number;
   extraSmall: number;
 }
+
+export interface HERO_HEIGHT_INTERFACE {
+  style: string;
+}
+
+export interface SOCIALS_INTERFACE {
+  linkedIn: string;
+  gitHub: string;
+  email: string;
+}
