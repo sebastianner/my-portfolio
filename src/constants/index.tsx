@@ -6,7 +6,9 @@ import {
   SPHERE_SCALE_INTERFACE,
   HERO_HEIGHT_INTERFACE,
   SOCIALS_INTERFACE,
+  HIGHLIGHTED_TECH_INTERFACE,
 } from "@/app/interfaces";
+import { MobileIcon, BrowserIcon, DesktopIcon } from "@/icons";
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   position: {
@@ -143,4 +145,24 @@ export const SOCIALS: SOCIALS_INTERFACE = {
   linkedIn: "https://www.linkedin.com/in/sebastian-mera/",
   gitHub: "https://github.com/sebastianner",
   email: "sebastianner23@gmail.com",
+};
+
+export const HIGHLIGHTED_TECH: HIGHLIGHTED_TECH_INTERFACE = {
+  info: [
+    {
+      technology: "React Native",
+      description: "Mobile developer",
+      icon: <MobileIcon />,
+    },
+    {
+      technology: "React - Next.js",
+      description: "Front-end React developer",
+      icon: <BrowserIcon />,
+    },
+    {
+      technology: "Electron.js",
+      description: "Desktop Apps developer",
+      icon: <DesktopIcon />,
+    },
+  ],
 };

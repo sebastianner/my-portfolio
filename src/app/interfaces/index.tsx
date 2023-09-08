@@ -57,3 +57,13 @@ export interface SOCIALS_INTERFACE {
   gitHub: string;
   email: string;
 }
+
+interface HIGHLIGHTED_TECH_INFO {
+  technology: string;
+  icon: JSX.Element;
+  description: string;
+}
+
+export interface HIGHLIGHTED_TECH_INTERFACE {
+  info: Array<HIGHLIGHTED_TECH_INFO>;
+}

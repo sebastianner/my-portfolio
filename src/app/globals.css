@@ -40,7 +40,7 @@ svg:hover .linkIcon {
 
 svg:hover .ghIcon {
   transition: fill 0.3s ease;
-  fill: #000;
+  fill: #fff;
 }
 
 .profile-picture {

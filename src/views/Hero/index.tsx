@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { LinkedInIcon, GithubIcon } from "@/icons/icons";
+import { LinkedInIcon, GithubIcon } from "@/icons";
 import { TimeTurnerCanvas } from "@/components/canvas";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { HERO_HEIGHT, SOCIALS } from "@/constants";
@@ -20,8 +20,8 @@ function Hero({}: Props) {
           <div className="flex flex-col relative">
             {/* <TimeTurnerCanvas /> */}
             <p className={GLOBAL_STYLES.paragraph}>
-              Hey there, Im <strong>Sebastian Mera</strong>, a dedicated React
-              Front-end Developer from Colombia.📍
+              Hey there, Im <b>Sebastian Mera</b>, a dedicated React Front-end
+              Developer from Colombia.📍
             </p>
           </div>
           <span className="flex gap-1 justify-center lg:justify-start">

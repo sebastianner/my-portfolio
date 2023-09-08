@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         "slytherin-green": "#0e1d15",
+        "card-green": "#162e21",
       },
       fontSize: {
         title: "2.5rem",

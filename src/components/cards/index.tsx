@@ -1,10 +1,22 @@
-import React from "react";
+import { GLOBAL_STYLES } from "@/global-styles";
 
-type Props = { n: number };
+GLOBAL_STYLES;
 
-function Card({ n }: Props) {
+type Props = {
+  technology: string;
+  description: string;
+  icon: JSX.Element;
+};
+
+function Card({ technology, description, icon }: Props) {
   return (
-    <div className="w-full max-w-xs h-72 bg-[#162e21] rounded-2xl">{n}</div>
+    <article className="w-full max-w-xs h-72 bg-card-green rounded-2xl grid auto-rows-auto auto-cols-auto place-items-center shadow-xl">
+      {icon}
+      <h2 className={`${GLOBAL_STYLES.paragraph}`}>{description}</h2>
+      <h3 className="text-subtitle font-extralight tracking-wide">
+        <b>{technology}</b>
+      </h3>
+    </article>
   );
 }
 

@@ -1,6 +1,4 @@
-type Props = {};
-
-function LinkedInIcon({}: Props) {
+function LinkedInIcon(): JSX.Element {
   return (
     <svg
       width="38px"
@@ -18,7 +16,7 @@ function LinkedInIcon({}: Props) {
   );
 }
 
-function GithubIcon({}: Props) {
+function GithubIcon(): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,4 +49,46 @@ function GithubIcon({}: Props) {
   );
 }
 
-export { LinkedInIcon, GithubIcon };
+function BrowserIcon(): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="80 "
+      width="80"
+      viewBox="0 -960 960 960"
+      fill="#fff"
+    >
+      <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h420v-140H160v140Zm500 0h140v-360H660v360ZM160-460h420v-140H160v140Z" />
+    </svg>
+  );
+}
+
+function MobileIcon(): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="80"
+      width="80"
+      viewBox="0 -960 960 960"
+      fill="#fff"
+    >
+      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z" />
+    </svg>
+  );
+}
+
+function DesktopIcon(): JSX.Element {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="80 "
+      width="80"
+      viewBox="0 -960 960 960"
+      fill="#fff"
+    >
+      <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
+    </svg>
+  );
+}
+
+export { LinkedInIcon, GithubIcon, MobileIcon, BrowserIcon, DesktopIcon };
