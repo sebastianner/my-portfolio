@@ -1,6 +1,4 @@
-type Props = {};
-
-function NavBar({}: Props) {
+function NavBar() {
   return (
     <nav className="bg-transparent w-screen h-20 flex items-center justify-between px-14 py-8 shadow-sm font-semibold text-lg absolute">
       Sebastian.dev

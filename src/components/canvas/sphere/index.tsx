@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState, memo } from "react";
+import { useRef, memo } from "react";
 import { useTexture, Decal, Float } from "@react-three/drei";
 import { Mesh } from "three";
 import SphereContainer from "./Sphere.container";
-import { CANVAS_MEDIA_QUERIES, SPHERE_SCALE } from "@/constants";
+import { SPHERE_SCALE } from "@/constants";
 import { useRezise } from "@/hooks";
 
 const SphereContainerMemo = memo(SphereContainer);
@@ -56,7 +56,7 @@ export function SphereMesh(props: Props) {
   );
 }
 
-function SphereCanvas({}: {}) {
+function SphereCanvas() {
   const { isMedium, isSmall, isExtraSmall } = useRezise();
 
   return (

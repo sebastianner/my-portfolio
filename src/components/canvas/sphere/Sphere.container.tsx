@@ -5,7 +5,7 @@ import {
 } from "@/constants";
 import { Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Html } from "next/document";
+import { Html } from "@react-three/drei";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import CanvasLoader from "../canvasLoader";
@@ -18,7 +18,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
   let position = SPHERE_COORDINATES.position.initial;
   let rotation = SPHERE_COORDINATES.rotation.initial;
   let height = CANVAS_HEIGHT.initial;
-  let fov = CANVAS_HEIGHT_FOV.initial;
+  const fov = CANVAS_HEIGHT_FOV.initial;
 
   if (medium) {
     position = SPHERE_COORDINATES.position.medium;

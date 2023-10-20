@@ -5,9 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, Suspense } from "react";
 import { Points as ThreePoints } from "three"; // Import Three's Points and PointMaterial
 
-type Props = {};
-
-function StarsCanvas({}: Props) {
+function StarsCanvas() {
   const Stars = () => {
     const starsRef = useRef<ThreePoints>(null);
 

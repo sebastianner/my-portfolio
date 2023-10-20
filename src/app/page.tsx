@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import { NavBar } from "@/components/";
-import { Hero, About } from "@/views/";
+import { Hero } from "@/views/";
 import { SectionBuilder } from "@/composition";
+import { SphereCanvas } from "@/components/canvas";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -15,7 +16,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <SectionBuilder id={"about"}>
-        <About />
+        <SphereCanvas />
       </SectionBuilder>
     </Fragment>
   );

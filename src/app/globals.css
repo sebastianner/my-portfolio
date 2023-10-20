@@ -25,7 +25,7 @@ body {
   background: #0e1d15;
 }
 
-p{
+p {
   line-height: 2rem;
 }
 
@@ -35,7 +35,7 @@ canvas {
 
 svg:hover .linkIcon {
   transition: fill 0.3s ease;
-  fill: #0A66C2;
+  fill: #0a66c2;
 }
 
 svg:hover .ghIcon {

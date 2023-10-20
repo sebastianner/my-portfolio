@@ -14,38 +14,40 @@ function useRezise(): {
     const w = window;
 
     const mediumScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.medium}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.medium}px)`,
     );
 
     const smallScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.small}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.small}px)`,
     );
 
     const extraSmallScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.extraSmall}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.extraSmall}px)`,
     );
 
     setMedium(mediumScreen.matches);
     setSmall(smallScreen.matches);
     setExtraSmall(extraSmallScreen.matches);
 
-    const handleMediaQueryChange = (event: any) => {
-      if (event.target.outerWidth > CANVAS_MEDIA_QUERIES.medium) {
+    const handleMediaQueryChange = (event: Event) => {
+      const windowWidth = (event.target as Window).outerWidth;
+
+      if (windowWidth > CANVAS_MEDIA_QUERIES.medium) {
         setMedium(false);
         setSmall(false);
         setExtraSmall(false);
       }
-      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.medium) {
+      if (windowWidth <= CANVAS_MEDIA_QUERIES.medium) {
         setSmall(false);
         setExtraSmall(false);
         setMedium(true);
       }
-      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.small) {
+      if (windowWidth <= CANVAS_MEDIA_QUERIES.small) {
         setMedium(false);
         setExtraSmall(false);
         setSmall(true);
       }
-      if (event.target.outerWidth <= CANVAS_MEDIA_QUERIES.extraSmall) {
+      if (windowWidth <= CANVAS_MEDIA_QUERIES.extraSmall) {
         setMedium(false);
         setSmall(false);
         setExtraSmall(true);

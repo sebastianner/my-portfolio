@@ -5,9 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
 import CanvasLoader from "@/components/canvas/canvasLoader";
 
-type Props = {};
-
-function TimeTurner({}: Props) {
+function TimeTurner() {
   const myMesh = useRef<Mesh>(null);
   const timeTurner = useGLTF("./timeTurner/scene.gltf");
 

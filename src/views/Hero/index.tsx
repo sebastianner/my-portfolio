@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons";
-import { TimeTurnerCanvas } from "@/components/canvas";
+// import { TimeTurnerCanvas } from "@/components/canvas";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { HERO_HEIGHT, SOCIALS } from "@/constants";
 
-type Props = {};
-
-function Hero({}: Props) {
+function Hero() {
   return (
     <main
       className={`flex justify-center items-center w-screen p-10 ${HERO_HEIGHT.style}`}

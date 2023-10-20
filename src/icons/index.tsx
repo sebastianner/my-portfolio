@@ -66,13 +66,25 @@ function BrowserIcon(): JSX.Element {
 function MobileIcon(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="80"
-      width="80"
-      viewBox="0 -960 960 960"
-      fill="#fff"
+      className="with-icon_icon__MHUeb"
+      data-testid="geist-icon"
+      fill="none"
+      height="24"
+      shapeRendering="geometricPrecision"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.0}
+      viewBox="0 0 24 24"
+      width="24"
+      style={{
+        color: "var(--geist-foreground)",
+        width: "80px",
+        height: "80px",
+      }}
     >
-      <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z" />
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+      <path d="M12 18h.01" />
     </svg>
   );
 }
@@ -80,13 +92,25 @@ function MobileIcon(): JSX.Element {
 function DesktopIcon(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="80 "
-      width="80"
-      viewBox="0 -960 960 960"
-      fill="#fff"
+      className="with-icon_icon__MHUeb"
+      fill="none"
+      height="24"
+      shapeRendering="geometricPrecision"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.0"
+      viewBox="0 0 24 24"
+      width="24"
+      style={{
+        color: "var(--geist-foreground)",
+        width: "80px",
+        height: "80px",
+      }}
     >
-      <path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z" />
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <path d="M8 21h8" />
+      <path d="M12 17v4" />
     </svg>
   );
 }
