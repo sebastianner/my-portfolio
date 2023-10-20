@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons";
-// import { TimeTurnerCanvas } from "@/components/canvas";
 import { GLOBAL_STYLES } from "@/global-styles";
-import { HERO_HEIGHT, SOCIALS } from "@/constants";
+import { SOCIALS } from "@/global-constants";
+import { HEADING, DESCRIPTION, HERO_HEIGHT } from "./constants";
 
 function Hero() {
   return (
@@ -14,13 +14,12 @@ function Hero() {
         {/* info section */}
         <section className="flex flex-col max-w-[460px] gap-6 text-center lg:text-left">
           {/* TODO IF DEVICE IS SLOW DONT RENDER THE TIME TURNER INSTEAD USE 🎨*/}
-          <h1 className={GLOBAL_STYLES.title}>React Front-End Developer🎨</h1>
+          <h1 className={GLOBAL_STYLES.title}>{HEADING}</h1>
           <div className="flex flex-col relative">
-            {/* <TimeTurnerCanvas /> */}
-            <p className={GLOBAL_STYLES.paragraph}>
-              Hey there, Im <b>Sebastian Mera</b>, a dedicated React Front-end
-              Developer from Colombia.📍
-            </p>
+            <p
+              className={GLOBAL_STYLES.paragraph}
+              dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
+            />
           </div>
           <span className="flex gap-1 justify-center lg:justify-start">
             <Link href={SOCIALS.linkedIn} target="_blank">

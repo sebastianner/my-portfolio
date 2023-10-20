@@ -60,8 +60,8 @@ export interface SOCIALS_INTERFACE {
 
 interface HIGHLIGHTED_TECH_INFO {
   technology: string;
-  icon: JSX.Element;
   description: string;
+  icon: JSX.Element;
 }
 
 export interface HIGHLIGHTED_TECH_INTERFACE {

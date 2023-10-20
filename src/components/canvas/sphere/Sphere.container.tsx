@@ -2,7 +2,7 @@ import {
   SPHERE_COORDINATES,
   CANVAS_HEIGHT,
   CANVAS_HEIGHT_FOV,
-} from "@/constants";
+} from "./constants";
 import { Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";

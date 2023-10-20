@@ -3,7 +3,7 @@ import { useRef, memo } from "react";
 import { useTexture, Decal, Float } from "@react-three/drei";
 import { Mesh } from "three";
 import SphereContainer from "./Sphere.container";
-import { SPHERE_SCALE } from "@/constants";
+import { SPHERE_SCALE } from "./constants";
 import { useRezise } from "@/hooks";
 
 const SphereContainerMemo = memo(SphereContainer);

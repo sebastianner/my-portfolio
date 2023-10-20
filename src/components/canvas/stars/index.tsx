@@ -1,5 +1,5 @@
 "use client";
-import { HERO_HEIGHT } from "@/constants";
+import { HERO_HEIGHT } from "./constants";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, Suspense } from "react";

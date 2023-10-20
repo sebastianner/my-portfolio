@@ -1,14 +1,9 @@
-import {
-  SPHERE_COORDINATES_INTERFACE,
-  CANVAS_MEDIA_QUERIES_INTERFACE,
-  CANVAS_HEIGHT_INTERFACE,
+import type {
   CANVAS_FOV_INTERFACE,
+  CANVAS_HEIGHT_INTERFACE,
+  SPHERE_COORDINATES_INTERFACE,
   SPHERE_SCALE_INTERFACE,
-  HERO_HEIGHT_INTERFACE,
-  SOCIALS_INTERFACE,
-  HIGHLIGHTED_TECH_INTERFACE,
 } from "@/app/interfaces";
-import { MobileIcon, BrowserIcon, DesktopIcon } from "@/icons";
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   position: {
@@ -115,12 +110,6 @@ export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   },
 };
 
-export const CANVAS_MEDIA_QUERIES: CANVAS_MEDIA_QUERIES_INTERFACE = {
-  medium: 1265,
-  small: 950,
-  extraSmall: 640,
-};
-
 export const CANVAS_HEIGHT: CANVAS_HEIGHT_INTERFACE = {
   initial: 500,
   small: 800,
@@ -135,34 +124,4 @@ export const SPHERE_SCALE: SPHERE_SCALE_INTERFACE = {
   initial: 20,
   small: 15,
   extraSmall: 10,
-};
-
-export const HERO_HEIGHT: HERO_HEIGHT_INTERFACE = {
-  style: "h-mobile sm:h-screen",
-};
-
-export const SOCIALS: SOCIALS_INTERFACE = {
-  linkedIn: "https://www.linkedin.com/in/sebastian-mera/",
-  gitHub: "https://github.com/sebastianner",
-  email: "sebastianner23@gmail.com",
-};
-
-export const HIGHLIGHTED_TECH: HIGHLIGHTED_TECH_INTERFACE = {
-  info: [
-    {
-      technology: "React Native",
-      description: "Mobile developer",
-      icon: <MobileIcon />,
-    },
-    {
-      technology: "React - Next.js",
-      description: "Front-end React developer",
-      icon: <BrowserIcon />,
-    },
-    {
-      technology: "Electron.js",
-      description: "Desktop Apps developer",
-      icon: <DesktopIcon />,
-    },
-  ],
 };
