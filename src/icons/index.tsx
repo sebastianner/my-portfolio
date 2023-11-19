@@ -82,7 +82,7 @@ function MobileIcon(): JSX.Element {
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.0}
+      strokeWidth={0.7}
       viewBox="0 0 24 24"
       width="24"
       style={{
@@ -107,7 +107,7 @@ function DesktopIcon(): JSX.Element {
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="1.0"
+      strokeWidth={0.7}
       viewBox="0 0 24 24"
       width="24"
       style={{

@@ -8,8 +8,8 @@ import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import CanvasLoader from "../canvasLoader";
-import { SphereMesh } from ".";
+import CanvasLoader from "../CanvasLoader/CanvasLoader";
+import { SphereMesh } from "./CanvasSphere";
 
 type Props = { medium: boolean; small: boolean; extraSmall: boolean };
 

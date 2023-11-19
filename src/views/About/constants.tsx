@@ -11,12 +11,12 @@ export const HIGHLIGHTED_TECH = {
       icon: <MobileIcon />,
     },
     {
-      technology: "React - Next.js",
-      description: "Front-end React developer",
+      technology: "React - Next",
+      description: "Front-end developer",
       icon: <BrowserIcon />,
     },
     {
-      technology: "Electron.js",
+      technology: "Electron",
       description: "Desktop Apps developer",
       icon: <DesktopIcon />,
     },

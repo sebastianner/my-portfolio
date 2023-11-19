@@ -14,13 +14,11 @@ function SectionBuilder({ children, id }: Props) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
-      className="w-full flex justify-center py-10"
-      // className={`sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto`}
+      className="w-full flex justify-center pt-10"
     >
       <span className="hash-span" id={id}>
         &nbsp;
       </span>
-
       {children}
     </motion.section>
   );

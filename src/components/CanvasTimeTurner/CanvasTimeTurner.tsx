@@ -3,7 +3,7 @@ import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
-import CanvasLoader from "@/components/canvas/canvasLoader";
+import CanvasLoader from "@/components/CanvasLoader/CanvasLoader";
 
 function TimeTurner() {
   const myMesh = useRef<Mesh>(null);

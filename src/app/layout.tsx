@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
-import { StarsCanvas } from "@/components/canvas/";
+import CanvasStars from "@/components/CanvasStars/CanvasStars";
 
 const inter = Inter({ subsets: ["latin"] });
 const Poppins_Font = Poppins({
@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <div className="relative z-0">
           <div className="absolute z-1">{children}</div>
-          <StarsCanvas />
+          <CanvasStars />
         </div>
       </body>
     </html>
