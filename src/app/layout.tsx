@@ -5,7 +5,7 @@ import CanvasStars from "@/components/CanvasStars/CanvasStars";
 
 const inter = Inter({ subsets: ["latin"] });
 const Poppins_Font = Poppins({
-  weight: ["100", "200", "300", "600", "500", "700", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
   style: "normal",
   subsets: ["latin"],
 });

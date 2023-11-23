@@ -11,10 +11,12 @@ export default meta;
 export const Default: Story = {
   args: {
     // Fill with props
-    date: new Date(2022, 3, 7),
+    date: [new Date(2022, 3, 7), new Date(2023, 1, 7)],
     title: "Frontend developer",
     company: "FSB TECH",
-    description: "Frontend developer at FSB",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi a lectus finibus imperdiet eget vel magna.",
     backgroundColor: "#fcb603",
+    textColor: "#111",
   },
 };
