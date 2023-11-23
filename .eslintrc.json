@@ -5,10 +5,10 @@
   },
   "extends": [
     "next/core-web-vitals",
-
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -35,7 +35,6 @@
         ]
       }
     ],
-
     "react/react-in-jsx-scope": "off"
   }
 }

@@ -1,6 +1,6 @@
 export const staggerContainer = (
   staggerChildren?: undefined,
-  delayChildren?: undefined,
+  delayChildren?: undefined
 ) => {
   return {
     hidden: {},
