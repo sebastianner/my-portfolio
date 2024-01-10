@@ -1,12 +1,15 @@
 import { format } from "date-fns";
+import { CSSProperties } from "react";
 
 type Props = {
-  date: [Date, Date];
+  date: Date[];
   title: string;
   company: string;
   description: string;
   backgroundColor: string;
   textColor: string;
+  className?: string;
+  style?: CSSProperties;
 };
 
 function TimeLineItem({
@@ -16,11 +19,13 @@ function TimeLineItem({
   textColor,
   description,
   backgroundColor,
+  className,
+  style,
 }: Props) {
   return (
     <article
-      style={{ backgroundColor: backgroundColor, color: textColor }}
-      className={`job-article rounded-md p-6 pt-5 min-w-[300px] lg:max-w-[400px]`}
+      style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
+      className={`job-article rounded-md p-6 pt-5 min-w-[300px] lg:max-w-[400px] shadow-xl	 ${className}`}
     >
       {/* // todo base heading */}
       <h3 className="font-semibold text-xl">{title}</h3>

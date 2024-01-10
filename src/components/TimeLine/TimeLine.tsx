@@ -1,17 +1,38 @@
 "use client";
-import React from "react";
+import React, { CSSProperties, useEffect, useRef } from "react";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
+import { JOBS } from "./data";
+import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
+import styles from "./styles.module.css";
 
 function TimeLine() {
+  const { height } = useGetSectionHeight("work");
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    divRef.current?.style.setProperty("--height", `${height}px`);
+  }, [height]);
+
   return (
-    <TimeLineItem
-      date={[new Date(2022, 3, 7), new Date(2023, 1, 7)]}
-      title={""}
-      company={""}
-      description={""}
-      backgroundColor={""}
-      textColor={""}
-    />
+    <div className={`${styles.timeLine}`} ref={divRef}>
+      {JOBS.map((job, index) => {
+        const gridColumn = (index + 1) % 2 ? 1 : 2;
+        const margin: CSSProperties =
+          gridColumn === 1 ? { marginRight: 20 } : { marginLeft: 20 };
+        return (
+          <TimeLineItem
+            date={job.date}
+            title={job.title}
+            company={job.company}
+            description={job.description}
+            backgroundColor={"#162e21"}
+            textColor={"#fff"}
+            style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
+            key={job.company}
+          />
+        );
+      })}
+    </div>
   );
 }
 

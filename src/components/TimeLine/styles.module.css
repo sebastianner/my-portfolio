@@ -1,0 +1,19 @@
+.timeLine {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
+}
+
+.timeLine::after {
+  display: inline-block;
+  margin: 0 20px 8px 0;
+  height: var(--height);
+  content: " ";
+  text-shadow: none;
+  background-color: #999;
+  width: 5px;
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+}
