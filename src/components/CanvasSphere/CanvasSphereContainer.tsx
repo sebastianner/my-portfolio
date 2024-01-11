@@ -1,3 +1,4 @@
+"use client";
 import {
   SPHERE_COORDINATES,
   CANVAS_HEIGHT,

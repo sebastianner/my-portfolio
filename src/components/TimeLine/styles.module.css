@@ -1,7 +1,9 @@
 .timeLine {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
+  justify-items: center;
+  gap: 15px;
 }
 
 .timeLine::after {
@@ -13,7 +15,17 @@
   background-color: #999;
   width: 5px;
   position: absolute;
-  left: 50%;
+  left: 50px;
   right: 0;
-  bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .timeLine {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
+  }
+  .timeLine::after {
+    left: 50%;
+  }
 }

@@ -3,8 +3,8 @@ import { Fragment } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import { About, Hero } from "@/views/";
 import SectionBuilder from "@/composition/SectionBuilder";
-import TimeLine from "@/views/TimeLine/TimeLine";
-// import { SphereCanvas } from "@/components/canvas";
+import TimeLine from "@/components/TimeLine/TimeLine";
+import Technologies from "@/views/Technologies/Technologies";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -21,6 +21,9 @@ export default function Home() {
       </SectionBuilder>
       <SectionBuilder id={"work"}>
         <TimeLine />
+      </SectionBuilder>
+      <SectionBuilder id={"technologies"}>
+        <Technologies />
       </SectionBuilder>
     </Fragment>
   );

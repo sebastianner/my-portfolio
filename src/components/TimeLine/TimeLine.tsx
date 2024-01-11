@@ -4,9 +4,11 @@ import TimeLineItem from "../TimeLineItem/TimeLineItem";
 import { JOBS } from "./data";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
 import styles from "./styles.module.css";
+import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 
 function TimeLine() {
   const { height } = useGetSectionHeight("work");
+  const { width } = useGetWindowWidth();
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,9 +18,13 @@ function TimeLine() {
   return (
     <div className={`${styles.timeLine}`} ref={divRef}>
       {JOBS.map((job, index) => {
-        const gridColumn = (index + 1) % 2 ? 1 : 2;
-        const margin: CSSProperties =
+        let gridColumn = (index + 1) % 2 ? 1 : 2;
+        let margin: CSSProperties =
           gridColumn === 1 ? { marginRight: 20 } : { marginLeft: 20 };
+        if (width < 768) {
+          margin = { margin: 0 };
+          gridColumn = 1;
+        }
         return (
           <TimeLineItem
             date={job.date}

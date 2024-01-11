@@ -56,7 +56,7 @@ export function SphereMesh(props: Props) {
   );
 }
 
-function SphereCanvas() {
+function CanvasSphere() {
   const { isMedium, isSmall, isExtraSmall } = useRezise();
 
   return (
@@ -68,4 +68,4 @@ function SphereCanvas() {
   );
 }
 
-export default SphereCanvas;
+export default CanvasSphere;

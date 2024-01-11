@@ -25,7 +25,7 @@ function TimeLineItem({
   return (
     <article
       style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
-      className={`job-article rounded-md p-6 pt-5 min-w-[300px] lg:max-w-[400px] shadow-xl	 ${className}`}
+      className={`job-article rounded-md p-6 pt-5 min-w-[300px] max-w-[80%] lg:max-w-[400px] shadow-xl ${className}`}
     >
       {/* // todo base heading */}
       <h3 className="font-semibold text-xl">{title}</h3>
