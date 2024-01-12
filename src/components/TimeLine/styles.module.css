@@ -15,7 +15,7 @@
   background-color: #999;
   width: 5px;
   position: absolute;
-  left: 50px;
+  left: 30px;
   right: 0;
 }
 
@@ -29,3 +29,5 @@
     left: 50%;
   }
 }
+
+/* @media (min-width: 640px) */

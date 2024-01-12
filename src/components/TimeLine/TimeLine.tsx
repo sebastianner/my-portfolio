@@ -16,11 +16,11 @@ function TimeLine() {
   }, [height]);
 
   return (
-    <div className={`${styles.timeLine}`} ref={divRef}>
+    <div className={`${styles.timeLine} pl-16 pr-4 md:p-0`} ref={divRef}>
       {JOBS.map((job, index) => {
         let gridColumn = (index + 1) % 2 ? 1 : 2;
         let margin: CSSProperties =
-          gridColumn === 1 ? { marginRight: 20 } : { marginLeft: 20 };
+          gridColumn === 1 ? { marginRight: 50 } : { marginLeft: 50 };
         if (width < 768) {
           margin = { margin: 0 };
           gridColumn = 1;

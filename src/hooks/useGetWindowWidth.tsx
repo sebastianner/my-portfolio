@@ -4,10 +4,11 @@ export function useGetWindowWidth() {
   const [width, setWidth] = useState<number>(0);
   useEffect(() => {
     const w = window;
-    setWidth(w.innerWidth);
+    const scrollBar = window.innerWidth - document.documentElement.clientWidth;
+    setWidth(w.innerWidth - scrollBar);
 
     const resizeHandler = () => {
-      setWidth(w.innerWidth);
+      setWidth(w.innerWidth - scrollBar);
     };
     w.addEventListener("resize", resizeHandler);
     return () => {

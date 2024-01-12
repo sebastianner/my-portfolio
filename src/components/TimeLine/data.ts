@@ -1,6 +1,6 @@
 export const JOBS = [
   {
-    date: [new Date("2023-10-01T12:00:00"), new Date()],
+    date: [new Date("2023-10-01T12:00:00"), "present"],
     title: "Front-end Developer",
     company: "Razorfish",
     description:

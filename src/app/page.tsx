@@ -4,7 +4,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import { About, Hero } from "@/views/";
 import SectionBuilder from "@/composition/SectionBuilder";
 import TimeLine from "@/components/TimeLine/TimeLine";
-import Technologies from "@/views/Technologies/Technologies";
+import TechStack from "@/views/TechStack/TechStack";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -22,8 +22,8 @@ export default function Home() {
       <SectionBuilder id={"work"}>
         <TimeLine />
       </SectionBuilder>
-      <SectionBuilder id={"technologies"}>
-        <Technologies />
+      <SectionBuilder id={"TechStack"}>
+        <TechStack />
       </SectionBuilder>
     </Fragment>
   );
