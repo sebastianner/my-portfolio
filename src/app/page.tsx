@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import { About, Hero } from "@/views/";
-import SectionBuilder from "@/composition/SectionBuilder";
 import TimeLine from "@/components/TimeLine/TimeLine";
 import TechStack from "@/views/TechStack/TechStack";
 
@@ -16,15 +15,9 @@ export default function Home() {
     <Fragment>
       <NavBar />
       <Hero />
-      <SectionBuilder id={"about"}>
-        <About />
-      </SectionBuilder>
-      <SectionBuilder id={"work"}>
-        <TimeLine />
-      </SectionBuilder>
-      <SectionBuilder id={"TechStack"}>
-        <TechStack />
-      </SectionBuilder>
+      <About />
+      <TimeLine />
+      <TechStack />
     </Fragment>
   );
 }

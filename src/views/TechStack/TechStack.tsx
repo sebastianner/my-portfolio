@@ -1,7 +1,9 @@
+"use client";
 import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
 import { GLOBAL_STYLES } from "@/global-styles";
 import React from "react";
 import { TITLE } from "./constants";
+import SectionBuilder from "@/HOC/SectionBuilder";
 
 function TechStack() {
   return (
@@ -12,4 +14,4 @@ function TechStack() {
   );
 }
 
-export default TechStack;
+export default SectionBuilder(TechStack, "tech-stack");

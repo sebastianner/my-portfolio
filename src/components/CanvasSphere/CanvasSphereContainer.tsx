@@ -59,7 +59,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
           <directionalLight intensity={8} position={[15, 10, 0]} />
           {test.map((_, i) => (
             <SphereMesh
-              key={i}
+              key={i + 2}
               position={position[i]}
               rotation={rotation[i]}
               small={small}

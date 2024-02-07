@@ -11,6 +11,10 @@ type Props = {
   textColor: string;
   className?: string;
   style?: CSSProperties;
+  image: {
+    url: string;
+    alt: string;
+  };
 };
 
 function TimeLineItem({
@@ -22,6 +26,7 @@ function TimeLineItem({
   backgroundColor,
   className,
   style,
+  image,
 }: Props) {
   return (
     <article
@@ -31,8 +36,8 @@ function TimeLineItem({
       <TimeLineIcon
         outlineColor={"#fff"}
         image={{
-          url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
-          alt: "",
+          url: image.url,
+          alt: image.alt,
           width: 60,
           height: 60,
         }}
@@ -41,18 +46,20 @@ function TimeLineItem({
       <h3 className="font-semibold text-xl">{title}</h3>
       <h4 className="font-medium text-lg">{company}</h4>
       <p className="font-normal my-2">{description}</p>
-      {date.map((date, index) => {
+      {date.map((date) => {
         const dateTime = date instanceof Date;
         return dateTime ? (
           <time
-            key={index}
+            key={date.getDate()}
             dateTime={format(date, "yyy")}
             className="time font-light"
           >
             {format(date, "yyy")}
           </time>
         ) : (
-          <span className="capitalize">{date}</span>
+          <span key={date} className="capitalize">
+            {date}
+          </span>
         );
       })}
     </article>

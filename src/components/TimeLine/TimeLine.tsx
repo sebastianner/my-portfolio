@@ -5,9 +5,10 @@ import { JOBS } from "./data";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
 import styles from "./styles.module.css";
 import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
+import SectionBuilder from "@/HOC/SectionBuilder";
 
 function TimeLine() {
-  const { height } = useGetSectionHeight("work");
+  const { height } = useGetSectionHeight("work-time-line");
   const { width } = useGetWindowWidth();
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -35,6 +36,10 @@ function TimeLine() {
             textColor={"#fff"}
             style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
             key={job.company}
+            image={{
+              url: job.image.url,
+              alt: job.image.alt,
+            }}
           />
         );
       })}
@@ -42,4 +47,4 @@ function TimeLine() {
   );
 }
 
-export default TimeLine;
+export default SectionBuilder(TimeLine, "work-time-line");

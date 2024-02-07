@@ -1,6 +1,8 @@
+"use client";
 import Card from "@/components/Cards/Cards";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { HIGHLIGHTED_TECH, OVERVIEW } from "./constants";
+import SectionBuilder from "@/HOC/SectionBuilder";
 
 function About() {
   return (
@@ -11,9 +13,9 @@ function About() {
         <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
       </div>
       <div className="w-full flex flex-wrap gap-8">
-        {HIGHLIGHTED_TECH.info.map((data, index) => (
+        {HIGHLIGHTED_TECH.info.map((data) => (
           <Card
-            key={index}
+            key={data.description}
             technology={data.technology}
             icon={data.icon}
             description={data.description}
@@ -24,4 +26,4 @@ function About() {
   );
 }
 
-export default About;
+export default SectionBuilder(About, "about");
