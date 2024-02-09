@@ -11,6 +11,7 @@ export default meta;
 export const Default: Story = {
   args: {
     // Fill with props
+    className: "",
     date: [new Date(2022, 3, 7), new Date(2023, 1, 7)],
     title: "Frontend developer",
     company: "FSB TECH",
@@ -18,5 +19,7 @@ export const Default: Story = {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi a lectus finibus imperdiet eget vel magna.",
     backgroundColor: "#fcb603",
     textColor: "#111",
+    style: {},
+    image: { url: "", alt: "" },
   },
 };
