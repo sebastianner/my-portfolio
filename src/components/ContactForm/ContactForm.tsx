@@ -36,7 +36,6 @@ function ContactForm() {
                 "hover:bg-gray-50",
                 "p-2"
               )}
-              aria-description="Your email here"
             />
             <textarea
               id="Message"
@@ -50,7 +49,6 @@ function ContactForm() {
                 "hover:bg-gray-50",
                 "p-2"
               )}
-              aria-label="Your message here"
             />
           </div>
         </div>
