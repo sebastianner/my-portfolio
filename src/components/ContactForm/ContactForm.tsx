@@ -1,14 +1,18 @@
 import { GLOBAL_STYLES } from "../../global-styles/index";
 import classNames from "classnames";
+import { CONTACT_ME } from "./constants";
 
-function ContactForm() {
+type Props = { className?: string };
+
+function ContactForm({ className }: Props) {
   return (
     <form
       className={classNames(
         "flex flex-col pl-[40px]",
         "bg-card-green h-[600px] rounded-2xl",
         "gap-5 p-5",
-        "md:p-5 md:items-center"
+        "md:p-5 md:items-center",
+        className
       )}
     >
       <fieldset
@@ -21,7 +25,7 @@ function ContactForm() {
           <legend
             className={classNames("text-left text-white", GLOBAL_STYLES.title)}
           >
-            Contact me
+            {CONTACT_ME}
           </legend>
           <div className="flex flex-col gap-5 items-center w-full">
             <input
@@ -61,7 +65,7 @@ function ContactForm() {
             "w-[150px] h-[50px]",
             "cursor-pointer",
             "hover:bg-gray-50",
-            "font-medium tex-center"
+            "font-medium tex-center text-black"
           )}
         />
       </fieldset>

@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import { About, Hero } from "@/views/";
 import TimeLine from "@/components/TimeLine/TimeLine";
 import TechStack from "@/views/TechStack/TechStack";
+import ContactMe from "@/views/ContactMe/ContactMe";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <TimeLine />
       <TechStack />
+      <ContactMe />
     </Fragment>
   );
 }
