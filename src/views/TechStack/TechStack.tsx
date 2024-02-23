@@ -11,7 +11,7 @@ function TechStack() {
     <div
       className={classNames(
         "flex flex-col justify-center",
-        "items-center w-screen pt-12"
+        "items-center w-screen pt-32"
       )}
     >
       <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>

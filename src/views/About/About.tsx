@@ -10,7 +10,7 @@ function About() {
     <div
       className={classNames(
         "max-w-7xl w-auto h-fit bg-slytherin-green",
-        "flex flex-col gap-12 px-6 sm:px-20 sm:py-16"
+        "flex flex-col gap-12 px-6 sm:px-20 sm:pt-16"
       )}
     >
       <div className="max-w-[80%]">
