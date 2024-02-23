@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import NavBar from "@/components/NavBar/NavBar";
-import { About, Hero } from "@/views/";
-import TimeLine from "@/components/TimeLine/TimeLine";
 import TechStack from "@/views/TechStack/TechStack";
 import ContactMe from "@/views/ContactMe/ContactMe";
+import Work from "@/views/Work/Work";
+import About from "@/views/About/About";
+import Hero from "@/views/Hero/Hero";
 
 export const metadata: Metadata = {
   title: "Sebastian M - Portfolio",
@@ -17,7 +18,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <About />
-      <TimeLine />
+      <Work />
       <TechStack />
       <ContactMe />
     </Fragment>

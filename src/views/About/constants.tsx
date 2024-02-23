@@ -22,3 +22,6 @@ export const HIGHLIGHTED_TECH = {
     },
   ],
 };
+
+export const TITLE = "Overview";
+export const INTRODUCTION = "Introduction";

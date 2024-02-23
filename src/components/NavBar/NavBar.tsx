@@ -1,32 +1,33 @@
 import classNames from "classnames";
+import { NavBarConstants } from "./constants";
 
 function NavBar() {
   return (
-    <header>
+    <header className="sticky top-0">
       <nav
         className={classNames(
           "bg-transparent shadow-sm",
-          "absolute w-screen h-20 px-14 py-8",
+          "w-screen h-20 px-14 py-8",
           "flex items-center justify-between",
           "font-semibold text-lg"
         )}
       >
-        Sebastian.dev
+        {NavBarConstants.name}
         <ul className="gap-4 hidden md:flex">
-          <a href={""}>
-            <li>Home</li>
+          <a href={"#home"}>
+            <li>{NavBarConstants.home}</li>
           </a>
           <a href={"#about"}>
-            <li>About me</li>
+            <li>{NavBarConstants.aboutMe}</li>
           </a>
-          <a href={""}>
-            <li>Work</li>
+          <a href={"#work"}>
+            <li>{NavBarConstants.work}</li>
           </a>
-          <a href={""}>
+          {/* <a href={"#projects"}>
             <li>Projects</li>
-          </a>
-          <a href={""}>
-            <li>Contact</li>
+          </a> */}
+          <a href={"#contact"}>
+            <li>{NavBarConstants.contact}</li>
           </a>
         </ul>
       </nav>

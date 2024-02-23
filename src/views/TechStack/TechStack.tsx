@@ -11,13 +11,13 @@ function TechStack() {
     <div
       className={classNames(
         "flex flex-col justify-center",
-        "items-center w-screen p-10"
+        "items-center w-screen pt-12"
       )}
     >
-      <h3 className={GLOBAL_STYLES.title}>{TITLE}</h3>
+      <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
       <CanvasSphere />
     </div>
   );
 }
 
-export default SectionBuilder(TechStack, "tech-stack");
+export default SectionBuilder(TechStack, "techStack");

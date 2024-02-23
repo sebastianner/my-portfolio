@@ -4,16 +4,30 @@ import { LinkedInIcon, GithubIcon } from "@/icons";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { SOCIALS } from "@/global-constants";
 import { HEADING, DESCRIPTION, HERO_HEIGHT } from "./constants";
+import classNames from "classnames";
 
 function Hero() {
   return (
     <main
-      className={`flex justify-center items-center w-screen p-10 ${HERO_HEIGHT.style}`}
+      className={classNames(
+        "flex justify-center items-center",
+        " w-screen p-10",
+        HERO_HEIGHT.style
+      )}
+      id="home"
     >
-      <div className="flex flex-wrap-reverse justify-center items-center md:gap-10">
-        {/* info section */}
-        <section className="flex flex-col max-w-[460px] gap-6 text-center lg:text-left">
-          {/* TODO IF DEVICE IS SLOW DONT RENDER THE TIME TURNER INSTEAD USE 🎨*/}
+      <div
+        className={classNames(
+          "flex flex-wrap-reverse md:gap-10",
+          "justify-center items-center"
+        )}
+      >
+        <section
+          className={classNames(
+            "flex flex-col max-w-[460px] gap-6",
+            "text-center lg:text-left"
+          )}
+        >
           <h1 className={GLOBAL_STYLES.title}>{HEADING}</h1>
           <div className="flex flex-col relative">
             <p
@@ -30,7 +44,6 @@ function Hero() {
             </Link>
           </span>
         </section>
-        {/*  picture section */}
         <section>
           <Image
             src={

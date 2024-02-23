@@ -1,7 +1,7 @@
 "use client";
 import Card from "@/components/Cards/Cards";
 import { GLOBAL_STYLES } from "@/global-styles";
-import { HIGHLIGHTED_TECH, OVERVIEW } from "./constants";
+import { HIGHLIGHTED_TECH, INTRODUCTION, OVERVIEW, TITLE } from "./constants";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import classNames from "classnames";
 
@@ -14,8 +14,8 @@ function About() {
       )}
     >
       <div className="max-w-[80%]">
-        <span className={GLOBAL_STYLES.subtitle}>Introduction</span>
-        <h2 className={GLOBAL_STYLES.title}>Overview.</h2>
+        <span className={GLOBAL_STYLES.subtitle}>{INTRODUCTION}</span>
+        <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
         <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
       </div>
       <div className="w-full flex flex-wrap gap-8">
