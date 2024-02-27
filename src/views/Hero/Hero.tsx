@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons";
@@ -6,12 +7,17 @@ import { SOCIALS } from "@/global-constants";
 import { HEADING, DESCRIPTION, HERO_HEIGHT } from "./constants";
 import classNames from "classnames";
 
-function Hero() {
+type Props = {
+  className?: string;
+};
+
+function Hero({ className }: Props) {
   return (
     <main
       className={classNames(
         "flex justify-center items-center",
         " w-screen p-10",
+        className,
         HERO_HEIGHT.style
       )}
       id="home"
@@ -28,13 +34,15 @@ function Hero() {
             "text-center lg:text-left"
           )}
         >
-          <h1 className={GLOBAL_STYLES.title}>{HEADING}</h1>
-          <div className="flex flex-col relative">
-            <p
-              className={GLOBAL_STYLES.paragraph}
-              dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
-            />
-          </div>
+          <hgroup>
+            <h1 className={GLOBAL_STYLES.title}>{HEADING}</h1>
+            <div className="flex flex-col relative">
+              <p
+                className={GLOBAL_STYLES.paragraph}
+                dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
+              />
+            </div>
+          </hgroup>
           <span className="flex gap-1 justify-center lg:justify-start">
             <Link href={SOCIALS.linkedIn} target="_blank">
               <LinkedInIcon />

@@ -2,7 +2,7 @@ export enum NavBarConstants {
   name = "Sebastian.dev",
   home = "Home",
   aboutMe = "About me",
-  work = "Work",
+  experience = "Experience",
   projects = "Projects",
   contact = "Contact",
 }

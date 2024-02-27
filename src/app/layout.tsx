@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import CanvasStars from "@/components/CanvasStars/CanvasStars";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 const Poppins_Font = Poppins({
@@ -9,6 +10,11 @@ const Poppins_Font = Poppins({
   style: "normal",
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: "Sebastian M - Portfolio",
+  description: "Sebastian Mera Frontend developer portfolio",
+};
 
 export default function RootLayout({
   children,

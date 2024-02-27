@@ -15,8 +15,10 @@ function About() {
     >
       <div className="max-w-[80%]">
         <span className={GLOBAL_STYLES.subtitle}>{INTRODUCTION}</span>
-        <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
-        <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
+        <hgroup>
+          <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
+          <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
+        </hgroup>
       </div>
       <div className="w-full flex flex-wrap gap-8">
         {HIGHLIGHTED_TECH.info.map((data) => (
