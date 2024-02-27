@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { CSSProperties } from "react";
 import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
+import classNames from "classnames";
 
 type Props = {
   date: (Date | string)[];
@@ -41,7 +42,10 @@ function TimeLineItem({
           width: 60,
           height: 60,
         }}
-        className={`absolute md:left-[50%] z-10 md:ml-[-28px] ml-[8px] left-[5px]`}
+        className={classNames(
+          "absolute md:left-[50%] z-[3]",
+          "md:ml-[-28px] ml-[8px] left-[5px]"
+        )}
       />
       <h3 className="font-semibold text-xl">{title}</h3>
       <h4 className="font-medium text-lg">{company}</h4>

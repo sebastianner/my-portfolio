@@ -16,6 +16,9 @@ function HamburgerMenu({
   showMobile,
   setShowMobile,
 }: Props) {
+  const handleSetShowMobile = () => {
+    setShowMobile(!showMobile);
+  };
   return (
     <aside
       className={classNames(
@@ -24,6 +27,7 @@ function HamburgerMenu({
         "flex flex-col justify-center",
         "font-semibold text-2xl",
         "bg-[#051C11DB]",
+        { "bg-transparent h-0": !showMobile },
         className
       )}
       style={{ color: color }}
@@ -40,20 +44,24 @@ function HamburgerMenu({
         />
       </button>
 
-      <ul className="flex flex-col gap-5">
-        <a href={"#home"}>
+      <ul
+        className={classNames("flex flex-col gap-5", {
+          "hidden ": !showMobile,
+        })}
+      >
+        <a href={"#home"} onClick={handleSetShowMobile}>
           <li>{NavBarConstants.home}</li>
         </a>
-        <a href={"#about"}>
+        <a href={"#about"} onClick={handleSetShowMobile}>
           <li>{NavBarConstants.aboutMe}</li>
         </a>
-        <a href={"#work"}>
+        <a href={"#work"} onClick={handleSetShowMobile}>
           <li>{NavBarConstants.experience}</li>
         </a>
-        {/* <a href={"#projects"}>
+        {/* <a href={"#projects"} onClick={handleSetShowMobile}>
             <li>Projects</li>
           </a> */}
-        <a href={"#contact"}>
+        <a href={"#contact"} onClick={handleSetShowMobile}>
           <li>{NavBarConstants.contact}</li>
         </a>
       </ul>

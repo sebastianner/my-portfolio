@@ -1,17 +1,32 @@
-"use client";
 import classNames from "classnames";
 import { NavBarConstants } from "./constants";
-import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
-import { Dispatch, SetStateAction } from "react";
+import { useEffect, useState } from "react";
 
-type Props = {
-  showMobile: boolean;
-  setShowMobile: Dispatch<SetStateAction<boolean>>;
-};
+function NavBar() {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY >= 150;
+      setIsScrolled(scrolled);
+    };
 
-function NavBar({ showMobile, setShowMobile }: Props) {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0">
+    <header
+      className={classNames(
+        "sticky top-0 z-[4]",
+        {
+          "bg-[#071a10]": isScrolled,
+        },
+        "md:bg-transparent"
+      )}
+    >
       <nav
         className={classNames(
           "bg-transparent shadow-sm",
@@ -39,18 +54,6 @@ function NavBar({ showMobile, setShowMobile }: Props) {
             <li>{NavBarConstants.contact}</li>
           </a>
         </ul>
-        <button
-          onClick={() => {
-            setShowMobile(!showMobile);
-          }}
-        >
-          <HamburgerMenuIcon
-            className={classNames("md:hidden", "mt-5", {
-              "hidden ": showMobile,
-            })}
-            isOpen={false}
-          />
-        </button>
       </nav>
     </header>
   );

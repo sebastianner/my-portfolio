@@ -14,7 +14,7 @@ type Props = {
 function TimeLineIcon({ image, outlineColor, className }: Props) {
   return (
     <figure
-      className={`h-fit w-fit outline rounded-full ${className}`}
+      className={`h-fit w-fit outline rounded-full z-[3] ${className}`}
       style={{ outlineColor: outlineColor }}
     >
       <Image
