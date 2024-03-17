@@ -1,22 +1,22 @@
-.hamburgerMenu{
-    transition: background-color 300ms linear;
+.hamburgerMenu {
+  transition: background-color 300ms linear;
 }
 
-.fadeItem{
-    opacity: 0;
-    transition: 2s all ease-in-out;
+.fadeItem {
+  opacity: 0;
+  transition: 2s all ease-in-out;
 }
 
 .fadein {
-    animation: fadeIn 0.5s 1;
-    animation-fill-mode: forwards;
+  animation: fadeIn 0.5s 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

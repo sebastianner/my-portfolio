@@ -11,14 +11,6 @@ type Props = {
   setShowMobile: Dispatch<SetStateAction<boolean>>;
 };
 
-const fadeIn = (menuOption: ChildNode, delay: number) => {
-  if (menuOption instanceof Element) {
-    setTimeout(() => {
-      menuOption.classList.add(styles.fadein);
-    }, delay);
-  }
-};
-
 function HamburgerMenu({
   className,
   color = "#fff",
@@ -33,11 +25,25 @@ function HamburgerMenu({
 
   useEffect(() => {
     const menuOptions = menuListRef.current?.childNodes;
+    const timeouts: NodeJS.Timeout[] = [];
     if (showMobile) {
       menuOptions?.forEach((menuOption, index) => {
-        fadeIn(menuOption, index * 200);
+        const timeoutId = setTimeout(() => {
+          if (menuOption instanceof Element) {
+            menuOption.classList.add(styles.fadein);
+          }
+        }, index * 200);
+        timeouts.push(timeoutId);
       });
     }
+    return () => {
+      timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+      menuOptions?.forEach((menuOption) => {
+        if (menuOption instanceof Element) {
+          menuOption.classList.remove(styles.fadein);
+        }
+      });
+    };
   }, [showMobile]);
 
   return (
