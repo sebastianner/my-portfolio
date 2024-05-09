@@ -40,6 +40,7 @@ function NavBar() {
         <ul className="gap-4 hidden md:flex">
           <li>
             <a
+              //to do: replace aria-description
               aria-description={navBarLinksAriaDescription(
                 NavBarConstants.home
               )}
