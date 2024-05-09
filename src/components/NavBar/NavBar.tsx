@@ -17,15 +17,15 @@ function NavBar() {
     };
   }, []);
 
+  const navBarLinksAriaDescription = (section: NavBarConstants) => {
+    return `auto-scroll to the ${section} section`;
+  };
+
   return (
     <header
-      className={classNames(
-        "sticky top-0 z-[4]",
-        {
-          "bg-[#071a10]": isScrolled,
-        },
-        "md:bg-transparent"
-      )}
+      className={classNames("sticky top-0 z-[4]", {
+        "bg-[#071a10]": isScrolled,
+      })}
     >
       <nav
         className={classNames(
@@ -38,19 +38,41 @@ function NavBar() {
       >
         {NavBarConstants.name}
         <ul className="gap-4 hidden md:flex">
-          <a href={"#home"}>
-            <li>{NavBarConstants.home}</li>
-          </a>
-          <a href={"#about"}>
+          <li>
+            <a
+              aria-description={navBarLinksAriaDescription(
+                NavBarConstants.home
+              )}
+              href={"#home"}
+            >
+              {NavBarConstants.home}
+            </a>
+          </li>
+          <a
+            aria-description={navBarLinksAriaDescription(
+              NavBarConstants.aboutMe
+            )}
+            href={"#about"}
+          >
             <li>{NavBarConstants.aboutMe}</li>
           </a>
-          <a href={"#work"}>
+          <a
+            aria-description={navBarLinksAriaDescription(
+              NavBarConstants.experience
+            )}
+            href={"#work"}
+          >
             <li>{NavBarConstants.experience}</li>
           </a>
           {/* <a href={"#projects"}>
             <li>Projects</li>
           </a> */}
-          <a href={"#contact"}>
+          <a
+            aria-description={navBarLinksAriaDescription(
+              NavBarConstants.contact
+            )}
+            href={"#contact"}
+          >
             <li>{NavBarConstants.contact}</li>
           </a>
         </ul>

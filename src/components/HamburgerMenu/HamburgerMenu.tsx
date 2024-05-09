@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { NavBarConstants } from "../NavBar/constants";
 import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
-import styles from "./HamburgerMenu.module.css";
+import styles from "./HamburgerMenu.module.scss";
 
 type Props = {
   className?: string;
@@ -49,45 +49,49 @@ function HamburgerMenu({
   return (
     <aside
       className={classNames(
-        "fixed z-10",
+        "fixed z-10 block md:hidden",
         "w-screen h-screen text-center",
         "flex flex-col justify-center",
         "font-semibold text-2xl",
         "bg-[#051C11DB]",
-        { "bg-transparent h-0": !showMobile },
+        { "hidden bg-transparent h-0": !showMobile },
         styles.hamburgerMenu,
         className
       )}
       style={{ color: color }}
     >
       <button
-        onClick={() => {
-          setShowMobile(!showMobile);
-        }}
+        onClick={handleSetShowMobile}
         className="absolute top-[25px] right-[40px]"
       >
-        <HamburgerMenuIcon className={"md:hidden"} isOpen={showMobile} />
+        <HamburgerMenuIcon isOpen={showMobile} />
       </button>
 
       <ul className={classNames("flex flex-col gap-5")} ref={menuListRef}>
         <a
           href={"#home"}
           onClick={handleSetShowMobile}
-          className={classNames(styles.fadeItem, { "opacity-0": !showMobile })}
+          className={classNames(styles.fadeItem, {
+            "opacity-0 hidden": !showMobile,
+          })}
         >
           <li>{NavBarConstants.home}</li>
         </a>
         <a
           href={"#about"}
           onClick={handleSetShowMobile}
-          className={classNames(styles.fadeItem, { "opacity-0": !showMobile })}
+          className={classNames(styles.fadeItem, {
+            "opacity-0 hidden": !showMobile,
+          })}
         >
           <li>{NavBarConstants.aboutMe}</li>
         </a>
         <a
           href={"#work"}
           onClick={handleSetShowMobile}
-          className={classNames(styles.fadeItem, { "opacity-0": !showMobile })}
+          className={classNames(styles.fadeItem, {
+            "opacity-0 hidden": !showMobile,
+          })}
         >
           <li>{NavBarConstants.experience}</li>
         </a>
@@ -97,7 +101,9 @@ function HamburgerMenu({
         <a
           href={"#contact"}
           onClick={handleSetShowMobile}
-          className={classNames(styles.fadeItem, { "opacity-0": !showMobile })}
+          className={classNames(styles.fadeItem, {
+            "opacity-0 hidden": !showMobile,
+          })}
         >
           <li>{NavBarConstants.contact}</li>
         </a>

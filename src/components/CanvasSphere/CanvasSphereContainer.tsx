@@ -57,16 +57,19 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
         <Suspense fallback={<CanvasLoader />}>
           <ambientLight intensity={0.3} />
           <directionalLight intensity={8} position={[15, 10, 0]} />
-          {test.map((_, i) => (
-            <SphereMesh
-              key={i + 2}
-              position={position[i]}
-              rotation={rotation[i]}
-              small={small}
-              medium={medium}
-              extraSmall={extraSmall}
-            />
-          ))}
+          {test.map((_, i) => {
+            const key = "shpere" + i;
+            return (
+              <SphereMesh
+                key={key}
+                position={position[i]}
+                rotation={rotation[i]}
+                small={small}
+                medium={medium}
+                extraSmall={extraSmall}
+              />
+            );
+          })}
           <Preload all />
         </Suspense>
       </ErrorBoundary>

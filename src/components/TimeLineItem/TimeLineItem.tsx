@@ -50,11 +50,11 @@ function TimeLineItem({
       <h3 className="font-semibold text-xl">{title}</h3>
       <h4 className="font-medium text-lg">{company}</h4>
       <p className="font-normal my-2">{description}</p>
-      {date.map((date) => {
+      {date.map((date, i) => {
         const dateTime = date instanceof Date;
         return dateTime ? (
           <time
-            key={date.getDate()}
+            key={date.getDate() + i}
             dateTime={format(date, "yyy")}
             className="time font-light"
           >

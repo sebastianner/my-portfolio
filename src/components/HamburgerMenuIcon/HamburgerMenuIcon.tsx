@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import styles from "./HamburgerMenuIcon.module.css";
+import styles from "./HamburgerMenuIcon.module.scss";
 
 type Props = {
   className?: string;

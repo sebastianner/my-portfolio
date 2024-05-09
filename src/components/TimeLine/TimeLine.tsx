@@ -3,7 +3,7 @@ import React, { CSSProperties, useEffect, useRef } from "react";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
 import { JOBS } from "./data";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
-import styles from "./styles.module.css";
+import styles from "./TimeLine.module.scss";
 import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import SectionBuilder from "@/HOC/SectionBuilder";
 

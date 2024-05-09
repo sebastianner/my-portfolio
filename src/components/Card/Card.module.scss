@@ -1,0 +1,11 @@
+.componentCard {
+  perspective: 500px;
+  div {
+    transition: transform 0.4s ease;
+
+    h2,
+    h3 {
+      transform: rotateX(0deg) rotateY(0deg) !important;
+    }
+  }
+}
