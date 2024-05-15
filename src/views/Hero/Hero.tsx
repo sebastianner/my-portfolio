@@ -5,6 +5,7 @@ import { LinkedInIcon, GithubIcon } from "@/icons";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { SOCIALS } from "@/global-constants";
 import { HEADING, DESCRIPTION, HERO_HEIGHT } from "./constants";
+import styles from "./Hero.module.scss";
 import classNames from "classnames";
 
 type Props = {
@@ -34,16 +35,26 @@ function Hero({ className }: Props) {
             "text-center lg:text-left"
           )}
         >
-          <hgroup>
-            <h1 className={GLOBAL_STYLES.title}>{HEADING}</h1>
-            <div className="flex flex-col relative">
+          <div>
+            <h1 className={classNames(GLOBAL_STYLES.title, styles.title)}>
+              {HEADING}
+            </h1>
+            <div
+              className={classNames(styles.paragraph, "flex flex-col relative")}
+            >
               <p
                 className={GLOBAL_STYLES.paragraph}
                 dangerouslySetInnerHTML={{ __html: DESCRIPTION }}
               />
             </div>
-          </hgroup>
-          <span className="flex gap-1 justify-center lg:justify-start">
+          </div>
+          <span
+            className={classNames(
+              "flex gap-1 justify-center",
+              "lg:justify-start",
+              styles.icons
+            )}
+          >
             <Link href={SOCIALS.linkedIn} target="_blank">
               <LinkedInIcon />
             </Link>
@@ -52,7 +63,7 @@ function Hero({ className }: Props) {
             </Link>
           </span>
         </section>
-        <section>
+        <section className={classNames(styles.image)}>
           <Image
             src={
               "https://media.licdn.com/dms/image/C5603AQGQdcEWEaKR8Q/profile-displayphoto-shrink_800_800/0/1657140097690?e=1698883200&v=beta&t=LKjxsb95A6co3tk4nWthWWyipEU8gz9vhJJcnUzcRKc"

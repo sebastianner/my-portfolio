@@ -61,37 +61,37 @@ function HamburgerMenu({
       style={{ color: color }}
     >
       <button
-        onClick={handleSetShowMobile}
         className="absolute top-[25px] right-[40px]"
+        onClick={handleSetShowMobile}
       >
         <HamburgerMenuIcon isOpen={showMobile} />
       </button>
 
       <ul className={classNames("flex flex-col gap-5")} ref={menuListRef}>
         <a
-          href={"#home"}
-          onClick={handleSetShowMobile}
           className={classNames(styles.fadeItem, {
             "opacity-0 hidden": !showMobile,
           })}
+          href={"#home"}
+          onClick={handleSetShowMobile}
         >
           <li>{NavBarConstants.home}</li>
         </a>
         <a
-          href={"#about"}
-          onClick={handleSetShowMobile}
           className={classNames(styles.fadeItem, {
             "opacity-0 hidden": !showMobile,
           })}
+          href={"#about"}
+          onClick={handleSetShowMobile}
         >
           <li>{NavBarConstants.aboutMe}</li>
         </a>
         <a
-          href={"#work"}
-          onClick={handleSetShowMobile}
           className={classNames(styles.fadeItem, {
             "opacity-0 hidden": !showMobile,
           })}
+          href={"#work"}
+          onClick={handleSetShowMobile}
         >
           <li>{NavBarConstants.experience}</li>
         </a>
@@ -99,11 +99,11 @@ function HamburgerMenu({
             <li>Projects</li>
           </a> */}
         <a
-          href={"#contact"}
-          onClick={handleSetShowMobile}
           className={classNames(styles.fadeItem, {
             "opacity-0 hidden": !showMobile,
           })}
+          href={"#contact"}
+          onClick={handleSetShowMobile}
         >
           <li>{NavBarConstants.contact}</li>
         </a>

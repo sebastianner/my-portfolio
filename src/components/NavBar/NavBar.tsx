@@ -17,9 +17,9 @@ function NavBar() {
     };
   }, []);
 
-  const navBarLinksAriaDescription = (section: NavBarConstants) => {
-    return `auto-scroll to the ${section} section`;
-  };
+  // const navBarLinksAriaDescription = (section: NavBarConstants) => {
+  //   return `auto-scroll to the ${section} section`;
+  // };
 
   return (
     <header
@@ -39,41 +39,18 @@ function NavBar() {
         {NavBarConstants.name}
         <ul className="gap-4 hidden md:flex">
           <li>
-            <a
-              //to do: replace aria-description
-              aria-description={navBarLinksAriaDescription(
-                NavBarConstants.home
-              )}
-              href={"#home"}
-            >
-              {NavBarConstants.home}
-            </a>
+            <a href={"#home"}>{NavBarConstants.home}</a>
           </li>
-          <a
-            aria-description={navBarLinksAriaDescription(
-              NavBarConstants.aboutMe
-            )}
-            href={"#about"}
-          >
+          <a href={"#about"}>
             <li>{NavBarConstants.aboutMe}</li>
           </a>
-          <a
-            aria-description={navBarLinksAriaDescription(
-              NavBarConstants.experience
-            )}
-            href={"#work"}
-          >
+          <a href={"#work"}>
             <li>{NavBarConstants.experience}</li>
           </a>
           {/* <a href={"#projects"}>
             <li>Projects</li>
           </a> */}
-          <a
-            aria-description={navBarLinksAriaDescription(
-              NavBarConstants.contact
-            )}
-            href={"#contact"}
-          >
+          <a href={"#contact"}>
             <li>{NavBarConstants.contact}</li>
           </a>
         </ul>

@@ -1,0 +1,85 @@
+.title {
+  opacity: 0;
+  animation-name: bounce-title;
+  animation: bounce-title 0.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-title {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.paragraph {
+  opacity: 0;
+  animation-name: bounce-paragraph;
+  animation: bounce-paragraph 0.8s;
+  animation-timing-function: cubic-bezier(0, 0, 0.34, 0.97);
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-paragraph {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.icons {
+  opacity: 0;
+  animation-name: bounce-icons;
+  animation: bounce-icons 1s;
+  animation-timing-function: cubic-bezier(0, 0, 0.34, 0.97);
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-icons {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.image {
+  opacity: 0;
+  animation-name: bounce-image;
+  animation: bounce-image 0.5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-image {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -28,18 +28,18 @@ function TimeLine() {
         }
         return (
           <TimeLineItem
-            date={job.date}
-            title={job.title}
-            company={job.company}
-            description={job.description}
             backgroundColor={"#162e21"}
-            textColor={"#fff"}
-            style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
-            key={job.company}
+            company={job.company}
+            date={job.date}
+            description={job.description}
             image={{
               url: job.image.url,
               alt: job.image.alt,
             }}
+            key={job.company}
+            style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
+            textColor={"#fff"}
+            title={job.title}
           />
         );
       })}
