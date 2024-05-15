@@ -23,10 +23,10 @@ function About() {
       <div className="w-full flex flex-wrap gap-8">
         {HIGHLIGHTED_TECH.info.map((data) => (
           <Card
+            description={data.description}
+            icon={data.icon}
             key={data.description}
             technology={data.technology}
-            icon={data.icon}
-            description={data.description}
           />
         ))}
       </div>

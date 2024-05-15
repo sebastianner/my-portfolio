@@ -31,21 +31,21 @@ function TimeLineItem({
 }: Props) {
   return (
     <article
-      style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
       className={`job-article rounded-md p-6 pt-5 min-w-[200px] lg:max-w-[400px] shadow-xl ${className}`}
+      style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
     >
       <TimeLineIcon
-        outlineColor={"#fff"}
+        className={classNames(
+          "absolute md:left-[50%] z-[3]",
+          "md:ml-[-28px] ml-[8px] left-[5px]"
+        )}
         image={{
           url: image.url,
           alt: image.alt,
           width: 60,
           height: 60,
         }}
-        className={classNames(
-          "absolute md:left-[50%] z-[3]",
-          "md:ml-[-28px] ml-[8px] left-[5px]"
-        )}
+        outlineColor={"#fff"}
       />
       <h3 className="font-semibold text-xl">{title}</h3>
       <h4 className="font-medium text-lg">{company}</h4>
@@ -54,14 +54,14 @@ function TimeLineItem({
         const dateTime = date instanceof Date;
         return dateTime ? (
           <time
-            key={date.getDate() + i}
-            dateTime={format(date, "yyy")}
             className="time font-light"
+            dateTime={format(date, "yyy")}
+            key={date.getDate() + i}
           >
             {format(date, "yyy")}
           </time>
         ) : (
-          <span key={date} className="capitalize">
+          <span className="capitalize" key={date}>
             {date}
           </span>
         );

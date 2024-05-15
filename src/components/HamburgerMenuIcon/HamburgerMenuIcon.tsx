@@ -12,10 +12,10 @@ function HamburgerMenuIcon({ className, color = "#fff", isOpen }: Props) {
 
   return (
     <div
+      aria-expanded={isOpen}
       className={`${styles.navIcon4} ${
         isOpen && styles.menuOpened
       } ${className}`}
-      aria-expanded={isOpen}
     >
       <span style={backgroundColor}></span>
       <span style={backgroundColor}></span>

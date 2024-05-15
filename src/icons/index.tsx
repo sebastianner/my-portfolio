@@ -1,16 +1,16 @@
 function LinkedInIcon(): JSX.Element {
   return (
     <svg
-      width="38px"
+      fill="none"
       height="38px"
       viewBox="0 0 16 16"
+      width="38px"
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
     >
       <path
         className="linkIcon"
-        fill="#a1a5aa"
         d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
+        fill="#a1a5aa"
       />
     </svg>
   );
@@ -19,23 +19,23 @@ function LinkedInIcon(): JSX.Element {
 function GithubIcon(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="31px"
       height="34px"
-      viewBox="0 0 20 20"
       version="1.1"
+      viewBox="0 0 20 20"
+      width="31px"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <g
+        fill="none"
+        fillRule="evenodd"
         id="Page-1"
         stroke="none"
         strokeWidth="1"
-        fill="none"
-        fillRule="evenodd"
       >
         <g
+          fill="#a1a5aa"
           id="Dribbble-Light-Preview"
           transform="translate(-140.000000, -7559.000000)"
-          fill="#a1a5aa"
         >
           <g id="icons" transform="translate(56.000000, 160.000000)">
             <path
@@ -52,14 +52,14 @@ function GithubIcon(): JSX.Element {
 function BrowserIcon(): JSX.Element {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      enableBackground="new 0 0 64 64"
       fill="#fff"
       height="70px"
-      width="70px"
-      version="1.1"
       id="Layer_1"
+      version="1.1"
       viewBox="0 0 64 64"
-      enableBackground="new 0 0 64 64"
+      width="70px"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <g id="Browser-window-right">
         <path d="M60,5h-56c-2.2091,0-4,1.7908001-4,4v5v2v39c0,2.2090988,1.7909,4,4,4h56c2.2092018,0,4-1.7909012,4-4V16v-2V9   C64,6.7908001,62.2092018,5,60,5z M62,55c0,1.1027985-0.8972015,2-2,2h-56c-1.1027,0-2-0.8972015-2-2V16h60V55z M2.0000019,14V9   c0-1.1027999,0.8973-2,2-2h56c1.1027985,0,2,0.8972001,2,2v5H2.0000019z" />
@@ -83,15 +83,15 @@ function MobileIcon(): JSX.Element {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={0.7}
-      viewBox="0 0 24 24"
-      width="24"
       style={{
         color: "var(--geist-foreground)",
         width: "80px",
         height: "80px",
       }}
+      viewBox="0 0 24 24"
+      width="24"
     >
-      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+      <rect height="20" rx="2" ry="2" width="14" x="5" y="2" />
       <path d="M12 18h.01" />
     </svg>
   );
@@ -108,15 +108,15 @@ function DesktopIcon(): JSX.Element {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={0.7}
-      viewBox="0 0 24 24"
-      width="24"
       style={{
         color: "var(--geist-foreground)",
         width: "80px",
         height: "80px",
       }}
+      viewBox="0 0 24 24"
+      width="24"
     >
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <rect height="14" rx="2" ry="2" width="20" x="2" y="3" />
       <path d="M8 21h8" />
       <path d="M12 17v4" />
     </svg>

@@ -29,10 +29,6 @@ function ContactForm({ className }: Props) {
           </legend>
           <div className="flex flex-col gap-5 items-center w-full">
             <input
-              id="Email"
-              name="Email"
-              type="text"
-              placeholder="youremail@example.com"
               className={classNames(
                 "bg-gray-100",
                 GLOBAL_STYLES.subtitle,
@@ -40,11 +36,12 @@ function ContactForm({ className }: Props) {
                 "hover:bg-gray-50",
                 "p-2"
               )}
+              id="Email"
+              name="Email"
+              placeholder="youremail@example.com"
+              type="text"
             />
             <textarea
-              id="Message"
-              name="Message"
-              placeholder="Hello Sebastian..."
               className={classNames(
                 "bg-gray-100",
                 GLOBAL_STYLES.subtitle,
@@ -53,13 +50,14 @@ function ContactForm({ className }: Props) {
                 "hover:bg-gray-50",
                 "p-2"
               )}
+              id="Message"
+              name="Message"
+              placeholder="Hello Sebastian..."
             />
           </div>
         </div>
         {/* TODO: Implement server actions */}
         <input
-          type="submit"
-          value="Submit"
           className={classNames(
             "bg-gray-100 rounded-full",
             "w-[150px] h-[50px]",
@@ -67,6 +65,8 @@ function ContactForm({ className }: Props) {
             "hover:bg-gray-50",
             "font-medium tex-center text-black"
           )}
+          type="submit"
+          value="Submit"
         />
       </fieldset>
     </form>

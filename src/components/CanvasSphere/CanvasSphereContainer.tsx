@@ -40,12 +40,12 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
 
   return (
     <Canvas
+      camera={{ position: [600, 50, 0], fov: fov }}
+      frameloop="always"
+      gl={{ preserveDrawingBuffer: true }}
       style={{
         height: height,
       }}
-      camera={{ position: [600, 50, 0], fov: fov }}
-      gl={{ preserveDrawingBuffer: true }}
-      frameloop="always"
     >
       <ErrorBoundary
         fallback={
@@ -61,12 +61,12 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
             const key = "shpere" + i;
             return (
               <SphereMesh
+                extraSmall={extraSmall}
                 key={key}
+                medium={medium}
                 position={position[i]}
                 rotation={rotation[i]}
                 small={small}
-                medium={medium}
-                extraSmall={extraSmall}
               />
             );
           })}

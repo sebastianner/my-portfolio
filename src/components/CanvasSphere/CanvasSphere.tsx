@@ -33,22 +33,22 @@ export function SphereMesh(props: Props) {
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <Float
-      speed={5}
-      rotationIntensity={0.1}
       floatIntensity={0.05}
       rotation={[0, 0, 0.065]}
+      rotationIntensity={0.1}
+      speed={5}
     >
-      <mesh {...props} ref={sphereRef} scale={scale} castShadow receiveShadow>
+      <mesh {...props} castShadow receiveShadow ref={sphereRef} scale={scale}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color={"#D3D0CB"}
+          flatShading
           polygonOffset
           polygonOffsetFactor={-5}
-          flatShading
         />
         <Decal
-          position={[0, 0, 1]}
           map={decal}
+          position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
         />
       </mesh>
@@ -61,9 +61,9 @@ function CanvasSphere() {
 
   return (
     <SphereContainerMemo
+      extraSmall={isExtraSmall}
       medium={isMedium}
       small={isSmall}
-      extraSmall={isExtraSmall}
     />
   );
 }

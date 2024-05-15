@@ -18,13 +18,13 @@ function TimeLineIcon({ image, outlineColor, className }: Props) {
       style={{ outlineColor: outlineColor }}
     >
       <Image
-        src={image.url}
         alt={image.alt}
-        width={image.width}
-        height={image.height}
         className="rounded-full"
+        height={image.height}
         layout="responsive"
         sizes="(max-width: 767px) 40px, 60px"
+        src={image.url}
+        width={image.width}
       />
     </figure>
   );

@@ -65,14 +65,14 @@ function Hero({ className }: Props) {
         </section>
         <section className={classNames(styles.image)}>
           <Image
+            alt={"My picture"}
+            className="border-2 profile-picture"
+            height={330}
+            priority
             src={
               "https://media.licdn.com/dms/image/C5603AQGQdcEWEaKR8Q/profile-displayphoto-shrink_800_800/0/1657140097690?e=1698883200&v=beta&t=LKjxsb95A6co3tk4nWthWWyipEU8gz9vhJJcnUzcRKc"
             }
-            alt={"My picture"}
             width={330}
-            height={330}
-            className="border-2 profile-picture"
-            priority
           />
         </section>
       </div>

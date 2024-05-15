@@ -12,7 +12,7 @@ export default function Home() {
   const [showMobile, setShowMobile] = useState<boolean>(false);
   return (
     <Fragment>
-      <HamburgerMenu showMobile={showMobile} setShowMobile={setShowMobile} />
+      <HamburgerMenu setShowMobile={setShowMobile} showMobile={showMobile} />
       <NavBar />
       <Hero />
       <About />

@@ -30,13 +30,13 @@ function CanvasStars() {
 
     return (
       <group rotation={[0, 0, Math.PI / 4]}>
-        <Points ref={starsRef} positions={sphere} stride={3} frustumCulled>
+        <Points frustumCulled positions={sphere} ref={starsRef} stride={3}>
           <PointMaterial
-            transparent
             color={"#fbff00"}
+            depthWrite={false}
             size={0.004}
             sizeAttenuation={true}
-            depthWrite={false}
+            transparent
           />
         </Points>
       </group>

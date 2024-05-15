@@ -21,9 +21,9 @@ function TimeTurner() {
       <directionalLight intensity={5.5} />
       <primitive
         object={timeTurner.scene}
-        scale={1.5}
         position={[0, -90, -1.5]}
         rotation={[0, 0, 0]}
+        scale={1.5}
       />
     </mesh>
   );
@@ -32,6 +32,9 @@ function TimeTurner() {
 const TimeTurnerCanvas = () => {
   return (
     <Canvas
+      camera={{ position: [600, 600, 0], fov: 25 }}
+      frameloop="always"
+      gl={{ preserveDrawingBuffer: true }}
       style={{
         width: "150px",
         height: "fit-content",
@@ -40,9 +43,6 @@ const TimeTurnerCanvas = () => {
         top: "-125px",
         right: "25px",
       }}
-      frameloop="always"
-      camera={{ position: [600, 600, 0], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

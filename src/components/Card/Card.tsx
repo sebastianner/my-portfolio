@@ -46,14 +46,14 @@ function Card({ technology, description, icon }: Props) {
           "place-items-center",
           "grid rounded-2xl"
         )}
-        onMouseMove={(event) => {
-          if (event.target instanceof HTMLElement) {
-            cardMovement(event.target, event);
-          }
-        }}
         onMouseLeave={(event) => {
           if (event.target instanceof HTMLElement) {
             cardMovementStop(event.target);
+          }
+        }}
+        onMouseMove={(event) => {
+          if (event.target instanceof HTMLElement) {
+            cardMovement(event.target, event);
           }
         }}
       >
