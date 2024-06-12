@@ -7,13 +7,24 @@ import styles from "./TimeLine.module.scss";
 import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import SectionBuilder from "@/HOC/SectionBuilder";
 
+const lineObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    entries[0].target.classList.add(styles.active);
+  }
+});
+
 function TimeLine() {
   const { height } = useGetSectionHeight("work-time-line");
   const { width } = useGetWindowWidth();
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    divRef.current?.style.setProperty("--height", `${height}px`);
+    if (height) {
+      divRef.current?.style.setProperty("--height", `${height}px`);
+      if (divRef.current) {
+        lineObserver.observe(divRef.current);
+      }
+    }
   }, [height]);
 
   return (

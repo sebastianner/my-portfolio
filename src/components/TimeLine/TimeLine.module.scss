@@ -4,31 +4,51 @@
   grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
   justify-items: center;
   gap: 15px;
-}
-
-.timeLine::after {
-  display: inline-block;
-  margin: 0 20px 8px 0;
-  height: var(--height);
-  content: " ";
-  text-shadow: none;
-  background-color: #999;
-  width: 5px;
-  position: absolute;
-  left: 30px;
-  right: 0;
-  z-index: 2;
-}
-
-@media only screen and (min-width: 768px) {
-  .timeLine {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
+  position: relative;
+  &::after {
+    display: inline-block;
+    margin: 0 20px 8px 0;
+    height: 15px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 5px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
   }
-  .timeLine::after {
-    left: 50%;
+
+  &.active::after {
+    display: inline-block;
+    margin: 0 20px 8px 0;
+    height: var(--height);
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 5px;
+    position: absolute;
+    left: 30px;
+    z-index: 2;
+    animation: growHeight 10s linear forwards;
+  }
+
+  @keyframes growHeight {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: var(--height);
+    }
+  }
+
+  @media (width>=768px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
+      &.active::after {
+        left: 50%;
+      }
+    }
   }
 }
-
-/* @media (min-width: 640px) */

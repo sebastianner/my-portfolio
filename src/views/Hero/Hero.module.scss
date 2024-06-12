@@ -1,7 +1,7 @@
 .title {
   opacity: 0;
   animation-name: bounce-title;
-  animation: bounce-title 0.5s linear;
+  animation: bounce-title 1.2s linear;
   animation-fill-mode: forwards;
 }
 
@@ -22,7 +22,7 @@
 .paragraph {
   opacity: 0;
   animation-name: bounce-paragraph;
-  animation: bounce-paragraph 0.8s;
+  animation: bounce-paragraph 1.5s;
   animation-timing-function: cubic-bezier(0, 0, 0.34, 0.97);
   animation-fill-mode: forwards;
 }
@@ -44,7 +44,7 @@
 .icons {
   opacity: 0;
   animation-name: bounce-icons;
-  animation: bounce-icons 1s;
+  animation: bounce-icons 1.8s;
   animation-timing-function: cubic-bezier(0, 0, 0.34, 0.97);
   animation-fill-mode: forwards;
 }
@@ -66,7 +66,7 @@
 .image {
   opacity: 0;
   animation-name: bounce-image;
-  animation: bounce-image 0.5s linear;
+  animation: bounce-image 1.2s linear;
   animation-fill-mode: forwards;
 }
 

@@ -58,7 +58,7 @@ function Card({ technology, description, icon }: Props) {
         }}
       >
         {icon}
-        <h2 className={`${GLOBAL_STYLES.paragraph} test`}>{description}</h2>
+        <h2 className={`${GLOBAL_STYLES.paragraph}`}>{description}</h2>
         <h3 className="text-subtitle tracking-wide font-medium">
           {technology}
         </h3>

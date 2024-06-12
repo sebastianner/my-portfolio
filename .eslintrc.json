@@ -19,6 +19,8 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
+    "@typescript-eslint/no-unused-vars":"warn",
+    "no-debugger":"off",
     "react/no-unknown-property": [
       "error",
       {
