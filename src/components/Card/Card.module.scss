@@ -8,30 +8,4 @@
       transform: rotateX(0deg) rotateY(0deg) !important;
     }
   }
-
-  &:nth-child(1) {
-    left: -10000px;
-    animation-delay: 2s;
-  }
-  &:nth-child(2) {
-    left: -10000px;
-    animation-delay: 1s;
-  }
-  &:nth-child(3) {
-    left: -10000px;
-    animation-delay: 0;
-  }
-  animation: card-entrance-left 2s ease-in-out 1 normal forwards;
-  @keyframes card-entrance-left {
-    0% {
-      opacity: 0;
-      transform: translateX(-250px);
-    }
-
-    100% {
-      left: 0;
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
 }

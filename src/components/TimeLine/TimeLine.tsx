@@ -9,7 +9,9 @@ import SectionBuilder from "@/HOC/SectionBuilder";
 
 const lineObserver = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
-    entries[0].target.classList.add(styles.active);
+    if (entries[0].target.parentNode instanceof Element) {
+      entries[0].target.parentNode.classList.add(styles.active);
+    }
   }
 });
 
@@ -22,7 +24,7 @@ function TimeLine() {
     if (height) {
       divRef.current?.style.setProperty("--height", `${height}px`);
       if (divRef.current) {
-        lineObserver.observe(divRef.current);
+        lineObserver.observe(divRef.current.children[1]);
       }
     }
   }, [height]);

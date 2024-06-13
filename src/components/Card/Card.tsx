@@ -3,12 +3,13 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 
 type Props = {
+  className?: string;
   technology: string;
   description: string;
   icon: JSX.Element;
 };
 
-function Card({ technology, description, icon }: Props) {
+function Card({ technology, description, icon, className }: Props) {
   const cardMovement = (
     card: HTMLElement,
     event: React.MouseEvent<HTMLElement, MouseEvent>
@@ -38,7 +39,9 @@ function Card({ technology, description, icon }: Props) {
   };
 
   return (
-    <article className={classNames(styles.componentCard, "w-full max-w-xs")}>
+    <article
+      className={classNames(className, styles.componentCard, "w-full max-w-xs")}
+    >
       <div
         className={classNames(
           "bg-card-green shadow-xl",
