@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 export function useGetWindowWidth() {
-  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState(0);
   useEffect(() => {
     const w = window;
-    const scrollBar = w.innerWidth - document.documentElement.clientWidth;
-    setWidth(w.innerWidth - scrollBar);
+    const scrollBar = w.innerWidth - document.documentElement.clientHeight;
+    setHeight(w.innerHeight - scrollBar);
 
     const resizeHandler = () => {
-      setWidth(w.innerWidth - scrollBar);
+      setHeight(w.innerHeight - scrollBar);
     };
     w.addEventListener("resize", resizeHandler);
     return () => {
@@ -16,5 +16,5 @@ export function useGetWindowWidth() {
     };
   }, []);
 
-  return { width };
+  return { height };
 }

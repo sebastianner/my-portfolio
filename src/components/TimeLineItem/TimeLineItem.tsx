@@ -1,7 +1,7 @@
+import classNames from "classnames";
 import { format } from "date-fns";
 import { CSSProperties } from "react";
-import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
-import classNames from "classnames";
+// import styles from "./About.module.scss";
 
 type Props = {
   date: (Date | string)[];
@@ -12,10 +12,6 @@ type Props = {
   textColor: string;
   className?: string;
   style?: CSSProperties;
-  image: {
-    url: string;
-    alt: string;
-  };
 };
 
 function TimeLineItem({
@@ -27,26 +23,17 @@ function TimeLineItem({
   backgroundColor,
   className,
   style,
-  image,
 }: Props) {
   return (
     <article
-      className={`job-article rounded-md p-6 pt-5 min-w-[200px] lg:max-w-[400px] shadow-xl ${className}`}
+      className={classNames(
+        "job-article shadow-xl",
+        "min-w-[200px] lg:max-w-[400px]",
+        "rounded-md p-6 pt-5 relative",
+        className
+      )}
       style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
     >
-      <TimeLineIcon
-        className={classNames(
-          "absolute md:left-[50%] z-[3]",
-          "md:ml-[-28px] ml-[8px] left-[5px]"
-        )}
-        image={{
-          url: image.url,
-          alt: image.alt,
-          width: 60,
-          height: 60,
-        }}
-        outlineColor={"#fff"}
-      />
       <h3 className="font-semibold text-xl">{title}</h3>
       <h4 className="font-medium text-lg">{company}</h4>
       <p className="font-normal my-2">{description}</p>

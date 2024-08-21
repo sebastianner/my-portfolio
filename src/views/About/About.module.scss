@@ -12,7 +12,7 @@
   &.active {
     &:nth-child(1) {
       left: -10000px;
-      animation-delay: 2s;
+      animation-delay: 0s;
     }
     &:nth-child(2) {
       left: -10000px;
@@ -20,8 +20,9 @@
     }
     &:nth-child(3) {
       left: -10000px;
-      animation-delay: 0;
+      animation-delay: 2s;
     }
+
     animation: card-entrance-left 1.2s ease-out normal forwards;
     @keyframes card-entrance-left {
       0% {
@@ -33,6 +34,20 @@
         left: 0;
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+    @media (width>=768px) {
+      &:nth-child(1) {
+        left: -10000px;
+        animation-delay: 2s;
+      }
+      &:nth-child(2) {
+        left: -10000px;
+        animation-delay: 1s;
+      }
+      &:nth-child(3) {
+        left: -10000px;
+        animation-delay: 0s;
       }
     }
   }

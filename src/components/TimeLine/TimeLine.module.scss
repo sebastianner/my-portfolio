@@ -1,4 +1,4 @@
-.timeLine {
+.timeline {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(0, fit-content));
@@ -8,7 +8,8 @@
   &::after {
     display: inline-block;
     margin: 0 20px 8px 0;
-    height: 15px;
+    height: var(--height);
+    max-height: var(--max-height);
     content: " ";
     text-shadow: none;
     background-color: #999;
@@ -16,20 +17,8 @@
     position: absolute;
     right: 0;
     z-index: 2;
-  }
-
-  &.active::after {
     left: 30px;
-    animation: growHeight 10s linear forwards;
-  }
-
-  @keyframes growHeight {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: var(--height);
-    }
+    transition: height 1.3s linear;
   }
 
   @media (width>=768px) {
@@ -40,6 +29,44 @@
       &::after,
       &.active::after {
         left: 50%;
+      }
+    }
+  }
+}
+
+.timeLineCardLeft {
+  left: -10000px;
+  &.active {
+    animation: card-entrance-left 800ms ease normal forwards;
+    @keyframes card-entrance-left {
+      0% {
+        transform: rotateY(275deg);
+      }
+      50% {
+        transform: rotateY(320deg);
+      }
+      100% {
+        left: 0;
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}
+
+.timeLineCardRight {
+  right: -10000px;
+  &.active {
+    animation: card-entrance-right 800ms ease normal forwards;
+    @keyframes card-entrance-right {
+      0% {
+        transform: rotateY(275deg);
+      }
+      50% {
+        transform: rotateY(310deg);
+      }
+      100% {
+        transform: rotateY(0deg);
+        right: 0;
       }
     }
   }
