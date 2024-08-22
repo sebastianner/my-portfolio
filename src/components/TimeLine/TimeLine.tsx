@@ -28,7 +28,7 @@ function TimeLine() {
           }
         });
       },
-      { threshold: 1 }
+      { threshold: 0.85 }
     );
 
     if (parentDivRef.current) {
@@ -69,6 +69,7 @@ function TimeLine() {
         }
         return (
           <div
+            className="pr-5"
             key={job.company}
             style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
           >

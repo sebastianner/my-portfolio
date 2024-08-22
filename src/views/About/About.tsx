@@ -6,23 +6,20 @@ import classNames from "classnames";
 import styles from "./About.module.scss";
 import { useEffect, useRef } from "react";
 
-const aboutSectionObserver = new IntersectionObserver(
-  (entries) => {
-    if (entries[0].isIntersecting) {
-      const childNode = entries[0].target.childNodes[0];
-      if (childNode instanceof Element) {
-        childNode.classList.add(styles.active);
-      }
-
-      entries[0].target.childNodes[1].childNodes.forEach((child) => {
-        if (child instanceof Element) {
-          child.classList.add(styles.active);
-        }
-      });
+const aboutSectionObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    const childNode = entries[0].target.childNodes[0];
+    if (childNode instanceof Element) {
+      childNode.classList.add(styles.active);
     }
+
+    entries[0].target.childNodes[1].childNodes.forEach((child) => {
+      if (child instanceof Element) {
+        child.classList.add(styles.active);
+      }
+    });
   }
-  // { threshold: 1, rootMargin: "0px 0px -20% 0px" }
-);
+});
 
 function About() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);

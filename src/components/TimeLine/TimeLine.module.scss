@@ -35,8 +35,9 @@
 }
 
 .timeLineCardLeft {
-  left: -10000px;
+  opacity: 0;
   &.active {
+    left: -10000px;
     animation: card-entrance-left 800ms ease normal forwards;
     @keyframes card-entrance-left {
       0% {
@@ -47,6 +48,7 @@
       }
       100% {
         left: 0;
+        opacity: 1;
         transform: rotateY(0deg);
       }
     }
@@ -54,8 +56,9 @@
 }
 
 .timeLineCardRight {
-  right: -10000px;
+  opacity: 0;
   &.active {
+    right: -10000px;
     animation: card-entrance-right 800ms ease normal forwards;
     @keyframes card-entrance-right {
       0% {
@@ -67,6 +70,7 @@
       100% {
         transform: rotateY(0deg);
         right: 0;
+        opacity: 1;
       }
     }
   }

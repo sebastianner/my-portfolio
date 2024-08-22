@@ -1,7 +1,6 @@
-"use client";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import classNames from "classnames";
-import ContactForm from "@/components/ContactForm/ContactForm";
+// import ContactForm from "@/components/ContactButton/ContactForm";
 
 function ContactMe() {
   return (
@@ -13,7 +12,7 @@ function ContactMe() {
         "sm:px-20 sm:pb-16"
       )}
     >
-      <ContactForm className="w-full max-w-[800px]" />
+      {/* <ContactForm className="w-full max-w-[800px]" /> */}
     </div>
   );
 }

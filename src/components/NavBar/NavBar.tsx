@@ -17,6 +17,11 @@ function NavBar() {
     };
   }, []);
 
+  useEffect(() => {
+    const scrolled = window.scrollY >= 150;
+    setIsScrolled(scrolled);
+  }, []);
+
   // const navBarLinksAriaDescription = (section: NavBarConstants) => {
   //   return `auto-scroll to the ${section} section`;
   // };
