@@ -81,8 +81,6 @@ function TimeLine() {
               image={{
                 url: job.image.url,
                 alt: job.image.alt,
-                width: 60,
-                height: 60,
               }}
               outlineColor={"#fff"}
             />
