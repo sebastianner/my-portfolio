@@ -14,8 +14,6 @@ export const Default: Story = {
     image: {
       url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
       alt: "test image",
-      width: 80,
-      height: 80,
     },
     outlineColor: "#fff",
   },
