@@ -12,5 +12,6 @@ export const Default: Story = {
   args: {
     // Fill with props
     color: "#fafa",
+    isOpen: false,
   },
 };
