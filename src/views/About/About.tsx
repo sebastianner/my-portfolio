@@ -6,20 +6,23 @@ import classNames from "classnames";
 import styles from "./About.module.scss";
 import { useEffect, useRef } from "react";
 
-const aboutSectionObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    const childNode = entries[0].target.childNodes[0];
-    if (childNode instanceof Element) {
-      childNode.classList.add(styles.active);
-    }
-
-    entries[0].target.childNodes[1].childNodes.forEach((child) => {
-      if (child instanceof Element) {
-        child.classList.add(styles.active);
+const aboutSectionObserver = new IntersectionObserver(
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      const childNode = entries[0].target.childNodes[0];
+      if (childNode instanceof Element) {
+        childNode.classList.add(styles.active);
       }
-    });
-  }
-});
+
+      entries[0].target.childNodes[1].childNodes.forEach((child) => {
+        if (child instanceof Element) {
+          child.classList.add(styles.active);
+        }
+      });
+    }
+  },
+  { threshold: 0.2 }
+);
 
 function About() {
   const aboutSectionRef = useRef<HTMLDivElement>(null);
@@ -33,8 +36,9 @@ function About() {
   return (
     <div
       className={classNames(
+        "flex flex-col gap-12",
+        "pt-14 px-6 sm:px-20 sm:pt-16",
         "max-w-7xl w-auto h-fit bg-slytherin-green",
-        "flex flex-col gap-12 px-6 sm:px-20 sm:pt-16",
         styles.about
       )}
       ref={aboutSectionRef}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { LinkedInIcon, GithubIcon } from "@/icons";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { SOCIALS } from "@/global-constants";
-import { HEADING, DESCRIPTION, HERO_HEIGHT } from "./constants";
+import { HEADING, DESCRIPTION } from "./constants";
 import styles from "./Hero.module.scss";
 import classNames from "classnames";
 
@@ -17,9 +17,9 @@ function Hero({ className }: Props) {
     <main
       className={classNames(
         "flex justify-center items-center",
-        " w-screen p-10",
-        className,
-        HERO_HEIGHT.style
+        "w-screen md:p-10",
+        "h-fit pt-3 pb-20 px-8 md:h-screen",
+        className
       )}
       id="home"
     >
