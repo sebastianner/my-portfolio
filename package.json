@@ -51,6 +51,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
+    "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint": "^8.51.0",
@@ -66,6 +67,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "sass": "^1.77.0",
     "storybook": "^7.5.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
   }
 }

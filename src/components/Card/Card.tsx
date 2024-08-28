@@ -34,6 +34,7 @@ function Card({ technology, description, icon, className }: Props) {
     card.style.cssText = `transform: rotateY(${yRotation}deg) rotateX(${xRotation}deg);`;
   };
 
+  // todo: drop anti-react pattern
   const cardMovementStop = (card: HTMLElement) => {
     card.style.cssText = `transform: rotateY(0deg) rotateX(0deg);`;
   };

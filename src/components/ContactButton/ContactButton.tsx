@@ -25,7 +25,7 @@ function ContactButton({
   email,
   link,
 }: Props) {
-  const href = behavior === "Email" ? email : link;
+  const href = behavior === "Email" ? `mailto:${email}` : link;
   return (
     <button
       className={classNames(
