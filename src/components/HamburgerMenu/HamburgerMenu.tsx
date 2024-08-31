@@ -1,114 +1,138 @@
+"use client";
 import classNames from "classnames";
 import { NavBarConstants } from "../NavBar/constants";
-import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { useContext, useEffect, useReducer, useRef } from "react";
 import styles from "./HamburgerMenu.module.scss";
+import { Context } from "@/app/page";
 
 type Props = {
   className?: string;
   color?: string;
-  showMobile: boolean;
-  setShowMobile: Dispatch<SetStateAction<boolean>>;
 };
 
-function HamburgerMenu({
-  className,
-  color = "#fff",
-  showMobile,
-  setShowMobile,
-}: Props) {
-  const menuListRef = useRef<HTMLUListElement>(null);
+type StackState = {
+  stack1: boolean;
+  stack2: boolean;
+  stack3: boolean;
+  stack4: boolean;
+};
 
-  const handleSetShowMobile = () => {
-    setShowMobile(!showMobile);
+type StackAction = Partial<StackState>;
+
+const stackInitialState = {
+  stack1: false,
+  stack2: false,
+  stack3: false,
+  stack4: false,
+};
+
+function HamburgerMenu({ className, color = "#fff" }: Props) {
+  const menuListRef = useRef<HTMLUListElement>(null);
+  const { AppState, dispatchAppState } = useContext(Context);
+  const isOpen = AppState.isHamburgerMenuOpen;
+  const [stack, dispatchStack] = useReducer(
+    (prev: StackState, next: StackAction) => {
+      return { ...prev, ...next };
+    },
+    stackInitialState
+  );
+
+  const handleCloseMenu = () => {
+    dispatchAppState({ isHamburgerMenuOpen: false });
   };
 
   useEffect(() => {
-    const menuOptions = menuListRef.current?.childNodes;
     const timeouts: NodeJS.Timeout[] = [];
-    if (showMobile) {
-      menuOptions?.forEach((menuOption, index) => {
+    if (isOpen) {
+      const stackLength = Object.keys(stack).length;
+      for (let index = 0; index <= stackLength; index++) {
         const timeoutId = setTimeout(() => {
-          if (menuOption instanceof Element) {
-            menuOption.classList.add(styles.fadein);
-          }
+          const stackNumber = `stack${index + 1}`;
+          dispatchStack({ [stackNumber]: true });
         }, index * 200);
         timeouts.push(timeoutId);
-      });
+      }
+    } else {
+      dispatchStack(stackInitialState);
     }
     return () => {
       timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
-      menuOptions?.forEach((menuOption) => {
-        if (menuOption instanceof Element) {
-          menuOption.classList.remove(styles.fadein);
-        }
-      });
     };
-  }, [showMobile]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
 
   return (
-    <aside
+    <section
       className={classNames(
-        "fixed z-10 block md:hidden",
+        "left-full fixed z-[1] md:hidden",
         "w-screen h-screen text-center",
         "flex flex-col justify-center",
         "font-semibold text-2xl",
         "bg-[#051C11DB]",
-        { "hidden bg-transparent h-0": !showMobile },
         styles.hamburgerMenu,
+        { "!left-0": isOpen },
         className
       )}
       style={{ color: color }}
     >
-      <button
-        className="absolute top-[25px] right-[40px]"
-        onClick={handleSetShowMobile}
-      >
-        <HamburgerMenuIcon isOpen={showMobile} />
-      </button>
-
       <ul className={classNames("flex flex-col gap-5")} ref={menuListRef}>
         <a
-          className={classNames(styles.fadeItem, {
-            "opacity-0 hidden": !showMobile,
-          })}
+          className={classNames(
+            styles.fadeItem,
+            { [styles.fadein]: stack.stack1 },
+            {
+              "opacity-0 hidden": !isOpen,
+            }
+          )}
           href={"#home"}
-          onClick={handleSetShowMobile}
+          onClick={handleCloseMenu}
         >
           <li>{NavBarConstants.home}</li>
         </a>
         <a
-          className={classNames(styles.fadeItem, {
-            "opacity-0 hidden": !showMobile,
-          })}
+          className={classNames(
+            styles.fadeItem,
+            { [styles.fadein]: stack.stack2 },
+            {
+              "opacity-0 hidden": !isOpen,
+            }
+          )}
           href={"#about"}
-          onClick={handleSetShowMobile}
+          onClick={handleCloseMenu}
         >
           <li>{NavBarConstants.aboutMe}</li>
         </a>
         <a
-          className={classNames(styles.fadeItem, {
-            "opacity-0 hidden": !showMobile,
-          })}
+          className={classNames(
+            styles.fadeItem,
+            { [styles.fadein]: stack.stack3 },
+            {
+              "opacity-0 hidden": !isOpen,
+            }
+          )}
           href={"#work"}
-          onClick={handleSetShowMobile}
+          onClick={handleCloseMenu}
         >
           <li>{NavBarConstants.experience}</li>
         </a>
-        {/* <a href={"#projects"} onClick={handleSetShowMobile}>
+        {/* <a href={"#projects"} onClick={handleCloseMenu}>
             <li>Projects</li>
           </a> */}
         <a
-          className={classNames(styles.fadeItem, {
-            "opacity-0 hidden": !showMobile,
-          })}
+          className={classNames(
+            styles.fadeItem,
+            { [styles.fadein]: stack.stack4 },
+            {
+              "opacity-0 hidden": !isOpen,
+            }
+          )}
           href={"#contact"}
-          onClick={handleSetShowMobile}
+          onClick={handleCloseMenu}
         >
           <li>{NavBarConstants.contact}</li>
         </a>
       </ul>
-    </aside>
+    </section>
   );
 }
 

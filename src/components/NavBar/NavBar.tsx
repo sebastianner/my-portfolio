@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { NavBarConstants } from "./constants";
 import { useEffect, useState } from "react";
+import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 
 function NavBar() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -22,6 +23,7 @@ function NavBar() {
     setIsScrolled(scrolled);
   }, []);
 
+  // to do: implement WEB ARIA.
   // const navBarLinksAriaDescription = (section: NavBarConstants) => {
   //   return `auto-scroll to the ${section} section`;
   // };
@@ -59,6 +61,7 @@ function NavBar() {
             <li>{NavBarConstants.contact}</li>
           </a>
         </ul>
+        <HamburgerMenuIcon className={classNames("md:hidden z-10", "top-3")} />
       </nav>
     </header>
   );

@@ -1,26 +1,35 @@
-import { CSSProperties } from "react";
+"use client";
+import { CSSProperties, useContext } from "react";
 import styles from "./HamburgerMenuIcon.module.scss";
+import { Context } from "@/app/page";
 
 type Props = {
   className?: string;
   color?: string;
-  isOpen: boolean;
 };
 
-function HamburgerMenuIcon({ className, color = "#fff", isOpen }: Props) {
+function HamburgerMenuIcon({ className, color = "#fff" }: Props) {
+  const { AppState, dispatchAppState } = useContext(Context);
   const backgroundColor: CSSProperties = { backgroundColor: color };
 
+  const isOpen = AppState.isHamburgerMenuOpen;
+
+  const toggleOpenMenu = () => {
+    dispatchAppState({ isHamburgerMenuOpen: !isOpen });
+  };
+
   return (
-    <div
+    <button
       aria-expanded={isOpen}
       className={`${styles.navIcon4} ${
         isOpen && styles.menuOpened
       } ${className}`}
+      onClick={toggleOpenMenu}
     >
       <span style={backgroundColor}></span>
       <span style={backgroundColor}></span>
       <span style={backgroundColor}></span>
-    </div>
+    </button>
   );
 }
 

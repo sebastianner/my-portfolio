@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { createContext, Dispatch, useReducer } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import TechStack from "@/views/TechStack/TechStack";
 import ContactMe from "@/views/ContactMe/ContactMe";
@@ -7,22 +7,43 @@ import Work from "@/views/Work/Work";
 import Hero from "@/views/Hero/Hero";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
 import dynamic from "next/dynamic";
+import type { AppContext } from "@/types/context";
+
+type AppContextType = {
+  AppState: AppContext;
+  dispatchAppState: Dispatch<Partial<AppContext>>;
+};
 
 const About = dynamic(() => import("@/views/About/About"), {
   ssr: false,
 });
 
+const AppInitialConext: AppContext = {
+  isHamburgerMenuOpen: false,
+};
+
+export const Context = createContext<AppContextType>({
+  AppState: AppInitialConext,
+  dispatchAppState: () => null,
+});
+
 export default function Home() {
-  const [showMobile, setShowMobile] = useState<boolean>(false);
+  const [AppState, dispatchAppState] = useReducer(
+    (prev: AppContext, next: Partial<AppContext>) => {
+      return { ...prev, ...next };
+    },
+    AppInitialConext
+  );
+
   return (
-    <Fragment>
-      <HamburgerMenu setShowMobile={setShowMobile} showMobile={showMobile} />
+    <Context.Provider value={{ AppState, dispatchAppState }}>
+      <HamburgerMenu />
       <NavBar />
       <Hero />
       <About />
       <Work />
       <TechStack />
       <ContactMe />
-    </Fragment>
+    </Context.Provider>
   );
 }
