@@ -11,15 +11,7 @@
 .card {
   opacity: 0;
   &.active {
-    &:nth-child(1) {
-      left: -10000px;
-    }
-    &:nth-child(2) {
-      left: -10000px;
-    }
-    &:nth-child(3) {
-      left: -10000px;
-    }
+    left: -1000px;
     animation: card-entrance-left 1s ease-out normal forwards;
     @keyframes card-entrance-left {
       0% {
