@@ -13,31 +13,14 @@
   &.active {
     &:nth-child(1) {
       left: -10000px;
-      animation-delay: 0s;
     }
     &:nth-child(2) {
       left: -10000px;
-      animation-delay: 1s;
     }
     &:nth-child(3) {
       left: -10000px;
-      animation-delay: 2s;
     }
-    @media (width>=768px) {
-      &:nth-child(1) {
-        left: -10000px;
-        animation-delay: 2s;
-      }
-      &:nth-child(2) {
-        left: -10000px;
-        animation-delay: 1s;
-      }
-      &:nth-child(3) {
-        left: -10000px;
-        animation-delay: 0s;
-      }
-    }
-    animation: card-entrance-left 1.2s ease-out normal forwards;
+    animation: card-entrance-left 1s ease-out normal forwards;
     @keyframes card-entrance-left {
       0% {
         transform: translateX(-250px);
@@ -47,6 +30,18 @@
         left: 0;
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+    @media (width>=768px) {
+      animation-duration: 1.2s;
+      &:nth-child(1) {
+        animation-delay: 2s;
+      }
+      &:nth-child(2) {
+        animation-delay: 1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0s;
       }
     }
   }

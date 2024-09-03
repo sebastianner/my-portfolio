@@ -2,8 +2,13 @@ import classNames from "classnames";
 import { NavBarConstants } from "./constants";
 import { useEffect, useState } from "react";
 import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
+import type { NavItem } from "@/types/app";
 
-function NavBar() {
+type Props = {
+  navItem: NavItem;
+};
+
+function NavBar({ navItem }: Props) {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -43,23 +48,13 @@ function NavBar() {
           "pr-10 pl-6 py-8 md:px-14"
         )}
       >
-        {NavBarConstants.name}
+        <span>{NavBarConstants.name}</span>
         <ul className="gap-4 hidden md:flex">
-          <li>
-            <a href={"#home"}>{NavBarConstants.home}</a>
-          </li>
-          <a href={"#about"}>
-            <li>{NavBarConstants.aboutMe}</li>
-          </a>
-          <a href={"#work"}>
-            <li>{NavBarConstants.experience}</li>
-          </a>
-          {/* <a href={"#projects"}>
-            <li>Projects</li>
-          </a> */}
-          <a href={"#contact"}>
-            <li>{NavBarConstants.contact}</li>
-          </a>
+          {navItem.map((item) => (
+            <li key={item.name}>
+              <a href={item.href}>{item.name}</a>
+            </li>
+          ))}
         </ul>
         <HamburgerMenuIcon className={classNames("md:hidden z-10", "top-3")} />
       </nav>

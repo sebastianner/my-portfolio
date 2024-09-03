@@ -1,6 +1,7 @@
 import { GLOBAL_STYLES } from "@/global-styles";
 import classNames from "classnames";
 import styles from "./Card.module.scss";
+import { ForwardedRef, forwardRef } from "react";
 
 type Props = {
   className?: string;
@@ -9,7 +10,10 @@ type Props = {
   icon: JSX.Element;
 };
 
-function Card({ technology, description, icon, className }: Props) {
+const Card = forwardRef(function Card(
+  { technology, description, icon, className }: Props,
+  ref: ForwardedRef<HTMLElement>
+) {
   const cardMovement = (
     card: HTMLElement,
     event: React.MouseEvent<HTMLElement, MouseEvent>
@@ -34,7 +38,7 @@ function Card({ technology, description, icon, className }: Props) {
     card.style.cssText = `transform: rotateY(${yRotation}deg) rotateX(${xRotation}deg);`;
   };
 
-  // todo: drop anti-react pattern
+  // to do: drop anti-react pattern
   const cardMovementStop = (card: HTMLElement) => {
     card.style.cssText = `transform: rotateY(0deg) rotateX(0deg);`;
   };
@@ -42,6 +46,7 @@ function Card({ technology, description, icon, className }: Props) {
   return (
     <article
       className={classNames(className, styles.componentCard, "w-full max-w-xs")}
+      ref={ref}
     >
       <div
         className={classNames(
@@ -69,6 +74,6 @@ function Card({ technology, description, icon, className }: Props) {
       </div>
     </article>
   );
-}
+});
 
 export default Card;

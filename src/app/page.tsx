@@ -8,6 +8,7 @@ import Hero from "@/views/Hero/Hero";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
 import dynamic from "next/dynamic";
 import type { AppContext } from "@/types/context";
+import { navItems } from "@/utils/mockData/data";
 
 type AppContextType = {
   AppState: AppContext;
@@ -37,8 +38,8 @@ export default function Home() {
 
   return (
     <Context.Provider value={{ AppState, dispatchAppState }}>
-      <HamburgerMenu />
-      <NavBar />
+      <HamburgerMenu navItem={navItems} />
+      <NavBar navItem={navItems} />
       <Hero />
       <About />
       <Work />
