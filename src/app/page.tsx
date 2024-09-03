@@ -23,6 +23,7 @@ const AppInitialConext: AppContext = {
   isHamburgerMenuOpen: false,
 };
 
+// to do: Move createContext to it's own file
 export const Context = createContext<AppContextType>({
   AppState: AppInitialConext,
   dispatchAppState: () => null,

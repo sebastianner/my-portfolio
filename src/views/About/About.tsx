@@ -1,3 +1,4 @@
+"use client";
 import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { HIGHLIGHTED_TECH, INTRODUCTION, OVERVIEW, TITLE } from "./constants";
