@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import HamburgerMenu from "./HamburgerMenu";
+import { navItems } from "@/utils/mockData/data";
 
 const meta = {
   component: HamburgerMenu,
@@ -12,6 +13,6 @@ export const Default: Story = {
   args: {
     // Fill with props
     color: "#000",
-    showMobile: false,
+    navItem: navItems,
   },
 };

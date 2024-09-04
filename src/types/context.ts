@@ -1,3 +1,3 @@
-export type AppContext = {
+export type AppStateType = {
   isHamburgerMenuOpen: boolean;
 };

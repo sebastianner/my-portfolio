@@ -67,8 +67,9 @@ function About() {
     });
     return () => {
       observers.forEach((observer, index) => {
-        if (cardRefs.current[index]) {
-          observer.unobserve(cardRefs.current[index]);
+        const element = cardRefs.current[index];
+        if (element !== null) {
+          observer.unobserve(element);
         }
       });
     };

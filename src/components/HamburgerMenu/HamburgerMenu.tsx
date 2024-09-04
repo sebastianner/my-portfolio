@@ -2,8 +2,8 @@
 import classNames from "classnames";
 import { useContext, useEffect, useReducer, useRef } from "react";
 import styles from "./HamburgerMenu.module.scss";
-import { Context } from "@/app/page";
 import type { NavItem } from "@/types/app";
+import { Context } from "@/context/context";
 
 type Props = {
   className?: string;

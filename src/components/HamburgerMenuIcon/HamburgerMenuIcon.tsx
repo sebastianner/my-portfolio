@@ -1,7 +1,7 @@
 "use client";
 import { CSSProperties, useContext } from "react";
 import styles from "./HamburgerMenuIcon.module.scss";
-import { Context } from "@/app/page";
+import { Context } from "@/context/context";
 
 type Props = {
   className?: string;
