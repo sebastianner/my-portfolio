@@ -47,8 +47,8 @@ const Card = forwardRef(function Card(
   return (
     <article
       className={classNames(className, styles.componentCard, "w-full max-w-xs")}
-      ref={ref}
       data-index={dataIndex}
+      ref={ref}
     >
       <div
         className={classNames(
