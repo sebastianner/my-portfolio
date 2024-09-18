@@ -10,16 +10,16 @@
 
 .card {
   opacity: 0;
+  transform: translateX(-50%);
   &.active {
-    left: -1000px;
     animation: card-entrance-left 1s ease-out normal forwards;
+
     @keyframes card-entrance-left {
       0% {
-        transform: translateX(-250px);
+        transform: translateX(-100%);
       }
 
       100% {
-        left: 0;
         opacity: 1;
         transform: translateX(0);
       }

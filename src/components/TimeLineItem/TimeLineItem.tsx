@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { format } from "date-fns";
-import { CSSProperties } from "react";
+import { CSSProperties, ForwardedRef, forwardRef } from "react";
 // import styles from "./About.module.scss";
 
 type Props = {
@@ -12,18 +12,23 @@ type Props = {
   textColor: string;
   className?: string;
   style?: CSSProperties;
+  dataIndex?: number;
 };
 
-function TimeLineItem({
-  date,
-  title,
-  company,
-  textColor,
-  description,
-  backgroundColor,
-  className,
-  style,
-}: Props) {
+const TimeLineItem = forwardRef(function TimeLineItem(
+  {
+    date,
+    title,
+    company,
+    textColor,
+    description,
+    backgroundColor,
+    className,
+    dataIndex,
+    style,
+  }: Props,
+  ref: ForwardedRef<HTMLElement>
+) {
   return (
     <article
       className={classNames(
@@ -32,6 +37,8 @@ function TimeLineItem({
         "rounded-md p-6 pt-5 relative",
         className
       )}
+      data-index={dataIndex}
+      ref={ref}
       style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
     >
       <h3 className="font-semibold text-xl">{title}</h3>
@@ -55,6 +62,6 @@ function TimeLineItem({
       })}
     </article>
   );
-}
+});
 
 export default TimeLineItem;

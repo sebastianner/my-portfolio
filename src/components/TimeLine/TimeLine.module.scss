@@ -36,42 +36,36 @@
 
 .timeLineCardLeft {
   opacity: 0;
+  transform: translateX(-50%);
   &.active {
-    left: -10000px;
     animation: card-entrance-left 800ms ease normal forwards;
-    @keyframes card-entrance-left {
-      0% {
-        transform: rotateY(275deg);
-      }
-      50% {
-        transform: rotateY(320deg);
-      }
-      100% {
-        left: 0;
-        opacity: 1;
-        transform: rotateY(0deg);
-      }
+  }
+  @keyframes card-entrance-left {
+    0% {
+      transform: translateX(-50%) rotateY(275deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
     }
   }
 }
 
 .timeLineCardRight {
   opacity: 0;
+  transform: translateX(100%);
   &.active {
-    right: -10000px;
     animation: card-entrance-right 800ms ease normal forwards;
-    @keyframes card-entrance-right {
-      0% {
-        transform: rotateY(275deg);
-      }
-      50% {
-        transform: rotateY(310deg);
-      }
-      100% {
-        transform: rotateY(0deg);
-        right: 0;
-        opacity: 1;
-      }
+  }
+  @keyframes card-entrance-right {
+    0% {
+      transform: translateX(100%) rotateY(275deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotateY(0deg);
+      opacity: 1;
     }
   }
 }

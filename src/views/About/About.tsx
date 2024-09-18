@@ -6,10 +6,7 @@ import SectionBuilder from "@/HOC/SectionBuilder";
 import classNames from "classnames";
 import styles from "./About.module.scss";
 import { useEffect, useReducer, useRef, useState } from "react";
-
-type CardState = {
-  [cardKey: string]: { position: number; isActive: boolean } | undefined;
-};
+import { CardState } from "@/types/app";
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);
@@ -27,52 +24,43 @@ function About() {
   }
 
   useEffect(() => {
-    const refCopy = infoRef.current;
     const infoObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsInfoActive(true);
         }
       },
-      { threshold: 1 }
+      { threshold: 0.5 }
     );
-    if (refCopy) {
-      infoObserver.observe(refCopy);
+    if (infoRef.current) {
+      infoObserver.observe(infoRef.current);
     }
 
-    return () => {
-      if (refCopy) {
-        infoObserver.unobserve(refCopy);
-      }
-    };
+    return () => infoObserver.disconnect();
   }, []);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    cardRefs.current.map((ref, index) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute("data-index"));
+          if (entry.isIntersecting) {
+            dispatchCard({
+              [`card${index}`]: { position: index, isActive: true },
+            });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    cardRefs.current.forEach((ref) => {
       if (ref) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            if (entries[0].isIntersecting) {
-              dispatchCard({
-                [`card${index}`]: { position: index, isActive: true },
-              });
-            }
-          },
-          { threshold: 0.1 }
-        );
-        observers.push(observer);
         observer.observe(ref);
       }
     });
-    return () => {
-      observers.forEach((observer, index) => {
-        const element = cardRefs.current[index];
-        if (element !== null) {
-          observer.unobserve(element);
-        }
-      });
-    };
+
+    return () => observer.disconnect();
   }, [cardRefs]);
 
   return (
@@ -102,6 +90,7 @@ function About() {
           return (
             <Card
               className={classNames(styles.card, { [styles.active]: isActive })}
+              dataIndex={index}
               description={data.description}
               icon={data.icon}
               key={data.description}

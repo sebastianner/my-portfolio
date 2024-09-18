@@ -8,10 +8,11 @@ type Props = {
   technology: string;
   description: string;
   icon: JSX.Element;
+  dataIndex?: number;
 };
 
 const Card = forwardRef(function Card(
-  { technology, description, icon, className }: Props,
+  { className, dataIndex, technology, description, icon }: Props,
   ref: ForwardedRef<HTMLElement>
 ) {
   const cardMovement = (
@@ -47,6 +48,7 @@ const Card = forwardRef(function Card(
     <article
       className={classNames(className, styles.componentCard, "w-full max-w-xs")}
       ref={ref}
+      data-index={dataIndex}
     >
       <div
         className={classNames(

@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useReducer, useRef, useState } from "react";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
 import { JOBS } from "./data";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
@@ -7,39 +7,50 @@ import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import classNames from "classnames";
 import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
+import { CardState } from "@/types/app";
 
 function TimeLine() {
   const { height } = useGetSectionHeight("work-time-line");
   const { width } = useGetWindowWidth();
   const parentDivRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [timelineHeight, setTimelineHeight] = useState(80);
+  const [cardStates, dispatchCard] = useReducer(
+    (prev: CardState, next: Partial<CardState>) => {
+      return { ...prev, ...next };
+    },
+    {}
+  );
 
   useEffect(() => {
-    const lineObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardHeight = entry.target.clientHeight;
-            setTimelineHeight((prevHeight) => prevHeight + cardHeight);
-            const workCard = entry.target.lastChild;
-            if (workCard instanceof Element) {
-              workCard.classList.add(styles.active);
+          const index = Number(entry.target.getAttribute("data-index"));
+          const cardHeight = entry.target.clientHeight;
+          if (!Number.isNaN(index)) {
+            if (entry.isIntersecting) {
+              setTimelineHeight((prevHeight) => prevHeight + cardHeight);
+              dispatchCard({
+                [`card${index}`]: { isActive: true, position: index },
+              });
+              observer.unobserve(entry.target);
             }
           }
         });
       },
-      { threshold: 0.85 }
+      {
+        threshold: 0.5,
+      }
     );
 
-    if (parentDivRef.current) {
-      const childElements = parentDivRef.current.children;
-      for (let index = 0; index < childElements.length; index++) {
-        const element = childElements[index];
-        lineObserver.observe(element);
+    cardRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
       }
-    }
+    });
 
-    return () => lineObserver.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -57,12 +68,12 @@ function TimeLine() {
       ref={parentDivRef}
     >
       {JOBS.map((job, index) => {
+        const isActive = cardStates[`card${index}`]?.isActive;
         let gridColumn = (index + 1) % 2 ? 1 : 2;
         let margin: CSSProperties =
           gridColumn === 1 ? { marginRight: 50 } : { marginLeft: 50 };
         const slideInAnimationSide =
           gridColumn === 1 ? styles.timeLineCardLeft : styles.timeLineCardRight;
-
         if (width < 768) {
           margin = { margin: 0 };
           gridColumn = 1;
@@ -86,10 +97,16 @@ function TimeLine() {
             />
             <TimeLineItem
               backgroundColor={"#162e21"}
-              className={classNames(slideInAnimationSide)}
+              className={classNames(slideInAnimationSide, {
+                [styles.active]: isActive,
+              })}
               company={job.company}
+              dataIndex={index}
               date={job.date}
               description={job.description}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
               textColor={"#fff"}
               title={job.title}
             />
