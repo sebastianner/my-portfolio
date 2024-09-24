@@ -3,9 +3,10 @@
   perspective: 500px;
   div {
     transition: transform 0.4s ease;
+    transform: rotateY(var(--rotationY)) rotateX(var(--rotationX));
     h2,
     h3 {
-      transform: rotateX(0deg) rotateY(0deg) !important;
+      transform: rotateY(0deg) rotateX(0deg) !important;
     }
   }
 }

@@ -1,0 +1,65 @@
+@import "tailwind.css";
+@import "shared.css";
+@import "colors.scss";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--primary-color);
+  color: white;
+}
+
+p {
+  line-height: 2rem;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+svg:hover .linkIcon {
+  transition: fill 0.3s ease;
+  fill: #0a66c2;
+}
+
+svg:hover .ghIcon {
+  transition: fill 0.3s ease;
+  fill: #fff;
+}
+
+.profile-picture {
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}

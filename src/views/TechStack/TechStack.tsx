@@ -5,6 +5,7 @@ import React from "react";
 import { TITLE } from "./constants";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import classNames from "classnames";
+import BaseHeading from "@/components/BaseHeading/BaseHeading";
 
 function TechStack() {
   return (
@@ -14,7 +15,7 @@ function TechStack() {
         "items-center w-screen pt-32"
       )}
     >
-      <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
+      <BaseHeading level={2}>{TITLE}</BaseHeading>
       <CanvasSphere />
     </div>
   );

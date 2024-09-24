@@ -3,7 +3,7 @@ import type {
   CANVAS_HEIGHT_INTERFACE,
   SPHERE_COORDINATES_INTERFACE,
   SPHERE_SCALE_INTERFACE,
-} from "@/app/interfaces";
+} from "@/interfaces";
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   position: {

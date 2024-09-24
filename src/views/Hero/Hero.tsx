@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { LinkedInIcon, GithubIcon } from "@/icons";
+import { LinkedInIcon, GithubIcon } from "@/icons/Icons";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { SOCIALS } from "@/global-constants";
 import { HEADING, DESCRIPTION } from "./constants";
 import styles from "./Hero.module.scss";
 import classNames from "classnames";
+import BaseHeading from "@/components/BaseHeading/BaseHeading";
 
 type Props = {
   className?: string;
@@ -16,9 +17,10 @@ function Hero({ className }: Props) {
   return (
     <main
       className={classNames(
-        "flex justify-center items-center",
         "w-screen md:p-10",
-        "h-fit pt-3 pb-20 px-8 md:h-screen",
+        "pt-3 pb-20 px-8 ",
+        "flex justify-center items-center",
+        "h-mobile md:h-screen",
         className
       )}
       id="home"
@@ -36,9 +38,7 @@ function Hero({ className }: Props) {
           )}
         >
           <div>
-            <h1 className={classNames(GLOBAL_STYLES.title, styles.title)}>
-              {HEADING}
-            </h1>
+            <BaseHeading level={1}>{HEADING}</BaseHeading>
             <div
               className={classNames(styles.paragraph, "flex flex-col relative")}
             >

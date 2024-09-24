@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { format } from "date-fns";
 import { CSSProperties, ForwardedRef, forwardRef } from "react";
+import BaseHeading from "../BaseHeading/BaseHeading";
 // import styles from "./About.module.scss";
 
 type Props = {
@@ -8,7 +9,6 @@ type Props = {
   title: string;
   company: string;
   description: string;
-  backgroundColor: string;
   textColor: string;
   className?: string;
   style?: CSSProperties;
@@ -22,7 +22,6 @@ const TimeLineItem = forwardRef(function TimeLineItem(
     company,
     textColor,
     description,
-    backgroundColor,
     className,
     dataIndex,
     style,
@@ -35,14 +34,15 @@ const TimeLineItem = forwardRef(function TimeLineItem(
         "job-article shadow-xl",
         "min-w-[200px] lg:max-w-[400px]",
         "rounded-md p-6 pt-5 relative",
+        "bg-secondary-color",
         className
       )}
       data-index={dataIndex}
       ref={ref}
-      style={{ backgroundColor: backgroundColor, color: textColor, ...style }}
+      style={{ color: textColor, ...style }}
     >
-      <h3 className="font-semibold text-xl">{title}</h3>
-      <h4 className="font-medium text-lg">{company}</h4>
+      <BaseHeading level={3}>{title}</BaseHeading>
+      <BaseHeading level={4}>{company}</BaseHeading>
       <p className="font-normal my-2">{description}</p>
       {date.map((date, i) => {
         const dateTime = date instanceof Date;

@@ -12,7 +12,7 @@
     max-height: var(--max-height);
     content: " ";
     text-shadow: none;
-    background-color: #999;
+    background-color: var(--auxiliar-gray);
     width: 5px;
     position: absolute;
     right: 0;
@@ -42,7 +42,7 @@
   }
   @keyframes card-entrance-left {
     0% {
-      transform: translateX(-50%) rotateY(275deg);
+      transform: translateX(-50%) rotateY(100deg);
       opacity: 0;
     }
     100% {
@@ -54,13 +54,12 @@
 
 .timeLineCardRight {
   opacity: 0;
-  transform: translateX(100%);
   &.active {
     animation: card-entrance-right 800ms ease normal forwards;
   }
   @keyframes card-entrance-right {
     0% {
-      transform: translateX(100%) rotateY(275deg);
+      transform: translateX(50%) rotateY(100deg);
       opacity: 0;
     }
     100% {

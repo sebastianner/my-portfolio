@@ -1,4 +1,4 @@
-import { MobileIcon, BrowserIcon, DesktopIcon } from "@/icons";
+import { MobileIcon, BrowserIcon, DesktopIcon } from "@/icons/Icons";
 
 export const OVERVIEW =
   "I`m a proficient Front-end developer with a focus on crafting interactive digital experiences using React. Proficient across the JavaScript spectrum – including React, Next.js, TypeScript, Node.js, and Redux – I excel at transforming ideas into seamless, efficient, and user-friendly solutions. Let`s collaborate to turn your vision into reality!";

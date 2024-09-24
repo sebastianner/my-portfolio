@@ -30,7 +30,7 @@ function ContactButton({
     <button
       className={classNames(
         className,
-        "bg-card-green px-5 py-3",
+        "bg-secondary-color px-5 py-3",
         "text-center text-white",
         styles.contactButton
       )}

@@ -35,18 +35,17 @@ function NavBar({ navItem }: Props) {
   // };
 
   return (
-    <header
-      className={classNames("sticky top-0 z-[4]", {
-        "bg-[#071a10]": isScrolled,
-      })}
-    >
+    <header className={classNames("sticky top-0 z-[4]")}>
       <nav
         className={classNames(
-          "bg-transparent shadow-sm",
+          "shadow-sm",
           "w-screen h-20",
           "flex items-center justify-between",
           "font-semibold text-lg",
-          "pr-10 pl-6 py-8 md:px-14"
+          "pr-10 pl-6 py-8 md:px-14 transition-colors",
+          {
+            "bg-black": isScrolled,
+          }
         )}
       >
         <span>{NavBarConstants.name}</span>

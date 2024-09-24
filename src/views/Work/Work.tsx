@@ -5,6 +5,7 @@ import classNames from "classnames";
 import React from "react";
 import { WorkConstants } from "./constants";
 import dynamic from "next/dynamic";
+import BaseHeading from "@/components/BaseHeading/BaseHeading";
 
 const TimeLine = dynamic(() => import("@/components/TimeLine/TimeLine"), {
   ssr: false,
@@ -18,7 +19,7 @@ function Work() {
         "gap-12 pt-32"
       )}
     >
-      <h2 className={GLOBAL_STYLES.title}>{WorkConstants.title}</h2>
+      <BaseHeading level={2}>{WorkConstants.title}</BaseHeading>
       <TimeLine />
     </div>
   );

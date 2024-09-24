@@ -7,6 +7,7 @@ import classNames from "classnames";
 import styles from "./About.module.scss";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { CardState } from "@/types/app";
+import BaseHeading from "@/components/BaseHeading/BaseHeading";
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);
@@ -66,9 +67,9 @@ function About() {
   return (
     <div
       className={classNames(
+        "px-6 sm:px-20",
         "flex flex-col gap-12",
-        "pt-14 px-6 sm:px-20 sm:pt-16",
-        "max-w-7xl w-auto h-fit bg-slytherin-green",
+        "max-w-7xl w-auto h-fit",
         styles.about
       )}
     >
@@ -80,7 +81,7 @@ function About() {
       >
         <span className={GLOBAL_STYLES.subtitle}>{INTRODUCTION}</span>
         <hgroup>
-          <h2 className={GLOBAL_STYLES.title}>{TITLE}</h2>
+          <BaseHeading level={2}>{TITLE}</BaseHeading>
           <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
         </hgroup>
       </div>

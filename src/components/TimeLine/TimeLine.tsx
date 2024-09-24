@@ -96,7 +96,6 @@ function TimeLine() {
               outlineColor={"#fff"}
             />
             <TimeLineItem
-              backgroundColor={"#162e21"}
               className={classNames(slideInAnimationSide, {
                 [styles.active]: isActive,
               })}

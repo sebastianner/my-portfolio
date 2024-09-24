@@ -1,9 +1,9 @@
 "use client";
-import { HERO_HEIGHT } from "./constants";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
+import classNames from "classnames";
 import { useRef, Suspense } from "react";
-import { Points as ThreePoints } from "three"; // Import Three's Points and PointMaterial
+import { Points as ThreePoints } from "three";
 
 function CanvasStars() {
   const Stars = () => {
@@ -44,7 +44,12 @@ function CanvasStars() {
   };
 
   return (
-    <div className={`w-screen absolute z-[-1] ${HERO_HEIGHT.style}`}>
+    <div
+      className={classNames(
+        "w-screen absolute z-[-1]",
+        "h-mobile md:h-[105vh] lg:h-screen"
+      )}
+    >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={"null"}>
           <Stars />

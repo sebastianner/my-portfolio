@@ -1,7 +1,7 @@
 import type {
   CANVAS_MEDIA_QUERIES_INTERFACE,
   SOCIALS_INTERFACE,
-} from "@/app/interfaces";
+} from "@/interfaces";
 
 export const CANVAS_MEDIA_QUERIES: CANVAS_MEDIA_QUERIES_INTERFACE = {
   medium: 1265,
