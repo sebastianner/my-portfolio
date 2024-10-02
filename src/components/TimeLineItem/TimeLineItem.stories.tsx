@@ -17,7 +17,6 @@ export const Default: Story = {
     company: "FSB TECH",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nisi a lectus finibus imperdiet eget vel magna.",
-    backgroundColor: "#fcb603",
     textColor: "#111",
   },
 };
