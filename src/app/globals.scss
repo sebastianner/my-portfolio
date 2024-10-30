@@ -22,7 +22,7 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--primary-color);
+  background: var(--slytherin-primary-color);
   color: white;
 }
 
@@ -48,6 +48,19 @@ svg:hover .ghIcon {
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   animation: morph 8s ease-in-out infinite;
   transition: all 1s ease-in-out;
+  width: 220px;
+  height: auto;
+  border-width: 6px;
+
+  // Tablet
+  @media (min-width: 768px) {
+    width: 300px;
+  }
+
+  // Desktop
+  @media (min-width: 1200px) {
+    width: 330px;
+  }
 }
 
 @keyframes morph {
@@ -62,4 +75,8 @@ svg:hover .ghIcon {
   100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
+}
+
+.navBar-backdrop {
+  backdrop-filter: blur(10px);
 }

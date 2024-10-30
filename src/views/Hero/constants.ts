@@ -1,6 +1,7 @@
-export const HEADING = "React Front-End Developer🎨";
 export const DESCRIPTION =
-  "Hey there, Im <b>Sebastian Mera</b>, a dedicated React Front-end Developer from Colombia.📍";
+  "a dedicated <b className='font-bold'>React Front-end Developer</b> from Colombia📍";
+export const GREETINGS =
+  "Hey there!👋🏻 <br /> I'm <b class='text-secondary-green'>Sebastian Mera</b>";
 
 export const SOCIALS = {
   linkedIn: "https://www.linkedin.com/in/sebastian-mera/",

@@ -1,6 +1,5 @@
 "use client";
 import classNames from "classnames";
-import { NavBarConstants } from "./constants";
 import { useEffect, useState } from "react";
 import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 import type { NavItem } from "@/types/app";
@@ -40,15 +39,14 @@ function NavBar({ navItem }: Props) {
         className={classNames(
           "shadow-sm",
           "w-screen h-20",
-          "flex items-center justify-between",
+          "flex items-center justify-center",
           "font-semibold text-lg",
           "pr-10 pl-6 py-8 md:px-14 transition-colors",
           {
-            "bg-black": isScrolled,
+            "navBar-backdrop": isScrolled,
           }
         )}
       >
-        <span>{NavBarConstants.name}</span>
         <ul className="gap-4 hidden md:flex">
           {navItem.map((item) => (
             <li key={item.name}>

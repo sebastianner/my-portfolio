@@ -1,11 +1,9 @@
 import "./globals.scss";
-import { Inter } from "next/font/google";
-import { Poppins } from "next/font/google";
-import CanvasStars from "@/components/CanvasStars/CanvasStars";
+import { Inter, Montserrat } from "next/font/google";
 import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
-const Poppins_Font = Poppins({
+const Poppins_Font = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
   style: "normal",
   subsets: ["latin"],
@@ -26,10 +24,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${Poppins_Font.className} overflow-x-hidden`}
       >
-        <div className="relative z-0">
-          <div className="absolute z-1">{children}</div>
-          <CanvasStars />
-        </div>
+        <div>{children} </div>
       </body>
     </html>
   );

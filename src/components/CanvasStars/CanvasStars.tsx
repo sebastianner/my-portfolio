@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { useRef, Suspense } from "react";
 import { Points as ThreePoints } from "three";
 
-function CanvasStars() {
+function CanvasStars({ className }: { className?: string }) {
   const Stars = () => {
     const starsRef = useRef<ThreePoints>(null);
 
@@ -44,12 +44,7 @@ function CanvasStars() {
   };
 
   return (
-    <div
-      className={classNames(
-        "w-screen absolute z-[-1]",
-        "h-mobile md:h-[105vh] lg:h-screen"
-      )}
-    >
+    <div className={classNames(className)}>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={"null"}>
           <Stars />

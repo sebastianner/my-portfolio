@@ -1,7 +1,8 @@
 import React from "react";
 import "./BaseHeading.scss";
+import HTMLReactParser from "html-react-parser/lib/index";
 
-type Props = { level: 1 | 2 | 3 | 4 | 5 | 6; children: React.ReactNode };
+type Props = { level: 1 | 2 | 3 | 4 | 5 | 6; children: string };
 
 const headingStyles = {
   1: "base-heading-level-1",
@@ -13,10 +14,11 @@ const headingStyles = {
 };
 
 function BaseHeading({ level, children }: Props) {
+  const parseHtmlToJsx = HTMLReactParser(children);
   return React.createElement(
     `h${level}`,
     { className: headingStyles[level] },
-    children
+    parseHtmlToJsx
   );
 }
 
