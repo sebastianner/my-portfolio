@@ -12,9 +12,8 @@ export const Default: Story = {
   args: {
     // Fill with props
     image: {
-      url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
       alt: "test image",
+      url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
     },
-    outlineColor: "#fff",
   },
 };
