@@ -1,5 +1,5 @@
 export const GLOBAL_STYLES = {
-  title: "text-title font-bold text-white",
+  paragraph: "text-lg	md:text-xl font-light text-white",
   subtitle: "text-subtitle font-extralight opacity-80 tracking-wide",
-  paragraph: "text-lg	md:text-xl	font-light",
+  title: "text-title font-bold text-white",
 };

@@ -17,7 +17,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "sort-keys", "typescript-sort-keys", "sort-keys-fix", "import"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "sort-keys",
+    "typescript-sort-keys",
+    "sort-keys-fix",
+    "import"
+  ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "no-debugger": "off",
@@ -43,12 +51,15 @@
     "react-hooks/exhaustive-deps": "warn",
     "typescript-sort-keys/interface": "warn",
     "typescript-sort-keys/string-enum": "warn",
-    "react/jsx-sort-props": ["warn", {
-      "callbacksLast": true,
-      "shorthandFirst": true,
-      "ignoreCase": true,
-      "shorthandLast": false
-    }],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "shorthandLast": false
+      }
+    ],
     "import/order": [
       "warn",
       { "alphabetize": { "order": "asc", "caseInsensitive": true } }
@@ -58,7 +69,7 @@
       {
         "ignoreCase": false,
         "ignoreDeclarationSort": true,
-        "memberSyntaxSortOrder": ["none","all", "multiple", "single"]
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
       }
     ],
     "sort-keys": ["warn", "asc", { "natural": true }],

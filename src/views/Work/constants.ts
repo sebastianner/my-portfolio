@@ -1,3 +1,3 @@
 export enum WorkConstants {
-  title = "Work experience",
+  title = "Work experience 👨🏻‍💻",
 }

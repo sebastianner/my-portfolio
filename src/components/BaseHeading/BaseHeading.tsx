@@ -1,8 +1,8 @@
+import HTMLReactParser from "html-react-parser/lib/index";
 import React from "react";
 import "./BaseHeading.scss";
-import HTMLReactParser from "html-react-parser/lib/index";
 
-type Props = { level: 1 | 2 | 3 | 4 | 5 | 6; children: string };
+type Props = { children: string; level: 1 | 2 | 3 | 4 | 5 | 6 };
 
 const headingStyles = {
   1: "base-heading-level-1",

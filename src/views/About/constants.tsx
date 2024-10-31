@@ -1,27 +1,26 @@
-import { MobileIcon, BrowserIcon, DesktopIcon } from "@/icons/Icons";
+import { BrowserIcon, DesktopIcon, MobileIcon } from "@/icons/Icons";
 
 export const OVERVIEW =
-  "I`m a proficient Front-end developer with a focus on crafting interactive digital experiences using React. Proficient across the JavaScript spectrum – including React, Next.js, TypeScript, Node.js, and Redux – I excel at transforming ideas into seamless, efficient, and user-friendly solutions. Let`s collaborate to turn your vision into reality!";
+  "I'm a proficient Front-end developer with a focus on <strong>crafting interactive digital experiences using React.</strong> <br /><br /> Proficient across the JavaScript spectrum – including React, Next.js, TypeScript, Node.js, and Redux – I excel at transforming ideas into seamless, efficient, and user-friendly solutions. <br/><br/> <strong className='text-secondary-green'>Let's collaborate to turn your vision into reality!</strong>";
 
 export const HIGHLIGHTED_TECH = {
   info: [
     {
-      technology: "React Native",
       description: "Mobile developer",
       icon: <MobileIcon />,
+      technology: "React Native",
     },
     {
-      technology: "React - Next",
       description: "Front-end developer",
       icon: <BrowserIcon />,
+      technology: "React - Next",
     },
     {
-      technology: "Electron",
       description: "Desktop Apps developer",
       icon: <DesktopIcon />,
+      technology: "Electron",
     },
   ],
 };
 
-export const TITLE = "Overview";
-export const INTRODUCTION = "Introduction";
+export const TITLE = "Overview 🔎";

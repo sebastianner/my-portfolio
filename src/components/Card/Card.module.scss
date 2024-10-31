@@ -10,3 +10,17 @@
     }
   }
 }
+
+.cardStyles {
+  border-radius: 21px;
+  border: 1px solid var(--secondary-green-color);
+}
+
+.cardDescription {
+  &::after {
+    color: white;
+    content: "|";
+    margin: 0 5px;
+    font-weight: 500;
+  }
+}

@@ -1,1 +1,1 @@
-export const TITLE = "Tech Stack";
+export const TITLE = "Tech Stack 💻";

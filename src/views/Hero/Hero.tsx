@@ -1,6 +1,5 @@
 "use client";
 import classNames from "classnames";
-import HTMLReactParser from "html-react-parser/lib/index";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,6 +10,7 @@ import CanvasStars from "@/components/CanvasStars/CanvasStars";
 import { SOCIALS } from "@/global-constants";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { GithubIcon, LinkedInIcon } from "@/icons/Icons";
+import { htmlToJsx } from "@/utils/mockData/HtmlToJsx/htmlToJsx";
 
 type Props = {
   className?: string;
@@ -46,10 +46,10 @@ function Hero({ className }: Props) {
         >
           <div className="flex flex-col gap-3">
             <BaseHeading level={1}>{GREETINGS}</BaseHeading>
-            {React.createElement(
+            {htmlToJsx(
               "p",
               { className: GLOBAL_STYLES.paragraph },
-              HTMLReactParser(DESCRIPTION)
+              DESCRIPTION
             )}
           </div>
           <span

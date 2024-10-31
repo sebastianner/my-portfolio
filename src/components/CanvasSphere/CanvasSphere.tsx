@@ -1,19 +1,20 @@
 "use client";
-import { useRef, memo } from "react";
-import { useTexture, Decal, Float } from "@react-three/drei";
+import { Decal, Float, useTexture } from "@react-three/drei";
+import classNames from "classnames";
+import { memo, useRef } from "react";
 import { Mesh } from "three";
 import SphereContainer from "./CanvasSphereContainer";
-import useRezise from "@/hooks/useResize";
 import { SPHERE_SCALE } from "./constants";
+import useRezise from "@/hooks/useResize";
 
 const SphereContainerMemo = memo(SphereContainer);
 
 type Props = {
+  extraSmall: boolean;
+  medium: boolean;
   position: [number, number, number];
   rotation: [number, number, number];
-  medium: boolean;
   small: boolean;
-  extraSmall: boolean;
 };
 export function SphereMesh(props: Props) {
   let scale = SPHERE_SCALE.initial;
@@ -41,9 +42,9 @@ export function SphereMesh(props: Props) {
       <mesh {...props} castShadow receiveShadow ref={sphereRef} scale={scale}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          color={"#D3D0CB"}
           flatShading
           polygonOffset
+          color={"#D3D0CB"}
           polygonOffsetFactor={-5}
         />
         <Decal
@@ -56,15 +57,17 @@ export function SphereMesh(props: Props) {
   );
 }
 
-function CanvasSphere() {
+function CanvasSphere({ className }: { className?: string }) {
   const { isMedium, isSmall, isExtraSmall } = useRezise();
 
   return (
-    <SphereContainerMemo
-      extraSmall={isExtraSmall}
-      medium={isMedium}
-      small={isSmall}
-    />
+    <div className={classNames("w-full h-full", className)}>
+      <SphereContainerMemo
+        extraSmall={isExtraSmall}
+        medium={isMedium}
+        small={isSmall}
+      />
+    </div>
   );
 }
 

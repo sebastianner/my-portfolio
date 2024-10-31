@@ -1,20 +1,20 @@
 import classNames from "classnames";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ContactButton.module.scss";
 
 type Behevior = "Email" | "Link";
 
 type Props = {
-  className?: string;
   behavior: Behevior;
-  icon: {
-    src: string;
-    alt: string;
-  };
-  text: string;
+  className?: string;
   email?: string;
+  icon: {
+    alt: string;
+    src: string;
+  };
   link?: string;
+  text: string;
 };
 
 function ContactButton({

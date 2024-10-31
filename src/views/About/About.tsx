@@ -1,13 +1,14 @@
 "use client";
+import classNames from "classnames";
+import { useEffect, useReducer, useRef, useState } from "react";
+import styles from "./About.module.scss";
+import { HIGHLIGHTED_TECH, OVERVIEW, TITLE } from "./constants";
+import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
-import { HIGHLIGHTED_TECH, INTRODUCTION, OVERVIEW, TITLE } from "./constants";
 import SectionBuilder from "@/HOC/SectionBuilder";
-import classNames from "classnames";
-import styles from "./About.module.scss";
-import { useEffect, useReducer, useRef, useState } from "react";
 import { CardState } from "@/types/app";
-import BaseHeading from "@/components/BaseHeading/BaseHeading";
+import { htmlToJsx } from "@/utils/mockData/HtmlToJsx/htmlToJsx";
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ function About() {
           const index = Number(entry.target.getAttribute("data-index"));
           if (entry.isIntersecting) {
             dispatchCard({
-              [`card${index}`]: { position: index, isActive: true },
+              [`card${index}`]: { isActive: true, position: index },
             });
           }
         });
@@ -68,8 +69,9 @@ function About() {
     <div
       className={classNames(
         "px-6 sm:px-20",
-        "flex flex-col gap-12",
+        "flex gap-12 mt-24",
         "max-w-7xl w-auto h-fit",
+        "flex-col lg:flex-row",
         styles.about
       )}
     >
@@ -79,10 +81,9 @@ function About() {
         })}
         ref={infoRef}
       >
-        <span className={GLOBAL_STYLES.subtitle}>{INTRODUCTION}</span>
         <hgroup>
           <BaseHeading level={2}>{TITLE}</BaseHeading>
-          <p className={GLOBAL_STYLES.paragraph}>{OVERVIEW}</p>
+          {htmlToJsx("p", { className: GLOBAL_STYLES.paragraph }, OVERVIEW)}
         </hgroup>
       </div>
       <div className="w-full flex flex-wrap gap-8">
@@ -93,7 +94,7 @@ function About() {
               className={classNames(styles.card, { [styles.active]: isActive })}
               dataIndex={index}
               description={data.description}
-              icon={data.icon}
+              icon={"/assets/smartphone.svg"}
               key={data.description}
               ref={(el) => {
                 cardRefs.current[index] = el;

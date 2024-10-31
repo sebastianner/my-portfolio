@@ -1,18 +1,18 @@
 "use client";
-import {
-  SPHERE_COORDINATES,
-  CANVAS_HEIGHT,
-  CANVAS_HEIGHT_FOV,
-} from "./constants";
 import { Preload } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import CanvasLoader from "../CanvasLoader/CanvasLoader";
 import { SphereMesh } from "./CanvasSphere";
+import {
+  CANVAS_HEIGHT,
+  CANVAS_HEIGHT_FOV,
+  SPHERE_COORDINATES,
+} from "./constants";
 
-type Props = { medium: boolean; small: boolean; extraSmall: boolean };
+type Props = { extraSmall: boolean; medium: boolean; small: boolean };
 
 function SphereContainer({ medium, small, extraSmall }: Props) {
   const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -40,7 +40,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
 
   return (
     <Canvas
-      camera={{ position: [600, 50, 0], fov: fov }}
+      camera={{ fov: fov, position: [600, 50, 0] }}
       frameloop="always"
       gl={{ preserveDrawingBuffer: true }}
       style={{

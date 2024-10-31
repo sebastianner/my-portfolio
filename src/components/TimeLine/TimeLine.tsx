@@ -1,12 +1,12 @@
+import classNames from "classnames";
 import { CSSProperties, useEffect, useReducer, useRef, useState } from "react";
+import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
 import { JOBS } from "./data";
-import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
 import styles from "./TimeLine.module.scss";
-import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import SectionBuilder from "@/HOC/SectionBuilder";
-import classNames from "classnames";
-import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
+import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
+import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import { CardState } from "@/types/app";
 
 function TimeLine() {
@@ -82,7 +82,7 @@ function TimeLine() {
           <div
             className="pr-5"
             key={job.company}
-            style={{ gridRow: index + 1, gridColumn: gridColumn, ...margin }}
+            style={{ gridColumn: gridColumn, gridRow: index + 1, ...margin }}
           >
             <TimeLineIcon
               className={classNames(
@@ -90,10 +90,9 @@ function TimeLine() {
                 "md:ml-[-28px] ml-[8px] left-[5px]"
               )}
               image={{
-                url: job.image.url,
                 alt: job.image.alt,
+                url: job.image.url,
               }}
-              outlineColor={"#fff"}
             />
             <TimeLineItem
               className={classNames(slideInAnimationSide, {

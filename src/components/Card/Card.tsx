@@ -1,14 +1,14 @@
-import { GLOBAL_STYLES } from "@/global-styles";
 import classNames from "classnames";
-import styles from "./Card.module.scss";
+import Image from "next/image";
 import React, { ForwardedRef, forwardRef } from "react";
-
+import styles from "./Card.module.scss";
+import { GLOBAL_STYLES } from "@/global-styles";
 type Props = {
   className?: string;
-  technology: string;
-  description: string;
-  icon: JSX.Element;
   dataIndex?: number;
+  description: string;
+  icon: string;
+  technology: string;
 };
 
 const Card = forwardRef(function Card(
@@ -29,7 +29,7 @@ const Card = forwardRef(function Card(
       (event.clientX - centerPointX) * rotationFactorY
     );
 
-    //X rotation
+    // X rotation
     const rotationFactorX = maxRotation / (coordBox.height / 2);
     const rotationX =
       -1 * Math.ceil((event.clientY - centerPointY) * rotationFactorX);
@@ -48,22 +48,40 @@ const Card = forwardRef(function Card(
 
   return (
     <article
-      className={classNames(className, styles.componentCard, "w-full max-w-xs")}
+      className={classNames(
+        className,
+        styles.componentCard,
+        "w-full lg:w-[531px] h-24 bg-transparent"
+      )}
       data-index={dataIndex}
       ref={ref}
     >
       <div
         className={classNames(
-          "bg-secondary-color shadow-xl",
-          "h-72 auto-rows-auto",
+          "h-full shadow-xl",
           "place-items-center",
-          "grid rounded-2xl"
+          "rounded-2xl",
+          "flex justify-center",
+          styles.cardStyles
         )}
         onMouseLeave={cardMovementStop}
         onMouseMove={cardMovement}
       >
-        {icon}
-        <p className={`${GLOBAL_STYLES.paragraph}`}>{description}</p>
+        <Image
+          alt={technology}
+          className="mr-7"
+          height={20}
+          src={icon}
+          width={20}
+        />
+        <p
+          className={classNames(
+            styles.cardDescription,
+            GLOBAL_STYLES.paragraph
+          )}
+        >
+          {description}
+        </p>
         <p className="text-subtitle tracking-wide font-medium">{technology}</p>
       </div>
     </article>

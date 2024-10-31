@@ -1,8 +1,8 @@
 "use client";
-import { Points, PointMaterial, Preload } from "@react-three/drei";
+import { PointMaterial, Points, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import classNames from "classnames";
-import { useRef, Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Points as ThreePoints } from "three";
 
 function CanvasStars({ className }: { className?: string }) {
@@ -32,11 +32,11 @@ function CanvasStars({ className }: { className?: string }) {
       <group rotation={[0, 0, Math.PI / 4]}>
         <Points frustumCulled positions={sphere} ref={starsRef} stride={3}>
           <PointMaterial
+            transparent
             color={"#fbff00"}
             depthWrite={false}
             size={0.004}
             sizeAttenuation={true}
-            transparent
           />
         </Points>
       </group>
