@@ -2,6 +2,7 @@
 import classNames from "classnames";
 import React from "react";
 import { TITLE } from "./constants";
+import styles from "./TechStack.module.scss";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
 import CanvasStars from "@/components/CanvasStars/CanvasStars";
@@ -21,7 +22,8 @@ function TechStack() {
       <div
         className={classNames(
           "flex flex-col justify-center absolute",
-          "w-full text-center"
+          "w-full text-center",
+          styles.content
         )}
       >
         <BaseHeading level={2}>{TITLE}</BaseHeading>
