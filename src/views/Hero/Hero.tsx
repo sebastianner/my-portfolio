@@ -24,7 +24,7 @@ function Hero({ className }: Props) {
         "w-[80%] h-[646px]",
         "rounded-[41px]",
         "flex justify-center items-center",
-        "bg-slytherin-secondary",
+        "bg-slytherin-secondary relative",
         className
       )}
       id="home"

@@ -42,21 +42,32 @@ const TimeLineItem = forwardRef(function TimeLineItem(
       ref={ref}
       style={{ color: textColor, ...style }}
     >
-      <BaseHeading level={3}>{title}</BaseHeading>
+      <BaseHeading className="text-secondary-green" level={3}>
+        {title}
+      </BaseHeading>
       <BaseHeading level={4}>{company}</BaseHeading>
-      <p className="font-normal my-2">{description}</p>
+      <p className="font-normal my-2 text-xl">{description}</p>
       {date.map((date, i) => {
         const dateTime = date instanceof Date;
         return dateTime ? (
           <time
-            className="time font-light"
+            className={classNames(
+              "time font-normal text-base",
+              "text-secondary-green"
+            )}
             dateTime={format(date, "yyy")}
             key={date.getDate() + i}
           >
             {format(date, "yyy")}
           </time>
         ) : (
-          <span className="capitalize" key={date}>
+          <span
+            className={classNames(
+              "capitalize font-normal text-base",
+              "text-secondary-green"
+            )}
+            key={date}
+          >
             {date}
           </span>
         );

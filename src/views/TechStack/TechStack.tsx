@@ -2,7 +2,6 @@
 import classNames from "classnames";
 import React from "react";
 import { TITLE } from "./constants";
-import styles from "./TechStack.module.scss";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
 import CanvasStars from "@/components/CanvasStars/CanvasStars";
@@ -12,10 +11,11 @@ function TechStack() {
   return (
     <div
       className={classNames(
-        "w-[80%] h-[646px] mt-28",
+        "w-[80%] mt-28",
         "flex flex-col justify-center",
-        "items-center",
-        "rounded-[41px] bg-slytherin-secondary"
+        "items-center relative",
+        "rounded-[41px] bg-slytherin-secondary",
+        "h-[1000px] md:h-[840px] lg:h-[646px]"
       )}
     >
       <CanvasStars className="w-full h-full" />
@@ -23,7 +23,7 @@ function TechStack() {
         className={classNames(
           "flex flex-col justify-center absolute",
           "w-full text-center",
-          styles.content
+          "top-10 md:top-8 lg:top-16 xl:top-20"
         )}
       >
         <BaseHeading level={2}>{TITLE}</BaseHeading>
