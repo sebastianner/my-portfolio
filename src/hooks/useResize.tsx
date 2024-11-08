@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
 import { CANVAS_MEDIA_QUERIES } from "@/global-constants";
-import { useState, useEffect } from "react";
 
 function useRezise(): {
+  isExtraSmall: boolean;
   isMedium: boolean;
   isSmall: boolean;
-  isExtraSmall: boolean;
 } {
   const [isMedium, setMedium] = useState<boolean>(false);
   const [isSmall, setSmall] = useState<boolean>(false);
@@ -61,7 +61,7 @@ function useRezise(): {
     };
   }, []);
 
-  return { isMedium, isSmall, isExtraSmall };
+  return { isExtraSmall, isMedium, isSmall };
 }
 
 export default useRezise;

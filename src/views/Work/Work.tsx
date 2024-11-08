@@ -1,11 +1,10 @@
 "use client";
-import SectionBuilder from "@/HOC/SectionBuilder";
-import { GLOBAL_STYLES } from "@/global-styles";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import React from "react";
 import { WorkConstants } from "./constants";
-import dynamic from "next/dynamic";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
+import SectionBuilder from "@/HOC/SectionBuilder";
 
 const TimeLine = dynamic(() => import("@/components/TimeLine/TimeLine"), {
   ssr: false,

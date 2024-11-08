@@ -1,35 +1,34 @@
 import { render, screen } from "@testing-library/react";
 import Card from "./Card";
-import { LinkedInIcon } from "@/icons/Icons";
 
 type Props = {
   className?: string;
-  technology: string;
   description: string;
-  icon: JSX.Element;
+  icon: string;
+  technology: string;
 };
 
 const props: Props = {
-  technology: "Typescript",
+  className: "testing-className",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus nunc sapien, et malesuada tellus sodales non. Proin sodales hendrerit nibh, et tincidunt dolor pretium et. In posuere elementum ante, non sollicitudin lectus. Cras euismod quis est nec ultrices.",
-  icon: <LinkedInIcon />,
-  className: "testing-className",
+  icon: "",
+  technology: "Typescript",
 };
 
 describe("Card component", () => {
   beforeAll(() => {
     HTMLElement.prototype.getBoundingClientRect = jest.fn(() => {
       return {
-        width: 200,
+        bottom: 300,
         height: 200,
-        x: 100,
-        y: 100,
-        top: 100,
         left: 100,
         right: 300,
-        bottom: 300,
         toJSON: () => {},
+        top: 100,
+        width: 200,
+        x: 100,
+        y: 100,
       };
     });
   });

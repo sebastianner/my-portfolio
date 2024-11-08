@@ -1,31 +1,31 @@
 import { render, screen } from "@testing-library/react";
-import ContactButton from "./ContactButton";
 import userEvent from "@testing-library/user-event";
+import ContactButton from "./ContactButton";
 
 type Props = {
-  className?: string;
   behavior: "Email" | "Link";
-  icon: {
-    src: string;
-    alt: string;
-  };
-  text: string;
+  className?: string;
   email?: string;
+  icon: {
+    alt: string;
+    src: string;
+  };
   link?: string;
+  text: string;
 };
 
 const emailProps: Props = {
   behavior: "Email",
-  icon: { src: "https://www.svgrepo.com/show/532031/cloud-fog.svg", alt: "" },
-  text: "Button Email",
   email: "someone@example.com",
+  icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
+  text: "Button Email",
 };
 
 const linkProps: Props = {
   behavior: "Link",
-  icon: { src: "https://www.svgrepo.com/show/532031/cloud-fog.svg", alt: "" },
-  text: "Button link",
+  icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
   link: "https://www.google.com/",
+  text: "Button link",
 };
 
 describe("ContactButton component", () => {

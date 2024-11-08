@@ -4,5 +4,5 @@ export type NavItem = {
 }[];
 
 export type CardState = {
-  [cardKey: string]: { position: number; isActive: boolean } | undefined;
+  [cardKey: string]: { isActive: boolean; position: number } | undefined;
 };
