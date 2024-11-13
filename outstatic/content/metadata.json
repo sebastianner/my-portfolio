@@ -1,0 +1,24 @@
+{
+  "commit": "36b7c7b33e712705664df02e4759eefd3016754b",
+  "generated": "Wed, 13 Nov 2024 03:12:45 GMT",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "b097dd678790df336c9e1ed28f7c6206ea4fcefe",
+        "hash": "4123753843",
+        "path": "outstatic/content/posts/test-post.md"
+      },
+      "author": {
+        "name": "Sebastian Mera",
+        "picture": "https://avatars.githubusercontent.com/u/62043323?v=4"
+      },
+      "collection": "posts",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-11-13T01:17:56.148Z",
+      "slug": "test-post",
+      "status": "published",
+      "title": "test post"
+    }
+  ]
+}
