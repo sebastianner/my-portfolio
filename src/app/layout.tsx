@@ -1,6 +1,7 @@
 import "./globals.scss";
 import { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { getDocuments } from "outstatic/server";
 
 const inter = Inter({ subsets: ["latin"] });
 const Poppins_Font = Montserrat({
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   description: "Sebastian Mera Frontend developer portfolio",
   title: "Sebastian M - Portfolio",
 };
+
+const posts = getDocuments("posts", ["title"]);
+console.log("here" + posts);
 
 export default function RootLayout({
   children,
