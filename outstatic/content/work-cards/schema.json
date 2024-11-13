@@ -1,0 +1,13 @@
+{
+  "title": "work-cards",
+  "type": "object",
+  "properties": {
+    "companyName": {
+      "required": true,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Company name"
+    }
+  }
+}
