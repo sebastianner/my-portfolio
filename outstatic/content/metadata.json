@@ -1,6 +1,6 @@
 {
-  "commit": "61392c7408380ce3113eae09ffd1b6fe3691636c",
-  "generated": "Wed, 13 Nov 2024 03:27:35 GMT",
+  "commit": "ad563073bc6629078ebffd86658ba2f5db99571e",
+  "generated": "2024-11-13T04:02:20.165Z",
   "metadata": [
     {
       "__outstatic": {
@@ -19,6 +19,24 @@
       "slug": "test-post",
       "status": "published",
       "title": "test post"
+    },
+    {
+      "__outstatic": {
+        "commit": "ad563073bc6629078ebffd86658ba2f5db99571e",
+        "hash": "283268498",
+        "path": "outstatic/content/admin/admin-number-1.md"
+      },
+      "author": {
+        "name": "Sebastian Mera",
+        "picture": "https://avatars.githubusercontent.com/u/62043323?v=4"
+      },
+      "collection": "admin",
+      "coverImage": "",
+      "description": "",
+      "publishedAt": "2024-11-13T03:32:03.857Z",
+      "slug": "admin-number-1",
+      "status": "published",
+      "title": "admin number 1"
     }
   ]
 }
