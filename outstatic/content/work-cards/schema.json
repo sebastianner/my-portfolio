@@ -8,13 +8,6 @@
       "fieldType": "String",
       "dataType": "string",
       "title": "Company name"
-    },
-    "dateWorked": {
-      "required": true,
-      "description": "Ex: Dec 2020 - Jan 2023",
-      "fieldType": "String",
-      "dataType": "string",
-      "title": "Date worked"
     }
   }
 }
