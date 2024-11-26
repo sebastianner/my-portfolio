@@ -73,7 +73,7 @@ function Hero({ className }: Props) {
             alt="My picture"
             className="border-2 profile-picture"
             height={330}
-            src="https://media.licdn.com/dms/image/C5603AQGQdcEWEaKR8Q/profile-displayphoto-shrink_800_800/0/1657140097690?e=1698883200&v=beta&t=LKjxsb95A6co3tk4nWthWWyipEU8gz9vhJJcnUzcRKc"
+            src="https://drive.google.com/u/1/drive-viewer/AKGpihaRNYajRKYx-QnaLry97ssX3aKKz9XAS8w7rTBBrdhyajimTZOpMPumkgi2B_w6LeNLxKuk--sv9R9Mzf5YRDEVm1TSfNfeug=s2560"
             width={330}
           />
         </section>
