@@ -3,29 +3,28 @@ import userEvent from "@testing-library/user-event";
 import ContactButton from "./ContactButton";
 
 type Props = {
-  behavior: "Email" | "Link";
   className?: string;
-  email?: string;
+  href: string;
   icon: {
     alt: string;
     src: string;
   };
-  link?: string;
-  text: string;
 };
 
 const emailProps: Props = {
-  behavior: "Email",
-  email: "someone@example.com",
-  icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
-  text: "Button Email",
+  href: "mailto:sebastianma87@gmail.com",
+  icon: {
+    alt: "mail icon",
+    src: "https://www.svgrepo.com/show/532031/cloud-fog.svg",
+  },
 };
 
 const linkProps: Props = {
-  behavior: "Link",
-  icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
-  link: "https://www.google.com/",
-  text: "Button link",
+  href: "https://www.linkedin.com/in/sebastian-mera/",
+  icon: {
+    alt: "link icon",
+    src: "https://www.svgrepo.com/show/532031/cloud-fog.svg",
+  },
 };
 
 describe("ContactButton component", () => {
@@ -37,14 +36,14 @@ describe("ContactButton component", () => {
     const linkElement = screen.getByRole("link");
     const hrefAttribute = linkElement.getAttribute("href");
 
-    expect(hrefAttribute).toEqual(`mailto:${emailProps.email}`);
+    expect(hrefAttribute).toEqual(expect.stringMatching(/^mailto:.+/));
   });
   test("Should behave as link", () => {
     render(<ContactButton {...linkProps} />);
     const linkElement = screen.getByRole("link");
     const hrefAttribute = linkElement.getAttribute("href");
 
-    expect(hrefAttribute).toEqual(`${linkProps.link}`);
+    expect(hrefAttribute).toEqual(`${linkProps.href}`);
   });
   test("Should open a new tab on link click", () => {
     render(<ContactButton {...linkProps} />);

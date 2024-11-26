@@ -3,42 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ContactButton.module.scss";
 
-type Behevior = "Email" | "Link";
-
 type Props = {
-  behavior: Behevior;
   className?: string;
-  email?: string;
+  href: string;
   icon: {
     alt: string;
     src: string;
   };
-  link?: string;
-  text: string;
 };
 
-function ContactButton({
-  className,
-  behavior,
-  icon,
-  text,
-  email,
-  link,
-}: Props) {
-  const href = behavior === "Email" ? `mailto:${email}` : link;
+function ContactButton({ className, icon, href }: Props) {
   return (
-    <button
-      className={classNames(
-        className,
-        "bg-secondary-color px-5 py-3",
-        "text-center text-white",
-        styles.contactButton
-      )}
-    >
+    <button className={classNames(className, styles.contactButton)}>
       {href && (
         <Link className="flex items-center gap-3" href={href} target="_blank">
-          <Image alt={icon.alt} height={30} src={icon.src} width={30} />
-          <span>{text}</span>
+          <Image alt={icon.alt} height={60} src={icon.src} width={60} />
         </Link>
       )}
     </button>

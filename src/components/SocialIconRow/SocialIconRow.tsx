@@ -1,14 +1,10 @@
 import classNames from "classnames";
-import Image from "next/image";
-import Link from "next/link";
-
-type Behevior = "Email" | "Link";
+import ContactButton from "../ContactButton/ContactButton";
 
 type Props = {
   className?: string;
   icons: {
     alt: string;
-    behavior: Behevior;
     href: string;
     src: string;
   }[];
@@ -16,15 +12,18 @@ type Props = {
 
 function SocialIconRow({ className, icons }: Props) {
   return (
-    <div className={classNames(className)}>
-      {icons.map(({ src, behavior, alt }) => {
-        const href = behavior === "Email" ? `mailto:${src}` : src;
+    <div className={classNames(className, "flex gap-3")}>
+      {icons.map(({ src, alt, href }) => {
         return (
-          <button className={classNames("")} key={alt}>
-            <Link href={href} target="_blank">
-              <Image alt={alt} height={30} src={src} width={30} />
-            </Link>
-          </button>
+          <div key={alt}>
+            <ContactButton
+              href={href}
+              icon={{
+                alt,
+                src,
+              }}
+            />
+          </div>
         );
       })}
     </div>
