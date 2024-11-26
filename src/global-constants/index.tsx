@@ -4,13 +4,13 @@ import type {
 } from "@/interfaces";
 
 export const CANVAS_MEDIA_QUERIES: CANVAS_MEDIA_QUERIES_INTERFACE = {
+  extraSmall: 640,
   medium: 1265,
   small: 950,
-  extraSmall: 640,
 };
 
 export const SOCIALS: SOCIALS_INTERFACE = {
-  linkedIn: "https://www.linkedin.com/in/sebastian-mera/",
-  gitHub: "https://github.com/sebastianner",
   email: "sebastianner23@gmail.com",
+  gitHub: "https://github.com/sebastianner",
+  linkedIn: "https://www.linkedin.com/in/sebastian-mera/",
 };
