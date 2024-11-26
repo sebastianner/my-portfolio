@@ -10,22 +10,16 @@ export default meta;
 
 export const Default: Story = {
   args: {
-    // Fill with props
-    behavior: "Link",
+    href: "", // Fill with props
     icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
-    link: "https://www.google.com/",
-    text: "Button link",
   },
   storyName: "Button link",
 };
 
 export const Email: Story = {
   args: {
-    // Fill with props
-    behavior: "Email",
-    email: "mailto:someone@example.com",
+    href: "", // Fill with props
     icon: { alt: "", src: "https://www.svgrepo.com/show/532031/cloud-fog.svg" },
-    text: "Button Email",
   },
   storyName: "Button Email",
 };
