@@ -73,7 +73,7 @@ function Hero({ className }: Props) {
             alt="My picture"
             className="border-2 profile-picture"
             height={330}
-            src="https://drive.google.com/u/1/drive-viewer/AKGpihaRNYajRKYx-QnaLry97ssX3aKKz9XAS8w7rTBBrdhyajimTZOpMPumkgi2B_w6LeNLxKuk--sv9R9Mzf5YRDEVm1TSfNfeug=s2560"
+            src="/assets/avatar.jpg"
             width={330}
           />
         </section>

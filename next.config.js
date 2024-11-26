@@ -3,16 +3,22 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "media.licdn.com",
-        port: "",
         pathname: "/**/**",
+        port: "",
+        protocol: "https",
       },
       {
-        protocol: "https",
         hostname: "i.ibb.co",
-        port: "",
         pathname: "/**/**",
+        port: "",
+        protocol: "https",
+      },
+      {
+        hostname: "drive.google.com",
+        pathname: "/**/**",
+        port: "",
+        protocol: "https",
       },
     ],
   },

@@ -29,7 +29,7 @@ export function SphereMesh(props: Props) {
     "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
   ]);
   // This reference gives us direct access to the THREE.Mesh object
-  const sphereRef = useRef<Mesh>(null);
+  const sphereRef = useRef<never>(null);
 
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
