@@ -11,6 +11,6 @@ export default meta;
 export const Default: Story = {
   args: {
     // Fill with props
-    icons: [{ alt: "fff", behavior: "Link", href: "", src: "" }],
+    icons: [{ alt: "fff", href: "", src: "" }],
   },
 };

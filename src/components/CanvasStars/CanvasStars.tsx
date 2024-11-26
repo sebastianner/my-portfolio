@@ -3,11 +3,11 @@ import { PointMaterial, Points, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import classNames from "classnames";
 import { Suspense, useRef } from "react";
-import { Points as ThreePoints } from "three";
 
 function CanvasStars({ className }: { className?: string }) {
   const Stars = () => {
-    const starsRef = useRef<ThreePoints>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const starsRef = useRef<any>(null);
 
     const generateStarPositions = () => {
       const positions = new Float32Array(5000 * 3); // Three components (x, y, z) per star
