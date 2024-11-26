@@ -7,6 +7,20 @@ import type {
 
 export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
   position: {
+    extraSmall: {
+      0: [0, 80, 15],
+      1: [0, 80, -15],
+      2: [0, 50, 15],
+      3: [0, 50, -15],
+      4: [0, 20, 15],
+      5: [0, 20, -15],
+      6: [0, -10, 15],
+      7: [0, -10, -15],
+      8: [0, -40, 15],
+      9: [0, -40, -15],
+      10: [0, -70, 15],
+      11: [0, -70, -15],
+    },
     initial: {
       0: [0, 50, 210],
       1: [0, 50, 140],
@@ -48,20 +62,6 @@ export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
       9: [0, -70, 70],
       10: [0, -70, 0],
       11: [0, -70, -70],
-    },
-    extraSmall: {
-      0: [0, 80, 15],
-      1: [0, 80, -15],
-      2: [0, 50, 15],
-      3: [0, 50, -15],
-      4: [0, 20, 15],
-      5: [0, 20, -15],
-      6: [0, -10, 15],
-      7: [0, -10, -15],
-      8: [0, -40, 15],
-      9: [0, -40, -15],
-      10: [0, -70, 15],
-      11: [0, -70, -15],
     },
   },
   rotation: {
@@ -111,9 +111,9 @@ export const SPHERE_COORDINATES: SPHERE_COORDINATES_INTERFACE = {
 };
 
 export const CANVAS_HEIGHT: CANVAS_HEIGHT_INTERFACE = {
+  extraSmall: 1000,
   initial: 500,
   small: 800,
-  extraSmall: 1000,
 };
 
 export const CANVAS_HEIGHT_FOV: CANVAS_FOV_INTERFACE = {
@@ -121,7 +121,7 @@ export const CANVAS_HEIGHT_FOV: CANVAS_FOV_INTERFACE = {
 };
 
 export const SPHERE_SCALE: SPHERE_SCALE_INTERFACE = {
+  extraSmall: 10,
   initial: 20,
   small: 15,
-  extraSmall: 10,
 };

@@ -1,5 +1,8 @@
 export interface SPHERE_COORDINATES_INTERFACE {
   position: {
+    extraSmall: {
+      [key: number]: [number, number, number];
+    };
     initial: {
       [key: number]: [number, number, number];
     };
@@ -7,9 +10,6 @@ export interface SPHERE_COORDINATES_INTERFACE {
       [key: number]: [number, number, number];
     };
     small: {
-      [key: number]: [number, number, number];
-    };
-    extraSmall: {
       [key: number]: [number, number, number];
     };
   };
@@ -27,15 +27,15 @@ export interface SPHERE_COORDINATES_INTERFACE {
 }
 
 export interface CANVAS_MEDIA_QUERIES_INTERFACE {
+  extraSmall: number;
   medium: number;
   small: number;
-  extraSmall: number;
 }
 
 export interface CANVAS_HEIGHT_INTERFACE {
+  extraSmall: number;
   initial: number;
   small: number;
-  extraSmall: number;
 }
 
 export interface CANVAS_FOV_INTERFACE {
@@ -43,9 +43,9 @@ export interface CANVAS_FOV_INTERFACE {
 }
 
 export interface SPHERE_SCALE_INTERFACE {
+  extraSmall: number;
   initial: number;
   small: number;
-  extraSmall: number;
 }
 
 export interface HERO_HEIGHT_INTERFACE {
@@ -53,15 +53,15 @@ export interface HERO_HEIGHT_INTERFACE {
 }
 
 export interface SOCIALS_INTERFACE {
-  linkedIn: string;
-  gitHub: string;
   email: string;
+  gitHub: string;
+  linkedIn: string;
 }
 
 interface HIGHLIGHTED_TECH_INFO {
-  technology: string;
   description: string;
   icon: JSX.Element;
+  technology: string;
 }
 
 export interface HIGHLIGHTED_TECH_INTERFACE {

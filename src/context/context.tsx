@@ -1,4 +1,4 @@
-import { createContext, Dispatch } from "react";
+import { Dispatch, createContext } from "react";
 import type { AppStateType } from "@/types/context";
 
 export type AppContextType = {

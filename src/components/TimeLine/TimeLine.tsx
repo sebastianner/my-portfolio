@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { getDocuments } from "outstatic/server";
 import { CSSProperties, useEffect, useReducer, useRef, useState } from "react";
 import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";

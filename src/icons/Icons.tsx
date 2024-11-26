@@ -85,8 +85,8 @@ function MobileIcon(): JSX.Element {
       strokeWidth={0.7}
       style={{
         color: "var(--geist-foreground)",
-        width: "80px",
         height: "80px",
+        width: "80px",
       }}
       viewBox="0 0 24 24"
       width="24"
@@ -110,8 +110,8 @@ function DesktopIcon(): JSX.Element {
       strokeWidth={0.7}
       style={{
         color: "var(--geist-foreground)",
-        width: "80px",
         height: "80px",
+        width: "80px",
       }}
       viewBox="0 0 24 24"
       width="24"

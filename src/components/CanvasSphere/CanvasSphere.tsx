@@ -2,7 +2,6 @@
 import { Decal, Float, useTexture } from "@react-three/drei";
 import classNames from "classnames";
 import { memo, useRef } from "react";
-import { Mesh } from "three";
 import SphereContainer from "./CanvasSphereContainer";
 import { SPHERE_SCALE } from "./constants";
 import useRezise from "@/hooks/useResize";
