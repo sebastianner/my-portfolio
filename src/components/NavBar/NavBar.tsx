@@ -39,8 +39,8 @@ function NavBar({ navItem }: Props) {
         className={classNames(
           "shadow-sm",
           "w-screen h-20",
-          "flex items-center justify-center",
           "font-semibold text-lg",
+          "flex items-center justify-center",
           "pr-10 pl-6 py-8 md:px-14 transition-colors",
           {
             "navBar-backdrop": isScrolled,
@@ -54,7 +54,9 @@ function NavBar({ navItem }: Props) {
             </li>
           ))}
         </ul>
-        <HamburgerMenuIcon className={classNames("md:hidden z-10", "top-3")} />
+        <HamburgerMenuIcon
+          className={classNames("md:hidden z-[5]", "top-3 ml-6")}
+        />
       </nav>
     </header>
   );

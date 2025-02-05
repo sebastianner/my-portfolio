@@ -54,7 +54,7 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
   return (
     <section
       className={classNames(
-        "left-full fixed z-[1] md:hidden",
+        "left-full fixed z-[4] md:hidden",
         "w-screen h-screen text-center",
         "flex flex-col justify-center",
         "font-semibold text-2xl",

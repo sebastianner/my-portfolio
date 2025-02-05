@@ -82,6 +82,7 @@ const Card = forwardRef(function Card(
         >
           {description}
         </p>
+        <span className="mx-1 mr-6 sm:mr-1">|</span>
         <p className="text-subtitle tracking-wide font-medium">{technology}</p>
       </div>
     </article>
