@@ -1,4 +1,5 @@
 "use client";
+import { Post, allPosts } from "contentlayer/generated";
 import dynamic from "next/dynamic";
 import { useReducer } from "react";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
@@ -23,15 +24,20 @@ export default function Home() {
     AppInitialConext
   );
 
+  console.log(allPosts);
+
   return (
-    <Context.Provider value={{ AppState, dispatchAppState }}>
-      <HamburgerMenu navItem={navItems} />
-      <NavBar navItem={navItems} />
-      <Hero />
-      <About />
-      <Work />
-      <TechStack />
-      <ContactMe />
-    </Context.Provider>
+    <>
+      <h1>{allPosts[0].title}</h1>
+      <Context.Provider value={{ AppState, dispatchAppState }}>
+        <HamburgerMenu navItem={navItems} />
+        <NavBar navItem={navItems} />
+        <Hero />
+        <About />
+        <Work />
+        <TechStack />
+        <ContactMe />
+      </Context.Provider>
+    </>
   );
 }
