@@ -86,7 +86,7 @@ function TimeLine() {
           >
             <TimeLineIcon
               className={classNames(
-                "absolute md:left-[50%] z-[3]",
+                "absolute md:left-[50%] z-3",
                 "md:ml-[-28px] ml-[8px] left-[5px]"
               )}
               image={{

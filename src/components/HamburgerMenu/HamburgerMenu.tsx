@@ -54,13 +54,13 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
   return (
     <section
       className={classNames(
-        "left-full fixed z-[4] md:hidden",
+        "left-full fixed z-4 md:hidden",
         "w-screen h-screen text-center",
         "flex flex-col justify-center",
         "font-semibold text-2xl",
         "bg-[#051C11DB]",
         styles.hamburgerMenu,
-        { "!left-0": isOpen },
+        { "left-0!": isOpen },
         className
       )}
       style={{ color: color }}

@@ -34,10 +34,10 @@ function NavBar({ navItem }: Props) {
   // };
 
   return (
-    <header className={classNames("sticky top-0 z-[4]")}>
+    <header className={classNames("sticky top-0 z-4")}>
       <nav
         className={classNames(
-          "shadow-sm",
+          "shadow-xs",
           "w-screen h-20",
           "font-semibold text-lg",
           "flex items-center justify-center",
@@ -55,7 +55,7 @@ function NavBar({ navItem }: Props) {
           ))}
         </ul>
         <HamburgerMenuIcon
-          className={classNames("md:hidden z-[5]", "top-3 ml-6")}
+          className={classNames("md:hidden z-5", "top-3 ml-6")}
         />
       </nav>
     </header>
