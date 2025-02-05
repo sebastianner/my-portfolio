@@ -1,19 +1,25 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
-export const Post = defineDocumentType(() => ({
+export const Hero = defineDocumentType(() => ({
   computedFields: {
     url: {
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (post) => `/hero/${post._raw.flattenedPath}`,
       type: "string",
     },
   },
   fields: {
-    date: { required: true, type: "date" },
-    title: { required: true, type: "string" },
+    intro: { required: true, type: "string" },
+    introSentence: { required: true, type: "string" },
+    navBar: { required: true, type: "string" },
+    profilePicture: { required: true, type: "string" },
+    socialMedia: { required: true, type: "string" },
   },
-  filePathPattern: `**/*.md`,
-  name: "Post",
+  filePathPattern: `hero/**/*.md`,
+  name: "Hero",
 }));
 
-export default makeSource({ contentDirPath: "posts", documentTypes: [Post] });
+export default makeSource({
+  contentDirPath: "content",
+  documentTypes: [Hero],
+});
