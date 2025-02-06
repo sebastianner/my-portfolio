@@ -8,7 +8,7 @@ import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { CardState } from "@/types/app";
-import { htmlToJsx } from "@/utils/mockData/HtmlToJsx/htmlToJsx";
+import { htmlToJsx } from "@/utils/htmlToJsx";
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);

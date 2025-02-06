@@ -3,18 +3,21 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { DESCRIPTION, GREETINGS } from "./constants";
 import styles from "./Hero.module.scss";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasStars from "@/components/CanvasStars/CanvasStars";
 import { SOCIALS } from "@/global-constants";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { GithubIcon, LinkedInIcon } from "@/icons/Icons";
-import { htmlToJsx } from "@/utils/mockData/HtmlToJsx/htmlToJsx";
+import getCmsData from "@/utils/getCmsData";
+import { htmlToJsx } from "@/utils/htmlToJsx";
+import { Hero as HeroType, allHeros } from "contentlayer/generated";
 
 type Props = {
   className?: string;
 };
+
+const cmsData = getCmsData<HeroType>(allHeros);
 
 function Hero({ className }: Props) {
   return (
@@ -45,11 +48,11 @@ function Hero({ className }: Props) {
           )}
         >
           <div className="flex flex-col gap-3">
-            <BaseHeading level={1}>{GREETINGS}</BaseHeading>
+            <BaseHeading level={1}>{cmsData.intro}</BaseHeading>
             {htmlToJsx(
               "p",
               { className: GLOBAL_STYLES.paragraph },
-              DESCRIPTION
+              cmsData.introDescription
             )}
           </div>
           <span
@@ -73,7 +76,7 @@ function Hero({ className }: Props) {
             alt="My picture"
             className="border-2 profile-picture"
             height={330}
-            src="/assets/avatar.jpg"
+            src={cmsData.profilePicture}
             width={330}
           />
         </section>
