@@ -8,7 +8,7 @@ import type { NavItem } from "@/types/app";
 type Props = {
   className?: string;
   color?: string;
-  navItem: NavItem;
+  navItem: NavItem[];
 };
 
 type StackState = Record<string, boolean | undefined>;

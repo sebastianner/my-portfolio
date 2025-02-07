@@ -8,7 +8,11 @@ import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { CardState } from "@/types/app";
+import getCmsData from "@/utils/getCmsData";
 import { htmlToJsx } from "@/utils/htmlToJsx";
+import { Overview, allOverviews } from "contentlayer/generated";
+
+const cmsData = getCmsData<Overview>(allOverviews);
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);
@@ -82,12 +86,16 @@ function About() {
         ref={infoRef}
       >
         <hgroup>
-          <BaseHeading level={2}>{TITLE}</BaseHeading>
-          {htmlToJsx("p", { className: GLOBAL_STYLES.paragraph }, OVERVIEW)}
+          <BaseHeading level={2}>{cmsData.title}</BaseHeading>
+          {htmlToJsx(
+            "div",
+            { className: GLOBAL_STYLES.paragraph },
+            cmsData.info
+          )}
         </hgroup>
       </div>
       <div className="w-full flex flex-wrap gap-8">
-        {HIGHLIGHTED_TECH.info.map((data, index) => {
+        {cmsData.cards.map((data, index) => {
           const isActive = cardStates[`card${index}`]?.isActive;
           return (
             <Card

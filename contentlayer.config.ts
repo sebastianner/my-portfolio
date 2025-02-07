@@ -14,6 +14,31 @@ const AboutCard = defineNestedType(() => ({
   name: "About_Card",
 }));
 
+const WorkExperienceCard = defineNestedType(() => ({
+  fields: {
+    company: { required: true, type: "string" },
+    companyImage: { required: true, type: "string" },
+    date: { of: { type: "string" }, required: true, type: "list" },
+    description: { required: true, type: "string" },
+    title: { required: true, type: "string" },
+  },
+  name: "WorkExperienceCard",
+}));
+
+export const NavBar = defineDocumentType(() => ({
+  computedFields: {
+    url: {
+      resolve: (post) => `/navBar/${post._raw.flattenedPath}`,
+      type: "string",
+    },
+  },
+  fields: {
+    navBar: { of: { type: "string" }, required: true, type: "list" },
+  },
+  filePathPattern: `navBar/**/*.md`,
+  name: "NavBar",
+}));
+
 export const Hero = defineDocumentType(() => ({
   computedFields: {
     url: {
@@ -24,7 +49,6 @@ export const Hero = defineDocumentType(() => ({
   fields: {
     intro: { required: true, type: "string" },
     introDescription: { required: true, type: "string" },
-    navBar: { of: { type: "string" }, required: true, type: "list" },
     profilePicture: { required: true, type: "string" },
   },
   filePathPattern: `hero/**/*.md`,
@@ -39,13 +63,29 @@ export const Overview = defineDocumentType(() => ({
     },
   },
   fields: {
-    cards: { of: AboutCard, type: "list" },
+    cards: { of: AboutCard, required: true, type: "list" },
+    info: { required: true, type: "string" },
+    title: { required: true, type: "string" },
   },
   filePathPattern: `overview/**/*.md`,
   name: "Overview",
 }));
 
+export const WorkExperience = defineDocumentType(() => ({
+  computedFields: {
+    url: {
+      resolve: (post) => `/work/${post._raw.flattenedPath}`,
+      type: "string",
+    },
+  },
+  fields: {
+    workCard: { of: WorkExperienceCard, required: true, type: "list" },
+  },
+  filePathPattern: `work/**/*.md`,
+  name: "Work",
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Hero, Overview],
+  documentTypes: [Hero, Overview, NavBar, WorkExperience],
 });

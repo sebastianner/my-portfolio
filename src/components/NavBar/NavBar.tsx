@@ -5,7 +5,7 @@ import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 import type { NavItem } from "@/types/app";
 
 type Props = {
-  navItem: NavItem;
+  navItem: NavItem[];
 };
 
 function NavBar({ navItem }: Props) {

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { format } from "date-fns";
+import { format, isValid } from "date-fns";
 import { CSSProperties, ForwardedRef, forwardRef } from "react";
 import BaseHeading from "../BaseHeading/BaseHeading";
 import styles from "./TimeLineItem.module.scss";
@@ -48,17 +48,18 @@ const TimeLineItem = forwardRef(function TimeLineItem(
       <BaseHeading level={4}>{company}</BaseHeading>
       <p className="font-normal my-2 text-xl">{description}</p>
       {date.map((date, i) => {
-        const dateTime = date instanceof Date;
+        const transformDate = new Date(date);
+        const dateTime = isValid(transformDate);
         return dateTime ? (
           <time
             className={classNames(
               "time font-normal text-base",
               "text-secondary-green"
             )}
-            dateTime={format(date, "yyy")}
-            key={date.getDate() + i}
+            dateTime={format(transformDate, "yyy")}
+            key={transformDate.getDate() + i}
           >
-            {format(date, "yyy")}
+            {format(transformDate, "yyy")}
           </time>
         ) : (
           <span
@@ -66,9 +67,9 @@ const TimeLineItem = forwardRef(function TimeLineItem(
               "capitalize font-normal text-base",
               "text-secondary-green"
             )}
-            key={date}
+            key={date as string}
           >
-            {date}
+            {date as string}
           </span>
         );
       })}

@@ -2,12 +2,15 @@ import classNames from "classnames";
 import { CSSProperties, useEffect, useReducer, useRef, useState } from "react";
 import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
-import { JOBS } from "./data";
 import styles from "./TimeLine.module.scss";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
 import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import { CardState } from "@/types/app";
+import getCmsData from "@/utils/getCmsData";
+import { Work as WorkType, allWorks } from "contentlayer/generated";
+
+const cmsData = getCmsData<WorkType>(allWorks);
 
 function TimeLine() {
   const { height } = useGetSectionHeight("work-time-line");
@@ -67,7 +70,7 @@ function TimeLine() {
       className={classNames(styles.timeline, "pl-16 pr-4 md:p-0")}
       ref={parentDivRef}
     >
-      {JOBS.map((job, index) => {
+      {cmsData.workCard.map((job, index) => {
         const isActive = cardStates[`card${index}`]?.isActive;
         let gridColumn = (index + 1) % 2 ? 1 : 2;
         let margin: CSSProperties =
@@ -90,8 +93,8 @@ function TimeLine() {
                 "md:ml-[-28px] ml-[8px] left-[5px]"
               )}
               image={{
-                alt: job.image.alt,
-                url: job.image.url,
+                alt: "to do: change this",
+                url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
               }}
             />
             <TimeLineItem
