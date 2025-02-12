@@ -94,7 +94,7 @@ function TimeLine() {
               )}
               image={{
                 alt: "to do: change this",
-                url: "https://i.ibb.co/yggdyjT/fsb-technology-logo.jpg",
+                url: job.companyImage,
               }}
             />
             <TimeLineItem
