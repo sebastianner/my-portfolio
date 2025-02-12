@@ -14,7 +14,7 @@ workCard:
     date:
       - 2023-08-01
       - 2023-10-10
-  - description: At FSB Technology, I developed high-quality applications using React, focusing on component design and state management tailored for specific use cases. I worked with industry-standard libraries like Redux and Styled-components to ensure seamless integration and performance. Additionally, I managed a proprietary CMS to configure and optimize microfrontends. I prioritized code quality by writing test cases with Jest, testing-library, and Enzyme, maintaining a minimum coverage of 90%. Beyond development, I specialized in refactoring code to improve maintainability, scalability, and overall performance.
+  - description: At FSB Technology, I developed high-quality React applications, focusing on component design and state management. I used libraries like Redux and Styled-components for seamless integration and performance. Additionally, I managed a proprietary CMS to optimize microfrontends. I ensured code quality with Jest, testing-library, and Enzyme, maintaining 90%+ coverage. I also specialized in refactoring to enhance maintainability, scalability, and performance.
     company: FSB Technology (UK) Ltd
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/fsb_technology_logo.jpg
     title: MID Front-end Developer
