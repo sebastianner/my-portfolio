@@ -2,7 +2,7 @@
 import classNames from "classnames";
 import { useEffect, useReducer, useRef, useState } from "react";
 import styles from "./About.module.scss";
-import { HIGHLIGHTED_TECH, OVERVIEW, TITLE } from "./constants";
+import { HIGHLIGHTED_TECH } from "./constants";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
