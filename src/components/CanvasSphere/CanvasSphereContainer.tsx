@@ -11,11 +11,15 @@ import {
   CANVAS_HEIGHT_FOV,
   SPHERE_COORDINATES,
 } from "./constants";
+import getCmsData from "@/utils/getCmsData";
+import { allTechstacks } from "contentlayer/generated";
+import type { Techstack as TechStackType } from "contentlayer/generated";
 
 type Props = { extraSmall: boolean; medium: boolean; small: boolean };
 
+const cmsData = getCmsData<TechStackType>(allTechstacks);
+
 function SphereContainer({ medium, small, extraSmall }: Props) {
-  const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   let position = SPHERE_COORDINATES.position.initial;
   let rotation = SPHERE_COORDINATES.rotation.initial;
   let height = CANVAS_HEIGHT.initial;
@@ -57,7 +61,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
         <Suspense fallback={<CanvasLoader />}>
           <ambientLight intensity={0.3} />
           <directionalLight intensity={8} position={[15, 10, 0]} />
-          {test.map((_, i) => {
+          {cmsData.technology.map((tech, i) => {
             const key = "shpere" + i;
             return (
               <SphereMesh
@@ -67,6 +71,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
                 position={position[i]}
                 rotation={rotation[i]}
                 small={small}
+                textureUrl={tech}
               />
             );
           })}

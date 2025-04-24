@@ -19,7 +19,7 @@ const WorkExperienceCard = defineNestedType(() => ({
     company: { required: true, type: "string" },
     companyImage: { required: true, type: "string" },
     date: { of: { type: "string" }, required: true, type: "list" },
-    description: { required: true, type: "string" },
+    description: { required: true, type: "markdown" },
     title: { required: true, type: "string" },
   },
   name: "WorkExperienceCard",
@@ -47,8 +47,8 @@ export const Hero = defineDocumentType(() => ({
     },
   },
   fields: {
-    intro: { required: true, type: "string" },
-    introDescription: { required: true, type: "string" },
+    intro: { required: true, type: "markdown" },
+    introDescription: { required: true, type: "markdown" },
     profilePicture: { required: true, type: "string" },
   },
   filePathPattern: `hero/**/*.md`,
@@ -64,7 +64,7 @@ export const Overview = defineDocumentType(() => ({
   },
   fields: {
     cards: { of: AboutCard, required: true, type: "list" },
-    info: { required: true, type: "string" },
+    overview: { required: true, type: "markdown" },
     title: { required: true, type: "string" },
   },
   filePathPattern: `overview/**/*.md`,
@@ -85,7 +85,21 @@ export const WorkExperience = defineDocumentType(() => ({
   name: "Work",
 }));
 
+export const TechStack = defineDocumentType(() => ({
+  computedFields: {
+    url: {
+      resolve: (post) => `/techstack/${post._raw.flattenedPath}`,
+      type: "string",
+    },
+  },
+  fields: {
+    technology: { of: { type: "string" }, required: true, type: "list" },
+  },
+  filePathPattern: `techstack/**/*.md`,
+  name: "Techstack",
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Hero, Overview, NavBar, WorkExperience],
+  documentTypes: [Hero, Overview, NavBar, WorkExperience, TechStack],
 });

@@ -1,0 +1,17 @@
+---
+technology:
+  [
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Typescript_logo_2020.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Unofficial_JavaScript_logo_2.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/node-js.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/react-1.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/nextjs-icon-svgrepo-com.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/NestJS.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Electron_Software_Framework_Logo.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/reactnative-inner.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Git_icon.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Official_CSS_Logo.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/Postgresql_elephant.svg",
+    "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/tech-icons/mongodb-svgrepo-com.svg",
+  ]
+---

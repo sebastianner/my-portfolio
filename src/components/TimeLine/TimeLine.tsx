@@ -93,7 +93,7 @@ function TimeLine() {
                 "md:ml-[-28px] ml-[8px] left-[5px]"
               )}
               image={{
-                alt: "to do: change this",
+                alt: job.company,
                 url: job.companyImage,
               }}
             />
@@ -104,7 +104,7 @@ function TimeLine() {
               company={job.company}
               dataIndex={index}
               date={job.date}
-              description={job.description}
+              description={job.description.html}
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}

@@ -1,5 +1,5 @@
-"use client";
 import classNames from "classnames";
+import parse from "html-react-parser";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,10 +7,8 @@ import styles from "./Hero.module.scss";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasStars from "@/components/CanvasStars/CanvasStars";
 import { SOCIALS } from "@/global-constants";
-import { GLOBAL_STYLES } from "@/global-styles";
 import { GithubIcon, LinkedInIcon } from "@/icons/Icons";
 import getCmsData from "@/utils/getCmsData";
-import { htmlToJsx } from "@/utils/htmlToJsx";
 import { Hero as HeroType, allHeros } from "contentlayer/generated";
 
 type Props = {
@@ -48,12 +46,8 @@ function Hero({ className }: Props) {
           )}
         >
           <div className="flex flex-col gap-3">
-            <BaseHeading level={1}>{cmsData.intro}</BaseHeading>
-            {htmlToJsx(
-              "p",
-              { className: GLOBAL_STYLES.paragraph },
-              cmsData.introDescription
-            )}
+            <BaseHeading level={1}>{cmsData.intro.raw}</BaseHeading>
+            {parse(cmsData.introDescription.html)}
           </div>
           <span
             className={classNames(

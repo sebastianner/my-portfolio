@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { format, isValid } from "date-fns";
+import parse from "html-react-parser";
 import { CSSProperties, ForwardedRef, forwardRef } from "react";
 import BaseHeading from "../BaseHeading/BaseHeading";
 import styles from "./TimeLineItem.module.scss";
@@ -46,7 +47,7 @@ const TimeLineItem = forwardRef(function TimeLineItem(
         {title}
       </BaseHeading>
       <BaseHeading level={4}>{company}</BaseHeading>
-      <p className="font-normal my-2 text-xl">{description}</p>
+      <div className="font-normal my-2 text-xl"> {parse(description, {})}</div>
       {date.map((date, i) => {
         const transformDate = new Date(date);
         const dateTime = isValid(transformDate);

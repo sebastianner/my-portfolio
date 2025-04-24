@@ -1,4 +1,3 @@
-"use client";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import React from "react";
@@ -7,7 +6,7 @@ import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import SectionBuilder from "@/HOC/SectionBuilder";
 
 const TimeLine = dynamic(() => import("@/components/TimeLine/TimeLine"), {
-  ssr: false,
+  ssr: true,
 });
 
 function Work() {

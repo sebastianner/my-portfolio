@@ -1,5 +1,6 @@
 "use client";
 import classNames from "classnames";
+import parse from "html-react-parser";
 import { useEffect, useReducer, useRef, useState } from "react";
 import styles from "./About.module.scss";
 import { HIGHLIGHTED_TECH } from "./constants";
@@ -9,10 +10,10 @@ import { GLOBAL_STYLES } from "@/global-styles";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { CardState } from "@/types/app";
 import getCmsData from "@/utils/getCmsData";
-import { htmlToJsx } from "@/utils/htmlToJsx";
 import { Overview, allOverviews } from "contentlayer/generated";
 
 const cmsData = getCmsData<Overview>(allOverviews);
+console.log(cmsData);
 
 function About() {
   const infoRef = useRef<HTMLDivElement>(null);
@@ -86,12 +87,10 @@ function About() {
         ref={infoRef}
       >
         <hgroup>
-          <BaseHeading level={2}>{cmsData.title}</BaseHeading>
-          {htmlToJsx(
-            "div",
-            { className: GLOBAL_STYLES.paragraph },
-            cmsData.info
-          )}
+          <BaseHeading level={2}>{cmsData?.title}</BaseHeading>
+          <div className={GLOBAL_STYLES.paragraph}>
+            {parse(cmsData.overview.raw)}
+          </div>
         </hgroup>
       </div>
       <div className="w-full flex flex-wrap gap-8">
@@ -102,7 +101,7 @@ function About() {
               className={classNames(styles.card, { [styles.active]: isActive })}
               dataIndex={index}
               description={data.description}
-              icon={"/assets/smartphone.svg"}
+              icon={data.icon}
               key={data.description}
               ref={(el) => {
                 cardRefs.current[index] = el;

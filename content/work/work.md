@@ -1,27 +1,23 @@
 ---
 workCard:
-  - description: Contribute to the proprietary React component library by building reusable and maintainable components, leveraging Storybook for documentation and testing. Integrate web content efficiently using CMS tools like Contentstack and Commerce Tools. Develop exclusively with Next.js as the front-end framework while prioritizing accessibility to meet web ARIA standards. Ensure seamless data fetching and manipulation by integrating both GraphQL and REST APIs.
+  - description: |
+      During my time as a **Ssr Frontend Developer** at **Razorfish**, I worked on key projects that challenged and strengthened my technical skills. I contributed to the development of a **React component library**, prioritizing **scalability** and **reusability**, which improved team efficiency. On the **Wegmans** project, I focused on optimizing the **shopping cart**, **saved lists**, and **checkout flows**, working closely with **UX/UI teams** to ensure a seamless **user experience**. Additionally, I implemented front-end solutions using technologies such as **TypeScript**, **JavaScript**, **React.js**, **Next.js**, and **Zustand** for **state management**, integrating dynamic content through **CMS platforms** like **Contentstack** and **Firework**. I always made sure to apply best **accessibility practices**, ensuring an inclusive and **high-performance** experience for users.
     company: Razorfish - Publicis groupe
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/razorfish_logo.jpg
     title: SSR Front-end Developer
     date:
       - 2023-10-10
       - Present
-  - description: I worked on a large-scale project for Colombia’s biggest bank, focusing on developing a robust and maintainable front-end using Next.js. I contributed to a proprietary React component library, ensuring reusability and consistency, with Storybook for documentation and testing. The project required seamless CMS integration with tools like Contentstack and Commerce Tools to enhance content management. Accessibility was a priority, following web ARIA standards to create an inclusive user experience. Additionally, I implemented and optimized API integrations using both GraphQL and REST for efficient data handling.
-    company: ITGlobers
-    companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/itglobers_logo.jpg
-    title: SSR Front-end Developer
-    date:
-      - 2023-08-01
-      - 2023-10-10
-  - description: At FSB Technology, I developed high-quality React applications, focusing on component design and state management. I used libraries like Redux and Styled-components for seamless integration and performance. Additionally, I managed a proprietary CMS to optimize microfrontends. I ensured code quality with Jest, testing-library, and Enzyme, maintaining 90%+ coverage. I also specialized in refactoring to enhance maintainability, scalability, and performance.
+  - description: |
+      As a **Mid Frontend Developer** at **FSB**, I built **React.js** applications for **iGaming** and **betting platforms**, focusing on **modular design** and **state management**. I worked with **UX/UI teams** on projects like **Fitzdares Canada** and **BetGoodwin UK**, using **Redux** for **state handling** and **tailwindcss** for **scalable styling**. I managed a proprietary **CMS** for content delivery and ensured **code quality** with **90%+ test coverage**. I **refactored legacy codebases** for better **performance** and **scalability**, using **JavaScript**/**TypeScript** for **maintainability**. My approach emphasized **clean architecture**, **TDD**, and **continuous code improvement** to deliver **reliable user experiences** in **online betting**.
     company: FSB Technology (UK) Ltd
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/fsb_technology_logo.jpg
     title: MID Front-end Developer
     date:
       - 2022-01-10
       - 2023-08-20
-  - description: As a Full-Stack developer, my role is to build modern web applications using React.js as a framework while ensuring to implement best practices such as Composition, Render props, and State management. To achieve this, I make use of industry-standard libraries like Redux, Router, and Styled-components.
+  - description: |
+      As a **Jr Fullstack Developer** at **Autopartes.App**, I helped build and improve an **e-commerce platform** for the **automotive market**. I worked with senior developers to create user interfaces using **React.js** and tools like **React Router** and **Styled-components**. I also supported the development of key features and wrote **unit tests** to ensure the stability of the platform. Additionally, I gained experience with **back-end development** by helping build **APIs** and working with **databases**. Throughout this role, I learned how to use **JavaScript** and **TypeScript** to improve the platform’s performance and ensure the system was easy to maintain and scale. This experience gave me a solid foundation in both **front-end** and **back-end development**.
     company: Autopartes APP
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/autopartes_app_logo.jpg
     title: JR Front-end Developer

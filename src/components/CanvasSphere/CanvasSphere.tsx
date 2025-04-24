@@ -14,6 +14,7 @@ type Props = {
   position: [number, number, number];
   rotation: [number, number, number];
   small: boolean;
+  textureUrl: string;
 };
 export function SphereMesh(props: Props) {
   let scale = SPHERE_SCALE.initial;
@@ -24,9 +25,7 @@ export function SphereMesh(props: Props) {
     scale = SPHERE_SCALE.extraSmall;
   }
 
-  const [decal] = useTexture([
-    "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-  ]);
+  const [decal] = useTexture([props.textureUrl]);
   // This reference gives us direct access to the THREE.Mesh object
   const sphereRef = useRef<never>(null);
 
