@@ -4,8 +4,15 @@ import React from "react";
 import { TITLE } from "./constants";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
-import CanvasStars from "@/components/CanvasStars/CanvasStars";
 import SectionBuilder from "@/HOC/SectionBuilder";
+import dynamic from "next/dynamic";
+
+const CanvasStars = dynamic(
+  () => import("@/components/CanvasStars/CanvasStars"),
+  {
+    ssr: false,
+  }
+);
 
 function TechStack() {
   return (

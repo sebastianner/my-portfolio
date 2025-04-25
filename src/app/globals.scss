@@ -1,6 +1,6 @@
-@import "tailwind";
-@import "shared";
-@import "colors";
+@use "tailwind";
+@use "shared";
+@use "colors";
 
 :root {
   --foreground-rgb: 0, 0, 0;

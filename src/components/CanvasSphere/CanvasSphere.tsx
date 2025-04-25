@@ -16,13 +16,14 @@ type Props = {
   small: boolean;
   textureUrl: string;
 };
-export function SphereMesh(props: Props) {
+
+export const SphereMesh = memo(function SphereMesh(props: Props) {
   let scale = SPHERE_SCALE.initial;
   if (props.small) {
-    scale = SPHERE_SCALE.small;
+    scale = SPHERE_SCALE?.small;
   }
   if (props.extraSmall) {
-    scale = SPHERE_SCALE.extraSmall;
+    scale = SPHERE_SCALE?.extraSmall;
   }
 
   const [decal] = useTexture([props.textureUrl]);
@@ -53,7 +54,7 @@ export function SphereMesh(props: Props) {
       </mesh>
     </Float>
   );
-}
+});
 
 function CanvasSphere({ className }: { className?: string }) {
   const { isMedium, isSmall, isExtraSmall } = useRezise();

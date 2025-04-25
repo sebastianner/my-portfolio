@@ -8,10 +8,21 @@ import { NavItem } from "@/types/app";
 import { AppStateType } from "@/types/context";
 import getCmsData from "@/utils/getCmsData";
 import ContactMe from "@/views/ContactMe/ContactMe";
-import Hero from "@/views/Hero/Hero";
-import TechStack from "@/views/TechStack/TechStack";
 import Work from "@/views/Work/Work";
 import { NavBar as NavBarType, allNavBars } from "contentlayer/generated";
+import React from "react";
+
+const About = dynamic(() => import("@/views/About/About"), {
+  ssr: false,
+});
+
+const Hero = dynamic(() => import("@/views/Hero/Hero"), {
+  ssr: false,
+});
+
+const TechStack = dynamic(() => import("@/views/TechStack/TechStack"), {
+  ssr: false,
+});
 
 const cmsData = getCmsData<NavBarType>(allNavBars);
 
@@ -20,10 +31,6 @@ const navItems = cmsData.navBar.map((navItem): NavItem => {
     href: `#${navItem.split(" ")[0].toLocaleLowerCase()}`,
     name: navItem,
   };
-});
-
-const About = dynamic(() => import("@/views/About/About"), {
-  ssr: false,
 });
 
 export default function Home() {

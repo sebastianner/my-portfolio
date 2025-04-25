@@ -62,17 +62,18 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
           <ambientLight intensity={0.3} />
           <directionalLight intensity={8} position={[15, 10, 0]} />
           {cmsData.technology.map((tech, i) => {
-            const key = "shpere" + i;
+            const key = "sphere" + i;
             return (
-              <SphereMesh
-                extraSmall={extraSmall}
-                key={key}
-                medium={medium}
-                position={position[i]}
-                rotation={rotation[i]}
-                small={small}
-                textureUrl={tech}
-              />
+              <Suspense key={key} fallback={null}>
+                <SphereMesh
+                  extraSmall={extraSmall}
+                  medium={medium}
+                  position={position[i]}
+                  rotation={rotation[i]}
+                  small={small}
+                  textureUrl={tech}
+                />
+              </Suspense>
             );
           })}
           <Preload all />
