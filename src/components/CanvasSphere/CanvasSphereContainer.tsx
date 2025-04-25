@@ -15,7 +15,7 @@ import getCmsData from "@/utils/getCmsData";
 import { allTechstacks } from "contentlayer/generated";
 import type { Techstack as TechStackType } from "contentlayer/generated";
 
-type Props = { extraSmall: boolean; medium: boolean; small: boolean };
+type Props = { extraSmall: boolean; small: boolean; medium: boolean };
 
 const cmsData = getCmsData<TechStackType>(allTechstacks);
 

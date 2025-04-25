@@ -10,7 +10,6 @@ import getCmsData from "@/utils/getCmsData";
 import ContactMe from "@/views/ContactMe/ContactMe";
 import Work from "@/views/Work/Work";
 import { NavBar as NavBarType, allNavBars } from "contentlayer/generated";
-import React from "react";
 
 const About = dynamic(() => import("@/views/About/About"), {
   ssr: false,

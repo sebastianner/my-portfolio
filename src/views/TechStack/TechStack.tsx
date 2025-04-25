@@ -1,11 +1,10 @@
 "use client";
 import classNames from "classnames";
-import React from "react";
+import dynamic from "next/dynamic";
 import { TITLE } from "./constants";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
 import SectionBuilder from "@/HOC/SectionBuilder";
-import dynamic from "next/dynamic";
 
 const CanvasStars = dynamic(
   () => import("@/components/CanvasStars/CanvasStars"),

@@ -9,7 +9,7 @@ workCard:
       - 2023-10-10
       - Present
   - description: |
-      As a **Mid Frontend Developer** at **FSB**, I built **React.js** applications for **iGaming** and **betting platforms**, focusing on **modular design** and **state management**. I worked with **UX/UI teams** on projects like **Fitzdares Canada** and **BetGoodwin UK**, using **Redux** for **state handling** and **tailwindcss** for **scalable styling**. I managed a proprietary **CMS** for content delivery and ensured **code quality** with **90%+ test coverage**. 
+      As a **Mid Frontend Developer** at **FSB**, I built **React.js** applications for **iGaming** and **betting platforms**, focusing on **modular design** and **state management**. I worked with **UX/UI teams** on projects like **Fitzdares Canada** and **BetGoodwin UK**, using **Redux** for **state handling** and **tailwindcss** for **scalable styling**. I managed a proprietary **CMS** for content delivery and ensured **code quality** with **90%+ test coverage**.
     company: FSB Technology (UK) Ltd
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/fsb_technology_logo.jpg
     title: MID Front-end Developer

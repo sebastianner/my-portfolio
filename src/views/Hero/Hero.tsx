@@ -1,6 +1,7 @@
 "use client";
 import classNames from "classnames";
 import parse from "html-react-parser";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,7 +12,6 @@ import { GLOBAL_STYLES } from "@/global-styles";
 import { GithubIcon, LinkedInIcon } from "@/icons/Icons";
 import getCmsData from "@/utils/getCmsData";
 import { Hero as HeroType, allHeros } from "contentlayer/generated";
-import dynamic from "next/dynamic";
 
 const CanvasStars = dynamic(
   () => import("@/components/CanvasStars/CanvasStars"),
