@@ -2,7 +2,6 @@ import classNames from "classnames";
 import Image from "next/image";
 import React, { ForwardedRef, forwardRef } from "react";
 import styles from "./Card.module.scss";
-import { GLOBAL_STYLES } from "@/global-styles";
 type Props = {
   className?: string;
   dataIndex?: number;
@@ -51,7 +50,7 @@ const Card = forwardRef(function Card(
       className={classNames(
         className,
         styles.componentCard,
-        "w-full lg:w-[531px] h-24 bg-transparent"
+        "w-full lg:w-[531px] h-24 bg-transparent text-base"
       )}
       data-index={dataIndex}
       ref={ref}
@@ -69,21 +68,28 @@ const Card = forwardRef(function Card(
       >
         <Image
           alt={technology}
-          className="mr-7"
+          className={classNames("m-5 md:mr-7")}
           height={20}
           src={icon}
           width={20}
         />
         <p
           className={classNames(
-            styles.cardDescription,
-            GLOBAL_STYLES.paragraph
+            "font-light text-white",
+            "text-base md:text-xl"
           )}
         >
           {description}
         </p>
         <span className="mx-1 mr-6 sm:mr-1">|</span>
-        <p className="text-subtitle tracking-wide font-medium">{technology}</p>
+        <p
+          className={classNames(
+            "tracking-wide font-medium",
+            "text-base md:text-xl"
+          )}
+        >
+          {technology}
+        </p>
       </div>
     </article>
   );

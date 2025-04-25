@@ -23,4 +23,4 @@ function Work() {
   );
 }
 
-export default SectionBuilder(Work, "work");
+export default SectionBuilder(Work, "experience");

@@ -4,7 +4,7 @@ import { ComponentType } from "react";
 export default function SectionBuilder(Component: ComponentType, id: string) {
   const BuildSection = () => {
     return (
-      <section className="w-screen flex justify-center">
+      <section className="w-screen h-max flex justify-center">
         <span className="hash-span" id={id}>
           &nbsp;
         </span>

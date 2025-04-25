@@ -87,7 +87,9 @@ function About() {
         ref={infoRef}
       >
         <hgroup>
-          <BaseHeading level={2}>{cmsData?.title}</BaseHeading>
+          <BaseHeading className="mb-5" level={2}>
+            {cmsData?.title}
+          </BaseHeading>
           <div className={GLOBAL_STYLES.paragraph}>
             {parse(cmsData.overview.raw)}
           </div>

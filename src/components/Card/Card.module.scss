@@ -4,10 +4,6 @@
   div {
     transition: transform 0.4s ease;
     transform: rotateY(var(--rotationY)) rotateX(var(--rotationX));
-    h2,
-    h3 {
-      transform: rotateY(0deg) rotateX(0deg) !important;
-    }
   }
 }
 

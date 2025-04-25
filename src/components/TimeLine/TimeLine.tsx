@@ -43,7 +43,7 @@ function TimeLine() {
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.1,
       }
     );
 
@@ -67,7 +67,7 @@ function TimeLine() {
 
   return (
     <div
-      className={classNames(styles.timeline, "pl-16 pr-4 md:p-0")}
+      className={classNames(styles.timeline, "pl-16 pr-4 lg:p-0")}
       ref={parentDivRef}
     >
       {cmsData.workCard.map((job, index) => {
@@ -77,7 +77,7 @@ function TimeLine() {
           gridColumn === 1 ? { marginRight: 50 } : { marginLeft: 50 };
         const slideInAnimationSide =
           gridColumn === 1 ? styles.timeLineCardLeft : styles.timeLineCardRight;
-        if (width < 768) {
+        if (width < 1024) {
           margin = { margin: 0 };
           gridColumn = 1;
         }
@@ -89,8 +89,8 @@ function TimeLine() {
           >
             <TimeLineIcon
               className={classNames(
-                "absolute md:left-[50%] z-3",
-                "md:ml-[-28px] ml-[8px] left-[5px]"
+                "absolute lg:left-[50%] z-3",
+                "lg:ml-[-28px] ml-[8px] left-[5px]"
               )}
               image={{
                 alt: job.company,

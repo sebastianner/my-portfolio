@@ -10,5 +10,5 @@ cards:
     technology: Node.JS - Nest.JS
     icon: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/laptop.svg
 title: Overview 🔎
-overview: "I'm a proficient Front-end developer with a focus on <strong>crafting interactive digital experiences using React.</strong> <br/><br/> Proficient across the JavaScript spectrum – including React, Next.js, TypeScript, Node.js, and Redux – I excel at transforming ideas into seamless, efficient, and user-friendly solutions. <strong className='text-secondary-green'>Let's collaborate to turn your vision into reality!</strong>"
+overview: "I'm a <strong>proficient JavaScript Full-Stack Developer</strong> with a focus on building robust digital experiences using React, Next.js, and Nest.js. <br/><br/> Proficient across the JavaScript spectrum – including React, Next.js, TypeScript, Nest.js, and Node.js – I excel at transforming ideas into seamless, scalable, and user-centric solutions. <strong className='text-secondary-green'>Let's collaborate to bring your vision to life!</strong>"
 ---

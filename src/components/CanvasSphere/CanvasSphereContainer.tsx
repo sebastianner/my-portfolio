@@ -54,7 +54,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
       <ErrorBoundary
         fallback={
           <Html>
-            <div>Something went wrong TODO ERROR BOUNDARY</div>
+            <div>Something went wrong to do: ERROR BOUNDARY</div>
           </Html>
         }
       >

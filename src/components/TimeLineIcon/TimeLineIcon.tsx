@@ -14,7 +14,7 @@ function TimeLineIcon({ image, className }: Props) {
     <figure
       className={classNames(
         "outline outline-2 outline-secondary-green rounded-full z-3",
-        "w-[40px] h-[40px] md:w-[60px] md:h-[60px]",
+        "w-[40px] h-[40px] lg:w-[60px] lg:h-[60px]",
         className
       )}
     >
