@@ -1,6 +1,5 @@
 "use client";
-import { Preload } from "@react-three/drei";
-import { Html } from "@react-three/drei";
+import { Html, Preload } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -15,11 +14,12 @@ import getCmsData from "@/utils/getCmsData";
 import { allTechstacks } from "contentlayer/generated";
 import type { Techstack as TechStackType } from "contentlayer/generated";
 
+// ✅ Props ordenados alfabéticamente
 type Props = { extraSmall: boolean; medium: boolean; small: boolean };
 
 const cmsData = getCmsData<TechStackType>(allTechstacks);
 
-function SphereContainer({ medium, small, extraSmall }: Props) {
+function SphereContainer({ extraSmall, medium, small }: Props) {
   let position = SPHERE_COORDINATES.position.initial;
   let rotation = SPHERE_COORDINATES.rotation.initial;
   let height = CANVAS_HEIGHT.initial;
@@ -47,9 +47,7 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
       camera={{ fov: fov, position: [600, 50, 0] }}
       frameloop="always"
       gl={{ preserveDrawingBuffer: true }}
-      style={{
-        height: height,
-      }}
+      style={{ height }}
     >
       <ErrorBoundary
         fallback={
@@ -68,9 +66,9 @@ function SphereContainer({ medium, small, extraSmall }: Props) {
                 <SphereMesh
                   extraSmall={extraSmall}
                   medium={medium}
+                  small={small}
                   position={position[i]}
                   rotation={rotation[i]}
-                  small={small}
                   textureUrl={tech}
                 />
               </Suspense>
