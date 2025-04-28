@@ -22,6 +22,6 @@ workCard:
     companyImage: https://storage.googleapis.com/sebastianner-dev-portfolio-statics/autopartes_app_logo.jpg
     title: JR Front-end Developer
     date:
-      - 2020-01-15
-      - 2021-10-01
+      - 2020-10-15
+      - 2021-12-14
 ---
