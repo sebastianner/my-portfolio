@@ -6,7 +6,7 @@ import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import SectionBuilder from "@/HOC/SectionBuilder";
 
 const TimeLine = dynamic(() => import("@/components/TimeLine/TimeLine"), {
-  ssr: true,
+  ssr: false,
 });
 
 function Work() {
