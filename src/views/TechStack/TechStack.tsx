@@ -39,4 +39,4 @@ function TechStack() {
   );
 }
 
-export default SectionBuilder(TechStack, "techStack");
+export default SectionBuilder(TechStack, "tech");

@@ -4,12 +4,13 @@ import SocialIconRow from "@/components/SocialIconRow/SocialIconRow";
 
 function ContactMe() {
   return (
-    <div
+    <section
       className={classNames(
         "p-20 w-full text-center",
         "flex flex-col gap-7",
         "flex-wrap items-center"
       )}
+      id="contact"
     >
       <BaseHeading level={2}>Reach Out and let’s talk! 👋🏻</BaseHeading>
       <SocialIconRow
@@ -31,7 +32,7 @@ function ContactMe() {
           },
         ]}
       />
-    </div>
+    </section>
   );
 }
 
