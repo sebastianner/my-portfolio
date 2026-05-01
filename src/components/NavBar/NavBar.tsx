@@ -44,7 +44,7 @@ function NavBar({ navItem }: Props) {
           "pr-10 pl-6 py-8 md:px-14 transition-colors",
           {
             "navBar-backdrop": isScrolled,
-          }
+          },
         )}
       >
         <ul className="gap-4 hidden md:flex">

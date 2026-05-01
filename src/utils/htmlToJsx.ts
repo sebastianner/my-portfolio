@@ -4,7 +4,7 @@ import React from "react";
 export function htmlToJsx(
   htmlElement: string,
   props: React.HTMLAttributes<HTMLElement>,
-  content: string
+  content: string,
 ) {
   return React.createElement(htmlElement, props, HTMLReactParser(content));
 }

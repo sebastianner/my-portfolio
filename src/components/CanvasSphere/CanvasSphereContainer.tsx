@@ -10,14 +10,9 @@ import {
   CANVAS_HEIGHT_FOV,
   SPHERE_COORDINATES,
 } from "./constants";
-import getCmsData from "@/utils/getCmsData";
-import { allTechstacks } from "contentlayer/generated";
-import type { Techstack as TechStackType } from "contentlayer/generated";
 
 // ✅ Props ordenados alfabéticamente
 type Props = { extraSmall: boolean; medium: boolean; small: boolean };
-
-const cmsData = getCmsData<TechStackType>(allTechstacks);
 
 function SphereContainer({ extraSmall, medium, small }: Props) {
   let position = SPHERE_COORDINATES.position.initial;
@@ -59,7 +54,7 @@ function SphereContainer({ extraSmall, medium, small }: Props) {
         <Suspense fallback={<CanvasLoader />}>
           <ambientLight intensity={0.3} />
           <directionalLight intensity={8} position={[15, 10, 0]} />
-          {cmsData.technology.map((tech, i) => {
+          {/* {cmsData.technology.map((tech, i) => {
             const key = "sphere" + i;
             return (
               <Suspense fallback={null} key={key}>
@@ -73,7 +68,7 @@ function SphereContainer({ extraSmall, medium, small }: Props) {
                 />
               </Suspense>
             );
-          })}
+          })} */}
           <Preload all />
         </Suspense>
       </ErrorBoundary>

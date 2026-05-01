@@ -14,15 +14,15 @@ function useRezise(): {
     const w = window;
 
     const mediumScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.medium}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.medium}px)`,
     );
 
     const smallScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.small}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.small}px)`,
     );
 
     const extraSmallScreen = window.matchMedia(
-      `(max-width:${CANVAS_MEDIA_QUERIES.extraSmall}px)`
+      `(max-width:${CANVAS_MEDIA_QUERIES.extraSmall}px)`,
     );
 
     setMedium(mediumScreen.matches);

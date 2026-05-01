@@ -24,7 +24,7 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
       }
       return { ...prev, ...next };
     },
-    {}
+    {},
   );
 
   const handleCloseMenu = () => {
@@ -61,22 +61,22 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
         "bg-[#051C11DB]",
         styles.hamburgerMenu,
         { "left-0!": isOpen },
-        className
+        className,
       )}
       style={{ color: color }}
     >
-      <ul className={classNames("flex flex-col gap-5")} ref={menuListRef}>
+      <ul ref={menuListRef} className={classNames("flex flex-col gap-5")}>
         {navItem.map((item, index) => {
           return (
             <li
+              key={item.name}
               className={classNames(
                 styles.fadeItem,
                 { [styles.fadein]: stack[`stack${index}`] },
                 {
                   "opacity-0 hidden": !isOpen,
-                }
+                },
               )}
-              key={item.name}
               onClick={handleCloseMenu}
             >
               <a href={item.href}>{item.name}</a>

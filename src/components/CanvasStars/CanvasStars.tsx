@@ -6,7 +6,7 @@ import { Suspense, useRef } from "react";
 
 function CanvasStars({ className }: { className?: string }) {
   const Stars = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     const starsRef = useRef<any>(null);
 
     const generateStarPositions = () => {
@@ -30,7 +30,7 @@ function CanvasStars({ className }: { className?: string }) {
 
     return (
       <group rotation={[0, 0, Math.PI / 4]}>
-        <Points frustumCulled positions={sphere} ref={starsRef} stride={3}>
+        <Points ref={starsRef} frustumCulled positions={sphere} stride={3}>
           <PointMaterial
             transparent
             color={"#fbff00"}

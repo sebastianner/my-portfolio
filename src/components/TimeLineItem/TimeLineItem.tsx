@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import { CSSProperties, ForwardedRef, forwardRef } from "react";
 import BaseHeading from "../BaseHeading/BaseHeading";
 import styles from "./TimeLineItem.module.scss";
+import HTMLReactParser from "html-react-parser/lib/index";
 
 type Props = {
   className?: string;
@@ -27,20 +28,20 @@ const TimeLineItem = forwardRef(function TimeLineItem(
     dataIndex,
     style,
   }: Props,
-  ref: ForwardedRef<HTMLElement>
+  ref: ForwardedRef<HTMLElement>,
 ) {
   return (
     <article
+      ref={ref}
       className={classNames(
         "h-fit bg-transparent",
         "job-article shadow-xl",
         "min-w-[200px] lg:max-w-[450px]",
         "rounded-md p-6 pt-5 relative",
         styles.timeLineItem,
-        className
+        className,
       )}
       data-index={dataIndex}
-      ref={ref}
       style={{ color: textColor, ...style }}
     >
       <BaseHeading className="text-secondary-green" level={3}>
@@ -48,29 +49,29 @@ const TimeLineItem = forwardRef(function TimeLineItem(
       </BaseHeading>
       <BaseHeading level={4}>{company}</BaseHeading>
       <div className="font-normal my-2 text-lg md:text-xl">
-        {parse(description)}
+        {HTMLReactParser(description)}
       </div>
       {date.map((date, i) => {
         const transformDate = new Date(date);
         const dateTime = isValid(transformDate);
         return dateTime ? (
           <time
+            key={transformDate.getDate() + i}
             className={classNames(
               "time font-normal text-base",
-              "text-secondary-green"
+              "text-secondary-green",
             )}
             dateTime={format(transformDate, "yyy")}
-            key={transformDate.getDate() + i}
           >
             {format(transformDate, "yyy")}
           </time>
         ) : (
           <span
+            key={date as string}
             className={classNames(
               "capitalize font-normal text-base",
-              "text-secondary-green"
+              "text-secondary-green",
             )}
-            key={date as string}
           >
             {date as string}
           </span>

@@ -1,24 +1,25 @@
+"use client";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
-import React from "react";
 import { WorkConstants } from "./constants";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import SectionBuilder from "@/HOC/SectionBuilder";
+import TimeLine from "@/components/TimeLine/TimeLine";
+import { WorkSectionType } from "@/types/content.types";
 
-const TimeLine = dynamic(() => import("@/components/TimeLine/TimeLine"), {
-  ssr: false,
-});
+type Props = {
+  content: WorkSectionType;
+};
 
-function Work() {
+function Work({ content }: Props) {
   return (
     <div
       className={classNames(
         "flex flex-col justify-center items-center",
-        "gap-12 pt-32"
+        "gap-12 pt-32",
       )}
     >
       <BaseHeading level={2}>{WorkConstants.title}</BaseHeading>
-      <TimeLine />
+      <TimeLine content={content} />
     </div>
   );
 }

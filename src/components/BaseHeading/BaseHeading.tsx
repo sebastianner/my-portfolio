@@ -23,7 +23,7 @@ function BaseHeading({ level, children, className }: Props) {
   return React.createElement(
     `h${level}`,
     { className: classNames(headingStyles[level], className) },
-    parseHtmlToJsx
+    parseHtmlToJsx,
   );
 }
 

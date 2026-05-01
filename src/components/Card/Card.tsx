@@ -12,7 +12,7 @@ type Props = {
 
 const Card = forwardRef(function Card(
   { className, dataIndex, technology, description, icon }: Props,
-  ref: ForwardedRef<HTMLElement>
+  ref: ForwardedRef<HTMLElement>,
 ) {
   const cardMovement = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const card = event.target as HTMLElement;
@@ -25,7 +25,7 @@ const Card = forwardRef(function Card(
     //Y rotation
     const rotationFactorY = maxRotation / (coordBox.width / 2);
     const rotationY = Math.ceil(
-      (event.clientX - centerPointX) * rotationFactorY
+      (event.clientX - centerPointX) * rotationFactorY,
     );
 
     // X rotation
@@ -38,7 +38,7 @@ const Card = forwardRef(function Card(
   };
 
   const cardMovementStop = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
   ) => {
     const card = event.target as HTMLElement;
     card.style.setProperty("--rotationY", "0");
@@ -47,13 +47,13 @@ const Card = forwardRef(function Card(
 
   return (
     <article
+      ref={ref}
       className={classNames(
         className,
         styles.componentCard,
-        "w-full lg:w-[531px] h-24 bg-transparent text-base"
+        "w-full lg:w-[531px] h-24 bg-transparent text-base",
       )}
       data-index={dataIndex}
-      ref={ref}
     >
       <div
         className={classNames(
@@ -61,7 +61,7 @@ const Card = forwardRef(function Card(
           "place-items-center",
           "rounded-2xl",
           "flex justify-center",
-          styles.cardStyles
+          styles.cardStyles,
         )}
         onMouseLeave={cardMovementStop}
         onMouseMove={cardMovement}
@@ -76,7 +76,7 @@ const Card = forwardRef(function Card(
         <p
           className={classNames(
             "font-light text-white",
-            "text-base md:text-xl"
+            "text-base md:text-xl",
           )}
         >
           {description}
@@ -85,7 +85,7 @@ const Card = forwardRef(function Card(
         <p
           className={classNames(
             "tracking-wide font-medium",
-            "text-base md:text-xl"
+            "text-base md:text-xl",
           )}
         >
           {technology}

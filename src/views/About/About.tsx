@@ -9,13 +9,14 @@ import Card from "@/components/Card/Card";
 import { GLOBAL_STYLES } from "@/global-styles";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { CardState } from "@/types/app";
-import getCmsData from "@/utils/getCmsData";
-import { Overview, allOverviews } from "contentlayer/generated";
+import type { OverviewType } from "@/types/content.types";
+import HTMLReactParser from "html-react-parser/lib/index";
 
-const cmsData = getCmsData<Overview>(allOverviews);
-console.log(cmsData);
+type Props = {
+  content: OverviewType;
+};
 
-function About() {
+function About({ content }: Props) {
   const infoRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [isInfoActive, setIsInfoActive] = useState<boolean>(false);
@@ -23,7 +24,7 @@ function About() {
     (prev: CardState, next: Partial<CardState>) => {
       return { ...prev, ...next };
     },
-    {}
+    {},
   );
 
   if (cardRefs.current.length !== HIGHLIGHTED_TECH.info.length) {
@@ -37,7 +38,7 @@ function About() {
           setIsInfoActive(true);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     if (infoRef.current) {
       infoObserver.observe(infoRef.current);
@@ -58,7 +59,7 @@ function About() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     cardRefs.current.forEach((ref) => {
@@ -77,37 +78,37 @@ function About() {
         "flex gap-12 mt-24",
         "max-w-7xl w-auto h-fit",
         "flex-col lg:flex-row",
-        styles.about
+        styles.about,
       )}
     >
       <div
+        ref={infoRef}
         className={classNames(`max-w-[80%]`, styles.aboutTextContainer, {
           [styles.active]: isInfoActive,
         })}
-        ref={infoRef}
       >
         <hgroup>
           <BaseHeading className="mb-5" level={2}>
-            {cmsData?.title}
+            {content?.title}
           </BaseHeading>
           <div className={GLOBAL_STYLES.paragraph}>
-            {parse(cmsData.overview.raw)}
+            {HTMLReactParser(content.overview)}
           </div>
         </hgroup>
       </div>
       <div className="w-full flex flex-wrap gap-8">
-        {cmsData.cards.map((data, index) => {
+        {content.cards.map((data, index) => {
           const isActive = cardStates[`card${index}`]?.isActive;
           return (
             <Card
-              className={classNames(styles.card, { [styles.active]: isActive })}
-              dataIndex={index}
-              description={data.description}
-              icon={data.icon}
               key={data.description}
               ref={(el) => {
                 cardRefs.current[index] = el;
               }}
+              className={classNames(styles.card, { [styles.active]: isActive })}
+              dataIndex={index}
+              description={data.description}
+              icon={data.icon}
               technology={data.technology}
             />
           );

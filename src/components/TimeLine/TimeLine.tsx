@@ -1,18 +1,17 @@
+"use client";
 import classNames from "classnames";
 import { CSSProperties, useEffect, useReducer, useRef, useState } from "react";
 import TimeLineIcon from "../TimeLineIcon/TimeLineIcon";
 import TimeLineItem from "../TimeLineItem/TimeLineItem";
 import styles from "./TimeLine.module.scss";
-import SectionBuilder from "@/HOC/SectionBuilder";
 import { useGetSectionHeight } from "@/hooks/useGetSectionHeight";
 import { useGetWindowWidth } from "@/hooks/useGetWindowWidth";
 import { CardState } from "@/types/app";
-import getCmsData from "@/utils/getCmsData";
-import { Work as WorkType, allWorks } from "contentlayer/generated";
+import { WorkSectionType } from "@/types/content.types";
 
-const cmsData = getCmsData<WorkType>(allWorks);
+type Props = { content: WorkSectionType };
 
-function TimeLine() {
+function TimeLine({ content }: Props) {
   const { height } = useGetSectionHeight("work-time-line");
   const { width } = useGetWindowWidth();
   const parentDivRef = useRef<HTMLDivElement>(null);
@@ -22,7 +21,7 @@ function TimeLine() {
     (prev: CardState, next: Partial<CardState>) => {
       return { ...prev, ...next };
     },
-    {}
+    {},
   );
 
   useEffect(() => {
@@ -44,7 +43,7 @@ function TimeLine() {
       },
       {
         threshold: 0.2,
-      }
+      },
     );
 
     cardRefs.current.forEach((ref) => {
@@ -67,10 +66,10 @@ function TimeLine() {
 
   return (
     <div
-      className={classNames(styles.timeline, "pl-16 pr-4 lg:p-0")}
       ref={parentDivRef}
+      className={classNames(styles.timeline, "pl-16 pr-4 lg:p-0")}
     >
-      {cmsData.workCard.map((job, index) => {
+      {content.workCard.map((job, index) => {
         const isActive = cardStates[`card${index}`]?.isActive;
         let gridColumn = (index + 1) % 2 ? 1 : 2;
         let margin: CSSProperties =
@@ -83,14 +82,14 @@ function TimeLine() {
         }
         return (
           <div
-            className="pr-5"
             key={job.company}
+            className="pr-5"
             style={{ gridColumn: gridColumn, gridRow: index + 1, ...margin }}
           >
             <TimeLineIcon
               className={classNames(
                 "absolute lg:left-[50%] z-3",
-                "lg:ml-[-28px] ml-[8px] left-[5px]"
+                "lg:ml-[-28px] ml-[8px] left-[5px]",
               )}
               image={{
                 alt: job.company,
@@ -98,16 +97,16 @@ function TimeLine() {
               }}
             />
             <TimeLineItem
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
               className={classNames(slideInAnimationSide, {
                 [styles.active]: isActive,
               })}
               company={job.company}
               dataIndex={index}
               date={job.date}
-              description={job.description.html}
-              ref={(el) => {
-                cardRefs.current[index] = el;
-              }}
+              description={job.description}
               textColor={"#fff"}
               title={job.title}
             />
@@ -118,4 +117,4 @@ function TimeLine() {
   );
 }
 
-export default SectionBuilder(TimeLine, "work-time-line");
+export default TimeLine;

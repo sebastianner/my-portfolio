@@ -1,5 +1,5 @@
 ---
-intro: "Hey there!👋🏻 <br /> I'm <b class='text-secondary-green'>Sebastian Mera</b>"
-introDescription: "a dedicated **Javascript Full-Stack Developer** from Colombia📍"
-profilePicture: "https://storage.googleapis.com/sebastianner-dev-portfolio-statics/avatar.jpg"
+title: "Hey there!👋🏻 <br /> I'm <b class='text-secondary-green'>Sebastian Mera</b>"
+description: "a dedicated <strong>Javascript Full-Stack Developer</strong> from Colombia📍"
+profilePicture: "/assets/profile-picture.jpg"
 ---

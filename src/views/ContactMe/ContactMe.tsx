@@ -8,7 +8,7 @@ function ContactMe() {
       className={classNames(
         "p-20 w-full text-center",
         "flex flex-col gap-7",
-        "flex-wrap items-center"
+        "flex-wrap items-center",
       )}
       id="contact"
     >

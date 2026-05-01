@@ -1,32 +1,22 @@
 "use client";
 import classNames from "classnames";
-import parse from "html-react-parser";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import styles from "./Hero.module.scss";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
 import { SOCIALS } from "@/global-constants";
 import { GLOBAL_STYLES } from "@/global-styles";
 import { GithubIcon, LinkedInIcon } from "@/icons/Icons";
-import getCmsData from "@/utils/getCmsData";
-import { Hero as HeroType, allHeros } from "contentlayer/generated";
-
-const CanvasStars = dynamic(
-  () => import("@/components/CanvasStars/CanvasStars"),
-  {
-    ssr: false,
-  }
-);
+import CanvasStars from "@/components/CanvasStars/CanvasStars";
+import HTMLReactParser from "html-react-parser/lib/index";
+import type { HeroType } from "@/types/content.types";
 
 type Props = {
   className?: string;
+  content: HeroType;
 };
 
-const cmsData = getCmsData<HeroType>(allHeros);
-
-function Hero({ className }: Props) {
+function Hero({ className, content }: Props) {
   return (
     <main
       className={classNames(
@@ -35,7 +25,7 @@ function Hero({ className }: Props) {
         "rounded-[41px]",
         "flex justify-center items-center",
         "bg-slytherin-secondary relative",
-        className
+        className,
       )}
       id="home"
     >
@@ -44,27 +34,27 @@ function Hero({ className }: Props) {
         className={classNames(
           "flex md:gap-5 2xl:gap-36",
           "flex-col-reverse lg:flex-row",
-          "justify-center items-center absolute"
+          "justify-center items-center absolute",
         )}
       >
         <section
           className={classNames(
             "flex flex-col gap-6",
             "text-center lg:text-left",
-            "max-w-[200px] sm:max-w-[430px] xl:max-w-none"
+            "max-w-[200px] sm:max-w-[430px] xl:max-w-none",
           )}
         >
           <div className="flex flex-col gap-3">
-            <BaseHeading level={1}>{cmsData.intro.raw}</BaseHeading>
+            <BaseHeading level={1}>{content.title}</BaseHeading>
             <span className={GLOBAL_STYLES.paragraph}>
-              {parse(cmsData.introDescription.html)}
+              {HTMLReactParser(content.description)}
             </span>
           </div>
           <span
             className={classNames(
               "flex gap-1 justify-center",
               "lg:justify-start",
-              styles.icons
+              styles.icons,
             )}
           >
             <Link href={SOCIALS.linkedIn} target="_blank">
@@ -81,7 +71,7 @@ function Hero({ className }: Props) {
             alt="My picture"
             className="border-2 profile-picture"
             height={330}
-            src={cmsData.profilePicture}
+            src={content.profilePicture}
             width={330}
           />
         </section>

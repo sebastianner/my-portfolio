@@ -38,7 +38,7 @@ export const SphereMesh = memo(function SphereMesh(props: Props) {
       rotationIntensity={0.1}
       speed={5}
     >
-      <mesh {...props} castShadow receiveShadow ref={sphereRef} scale={scale}>
+      <mesh {...props} ref={sphereRef} castShadow receiveShadow scale={scale}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           flatShading
