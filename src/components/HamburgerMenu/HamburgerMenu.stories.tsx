@@ -14,5 +14,6 @@ export const Default: Story = {
     // Fill with props
     color: "#000",
     navItem: navItems,
+    isOpen: true,
   },
 };
