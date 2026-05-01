@@ -1,22 +1,21 @@
 "use client";
 import classNames from "classnames";
-import { useContext, useEffect, useReducer, useRef } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import styles from "./HamburgerMenu.module.scss";
-import { Context } from "@/context/context";
 import type { NavItem } from "@/types/app";
+import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 
 type Props = {
   className?: string;
   color?: string;
   navItem: NavItem[];
+  isOpen: boolean;
 };
 
 type StackState = Record<string, boolean | undefined>;
 
-function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
+function HamburgerMenu({ className, navItem, color = "#fff", isOpen }: Props) {
   const menuListRef = useRef<HTMLUListElement>(null);
-  const { AppState, dispatchAppState } = useContext(Context);
-  const isOpen = AppState.isHamburgerMenuOpen;
   const [stack, dispatchStack] = useReducer(
     (prev: StackState, next: Partial<StackState>) => {
       if (Object.keys(next).length === 0) {
@@ -27,9 +26,7 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
     {},
   );
 
-  const handleCloseMenu = () => {
-    dispatchAppState({ isHamburgerMenuOpen: false });
-  };
+  const handleCloseMenu = () => {};
 
   useEffect(() => {
     const timeouts: NodeJS.Timeout[] = [];
@@ -52,39 +49,41 @@ function HamburgerMenu({ className, navItem, color = "#fff" }: Props) {
   }, [isOpen]);
 
   return (
-    <section
-      className={classNames(
-        "left-full fixed z-4 md:hidden",
-        "w-screen h-screen text-center",
-        "flex flex-col justify-center",
-        "font-semibold text-2xl",
-        "bg-[#051C11DB]",
-        styles.hamburgerMenu,
-        { "left-0!": isOpen },
-        className,
-      )}
-      style={{ color: color }}
-    >
-      <ul ref={menuListRef} className={classNames("flex flex-col gap-5")}>
-        {navItem.map((item, index) => {
-          return (
-            <li
-              key={item.name}
-              className={classNames(
-                styles.fadeItem,
-                { [styles.fadein]: stack[`stack${index}`] },
-                {
-                  "opacity-0 hidden": !isOpen,
-                },
-              )}
-              onClick={handleCloseMenu}
-            >
-              <a href={item.href}>{item.name}</a>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <>
+      <section
+        className={classNames(
+          "left-full fixed z-4 md:hidden",
+          "w-screen h-screen text-center",
+          "flex flex-col justify-center",
+          "font-semibold text-2xl",
+          "bg-[#051C11DB]",
+          styles.hamburgerMenu,
+          { "left-0!": isOpen },
+          className,
+        )}
+        style={{ color: color }}
+      >
+        <ul ref={menuListRef} className={classNames("flex flex-col gap-5")}>
+          {navItem.map((item, index) => {
+            return (
+              <li
+                key={item.name}
+                className={classNames(
+                  styles.fadeItem,
+                  { [styles.fadein]: stack[`stack${index}`] },
+                  {
+                    "opacity-0 hidden": !isOpen,
+                  },
+                )}
+                onClick={handleCloseMenu}
+              >
+                <a href={item.href}>{item.name}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
   );
 }
 

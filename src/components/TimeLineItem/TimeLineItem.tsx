@@ -36,7 +36,7 @@ const TimeLineItem = forwardRef(function TimeLineItem(
       className={classNames(
         "h-fit bg-transparent",
         "job-article shadow-xl",
-        "min-w-[200px] lg:max-w-[450px]",
+        "min-w-50 lg:max-w-112.5",
         "rounded-md p-6 pt-5 relative",
         styles.timeLineItem,
         className,
@@ -48,7 +48,7 @@ const TimeLineItem = forwardRef(function TimeLineItem(
         {title}
       </BaseHeading>
       <BaseHeading level={4}>{company}</BaseHeading>
-      <div className="font-normal my-2 text-lg md:text-xl">
+      <div className="font-normal my-2 text-lg md:text-xl [&_ul]:list-disc [&_ul]:ml-4 [&_li]:mb-1">
         {HTMLReactParser(description)}
       </div>
       {date.map((date, i) => {

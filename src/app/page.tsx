@@ -26,11 +26,8 @@ export default async function Home() {
     };
   });
 
-  console.log(workContent);
-
   return (
     <>
-      <HamburgerMenu navItem={navItems} />
       <NavBar navItem={navItems} />
       <Hero content={heroContent as HeroType} />
       <About content={overviewContent as OverviewType} />

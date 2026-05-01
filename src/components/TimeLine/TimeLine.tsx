@@ -89,7 +89,7 @@ function TimeLine({ content }: Props) {
             <TimeLineIcon
               className={classNames(
                 "absolute lg:left-[50%] z-3",
-                "lg:ml-[-28px] ml-[8px] left-[5px]",
+                "lg:-ml-7 ml-2 left-1.25",
               )}
               image={{
                 alt: job.company,

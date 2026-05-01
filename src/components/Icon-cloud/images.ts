@@ -29,4 +29,5 @@ export const techStackImages = [
   "/assets/tech-logos/aws-s3.30x30.svg",
   "/assets/tech-logos/aws-ses.30x30.svg",
   "/assets/tech-logos/aws-lambda.svg",
+  "/assets/tech-logos/cloudflare.svg",
 ];
