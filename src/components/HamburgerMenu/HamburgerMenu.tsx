@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { useEffect, useReducer, useRef, useState } from "react";
 import styles from "./HamburgerMenu.module.scss";
 import type { NavItem } from "@/types/app";
-import HamburgerMenuIcon from "../HamburgerMenuIcon/HamburgerMenuIcon";
 
 type Props = {
   className?: string;

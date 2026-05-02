@@ -21,7 +21,7 @@ function Hero({ className, content }: Props) {
     <main
       className={classNames(
         "mx-auto mt-3",
-        "w-[80%] h-[646px]",
+        "w-[80%] h-161.5",
         "rounded-[41px]",
         "flex justify-center items-center",
         "bg-slytherin-secondary relative",
@@ -41,7 +41,7 @@ function Hero({ className, content }: Props) {
           className={classNames(
             "flex flex-col gap-6",
             "text-center lg:text-left",
-            "max-w-[200px] sm:max-w-[430px] xl:max-w-none",
+            "max-w-50 sm:max-w-107.5 xl:max-w-none",
           )}
         >
           <div className="flex flex-col gap-3">

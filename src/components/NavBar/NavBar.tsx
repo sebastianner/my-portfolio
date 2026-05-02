@@ -64,7 +64,7 @@ function NavBar({ navItem }: Props) {
           />
         </nav>
       </header>
-      <HamburgerMenu navItem={navItem} isOpen={isOpen} />;
+      <HamburgerMenu navItem={navItem} isOpen={isOpen} />
     </>
   );
 }

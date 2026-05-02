@@ -1,19 +1,11 @@
 "use client";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
 import { TITLE } from "./constants";
 import BaseHeading from "@/components/BaseHeading/BaseHeading";
-import CanvasSphere from "@/components/CanvasSphere/CanvasSphere";
 import SectionBuilder from "@/HOC/SectionBuilder";
 import { IconCloud } from "@/components/Icon-cloud/icon-cloud";
 import { techStackImages } from "@/components/Icon-cloud/images";
-
-const CanvasStars = dynamic(
-  () => import("@/components/CanvasStars/CanvasStars"),
-  {
-    ssr: false,
-  },
-);
+import CanvasStars from "@/components/CanvasStars/CanvasStars";
 
 function TechStack() {
   return (
@@ -23,7 +15,7 @@ function TechStack() {
         "flex flex-col justify-center",
         "items-center relative",
         "rounded-[41px] bg-slytherin-secondary",
-        "h-[1000px] md:h-[840px] lg:h-[646px]",
+        "h-125 md:h-186 lg:h-161.5",
       )}
     >
       <CanvasStars className="w-full h-full" />
@@ -32,7 +24,7 @@ function TechStack() {
           "flex flex-col justify-center absolute",
           "top-10 md:top-8 lg:top-12",
           "w-full text-center",
-          "gap-58 md:gap-36 lg:gap-6",
+          "md:gap-26 lg:gap-8",
         )}
       >
         <BaseHeading level={2}>{TITLE}</BaseHeading>
