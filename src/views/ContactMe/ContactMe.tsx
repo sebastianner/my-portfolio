@@ -22,7 +22,7 @@ function ContactMe() {
           },
           {
             alt: "Email Icon",
-            href: "mailto:sebastianma87@gmail.com",
+            href: "mailto:sebastianner23@gmail.com",
             src: "/assets/emailIcon.svg",
           },
           {
