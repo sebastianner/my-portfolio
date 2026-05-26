@@ -6,7 +6,6 @@ import { Suspense, useRef } from "react";
 
 function CanvasStars({ className }: { className?: string }) {
   const Stars = () => {
-     
     const starsRef = useRef<any>(null);
 
     const generateStarPositions = () => {
